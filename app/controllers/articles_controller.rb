@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+
+
   def index
     @articles = Article.all
   end
@@ -38,18 +40,16 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @warticle = Article.find(params[:id])
     authorize @article
 
     if @article.destroy
-      flash[:notice] = "\"#{@article.title}\" was successfully deleted."
+      puts "#" * 50
+     flash[:notice] = "\"#{@article.title}\" was successfully deleted."
       redirect_to @article
     else
+      puts "W" *50
       flash.now[:alert] = "There was an error deleting the article."
       render :show
-    end
-    respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
     end
   end
 
