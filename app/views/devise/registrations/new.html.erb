@@ -5,6 +5,11 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
+      <%= f.label :role, "Rôle", class: 'control-label' %><br />
+      <%= f.number_field :role, autofocus: true, autocomplete: "role", class: 'form-control' %>
+    </div>
+
+    <div class="field">
       <%= f.label :first_name, "Prénom", class: 'control-label' %><br />
       <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "Prénom", class: 'form-control' %>
     </div>
