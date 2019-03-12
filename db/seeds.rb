@@ -61,7 +61,7 @@ puts '=== Article DB created ==='
 50.times do
   article_categorie = ArticleCategory.create!(
     category_id: Category.all.sample.id,
-    article_id: Product.all.sample.id)
+    article_id: Article.all.sample.id)
   print '.'
 end
 puts '=== ArticleCategory DB created ==='
