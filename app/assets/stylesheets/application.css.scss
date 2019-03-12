@@ -27,3 +27,6 @@
         font-url('nucleo-outline.ttf') format('truetype'),
         url(font-path('nucleo-outline.svg') + '#nucleo-outline') format('svg');
  }
+
+ div#alert {
+  margin-top: 62px !important; }
