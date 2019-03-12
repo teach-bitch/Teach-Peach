@@ -38,7 +38,16 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.destroy
+    @warticle = Article.find(params[:id])
+    authorize @article
+
+    if @article.destroy
+      flash[:notice] = "\"#{@article.title}\" was successfully deleted."
+      redirect_to @article
+    else
+      flash.now[:alert] = "There was an error deleting the article."
+      render :show
+    end
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
     end
