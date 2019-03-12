@@ -3,11 +3,11 @@ class ArticlePolicy < ApplicationPolicy
     attr_reader :user, :article
 
   def initialize(user, article)
-    @user = current_user
+    @user = user
     @article = article
   end
 
   def destroy?
-    @user.role == 'admin'
+    user.role == 'admin' || record.user == user
   end
 end
