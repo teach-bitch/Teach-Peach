@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  <%= link_to('Se Déconnecter', destroy_user_session_path, method: :delete, class: 'nav-link text-primary dropdown-item') %>
+<% else %>
+  <%= link_to('Se Connecter', new_user_session_path, class: 'nav-link text-primary dropdown-item')  %>
+<% end %>
