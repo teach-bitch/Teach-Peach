@@ -8,6 +8,6 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.role == 'admin' || record.user == user
+    user.role == 'admin' || article.user_id == user.id
   end
 end
