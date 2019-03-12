@@ -44,11 +44,11 @@ class ArticlesController < ApplicationController
 
     if @article.destroy
       puts "#" * 50
-     flash[:notice] = "\"#{@article.title}\" was successfully deleted."
+     flash[:notice] = "\"L'article #{@article.title}\" a été supprimé avec succès."
       redirect_to @article
     else
       puts "W" *50
-      flash.now[:alert] = "There was an error deleting the article."
+      flash.now[:alert] = "Il y a eu un problème lors de la suppression de l'article."
       render :show
     end
   end
