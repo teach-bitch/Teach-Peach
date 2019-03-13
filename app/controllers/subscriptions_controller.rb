@@ -9,10 +9,13 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     Stripe::Customer.create(
       source: params[:stripeToken]
       plan: ""
     )
+=======
+>>>>>>> 8c0db5ef87ee0c6f8eb7fc27cc1e8d1ee5c43fc1
   end
 
   def destroy
