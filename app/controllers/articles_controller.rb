@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article, notice: 'Cet article a été créé avec succès' }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article, notice: 'Cet article a été mis à jour avec succès' }
       else
         format.html { render :edit }
       end
@@ -43,12 +43,11 @@ class ArticlesController < ApplicationController
     authorize @article
 
     if @article.destroy
-      puts "#" * 50
-     flash[:notice] = "\"L'article #{@article.title}\" a été supprimé avec succès."
+
+     flash[:notice] = "\"Cet article #{@article.title}\" a été supprimé avec succès."
       redirect_to @article
     else
-      puts "W" *50
-      flash.now[:alert] = "Il y a eu un problème lors de la suppression de l'article."
+      flash.now[:alert] = "Il y a eu un problème lors de la suppression de cet article."
       render :show
     end
   end
