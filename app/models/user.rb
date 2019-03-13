@@ -1,11 +1,11 @@
 class User < ApplicationRecord
   #after_create :welcome_send
 
-  enum role: [:visitor, :user_minor, :user, :subscriber, :admin]
+  enum role: [:admin, :user_minor, :user, :subscriber ]
 
   after_initialize do 
     if self.new_record?
-      self.role ||= :visitor
+      self.role ||= :user
     end
   end
 
