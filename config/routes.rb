@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+	namespace :admin do
+		root 'articles#index'
+		resources :categories
+  	resources :articles
+  	resources :users
+  end
+
   root 'articles#index'
   resources :categories
   resources :articles
