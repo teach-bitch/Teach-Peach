@@ -14,12 +14,15 @@ class ArticlePolicy < ApplicationPolicy
   def show?
     puts "in show?" * 30
     
+    def show?
+
     if article.for_adult == true
-      user.role != "user_minor" || user.role == 'admin' || article.user_id == user.id || user.role == "subscriber"
+      user.role != "user_minor" 
     else
-      user.role == "user_minor" || user.role == 'admin' || article.user_id == user.id || user.role == "subscriber"
-        
+      user.role == "user_minor" || user.role == 'user' || user.role == 'admin' || article.user_id == user.id || user.role == "subscriber"
     end
+
+  end
 
   end
 
