@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
     flash[:error] = "Accès refusé."
     redirect_to (request.referrer || root_path)
   end
+
+  def redirect_to_root_if_visitor
+    unless user_signed_in?
+      flash[:alert] = "Veuillez vous connecter pour effectuer cette action."
+      redirect_to root_path
+    end
+  end
 end
