@@ -7,35 +7,36 @@ class ArticlePolicy < ApplicationPolicy
     @article = article
   end
 
-  def index
+  def index?
     
   end
 
-  def show
-    user.role == 'admin'
-
+  def show?
+    puts "in show?" * 30
+    
     if article.for_adult == true
-        user.role != "user_minor"
+        puts "for adult" * 50
+        user.role != "user_minor" && user.role != 'visitor' || user.role == 'admin' || article.user_id == user.id || user.role == "subscriber"
     else
-        article.user_id == user.id || user.role == "subscriber"
+        
     end
 
   end
 
-  def new    
+  def new?  
     user.role == 'admin' 
   end
 
-  def edit
+  def edit?
     user.role == 'admin' 
   end
 
-  def create
+  def create?
     user.role == 'admin' 
     
   end
 
-  def update
+  def update?
     user.role == 'admin' 
     
   end

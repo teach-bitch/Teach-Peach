@@ -8,9 +8,11 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    authorize @article
   end
 
   def new
+    authorize @article
     @article = Article.new
   end
 
@@ -18,6 +20,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    authorize @article
     @article = Article.new(article_params)
 
     respond_to do |format|
@@ -30,6 +33,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    authorize @article
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Cet article a été mis à jour avec succès' }
