@@ -36,6 +36,14 @@ sleep(1)
     birthdate: Faker::Date.birthday(9, 156))
   print '.'
 end
+
+admin = User.create!(email: "admin@admin.com", 
+  password: "peepoodo", 
+  first_name: "Peepoodo", 
+  last_name: "Peepoodo", 
+  username: "Peepoodo", 
+  birthdate: Faker::Date.birthday(9, 156),
+  role: 4)
 puts '=== User DB created ==='
 
 
