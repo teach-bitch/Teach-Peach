@@ -15,8 +15,9 @@ class ArticlePolicy < ApplicationPolicy
     puts "in show?" * 30
     
     if article.for_adult == true
-      user.role != "user_minor" && user.role != 'visitor' || user.role == 'admin' || article.user_id == user.id || user.role == "subscriber"
+      user.role != "user_minor" || user.role == 'admin' || article.user_id == user.id || user.role == "subscriber"
     else
+      user.role == "user_minor" || user.role == 'admin' || article.user_id == user.id || user.role == "subscriber"
         
     end
 

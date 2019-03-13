@@ -21,14 +21,14 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    authorize @article
     @article = Article.new(article_params)
+    authorize @article
 
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Cet article a été créé avec succès' }
       else
-        format.html { render :new }
+        format.html { render :index }
       end
     end
   end
