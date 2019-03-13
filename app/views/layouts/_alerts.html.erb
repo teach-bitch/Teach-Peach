@@ -1,6 +1,9 @@
 <% flash.each do |type, msg| %>
 <div class="alert <%= bootstrap_class_flash(type) %>" role="alert">
     <div class="container">
+      <div class="alert-icon">
+        <i class="now-ui-icons <%= flash_icons(type) %>"></i>
+      </div>
         <%= msg %>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">
