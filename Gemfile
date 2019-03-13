@@ -14,7 +14,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'table_print'
 gem 'jquery-rails'
-gem 'stripe'
+gem 'stripe', '~> 4.9'
 gem 'pundit'
 
 group :development, :test do

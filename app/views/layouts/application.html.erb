@@ -1,6 +1,7 @@
 <!DOCTYPE html>
  <html>
   <head>
+   <%= tag :meta, name: "stripe-key", content: ENV['PUBLISHABLE_KEY'] %>
    <%= render 'layouts/head' %>
   </head>
   <body>
@@ -10,11 +11,10 @@
  <!-- Alerts -->
   <%= render 'layouts/alerts' %>
  <!-- Alerts -->
-<%= yield %>
+    <%= yield %>
   <!-- Footer -->
    <%= render 'layouts/footer' %>
   <!-- Footer -->
-  <script type="text/javascript" src="https://js.stripe.com/v2/">
-  </script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   </body>
 </html>
