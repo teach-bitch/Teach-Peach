@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # Generates not authorized exception message
+  # Generates not authorized exception
   def user_not_authorized
     flash[:error] = "Accès refusé."
     redirect_to (request.referrer || root_path)
@@ -25,4 +25,5 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
 end
