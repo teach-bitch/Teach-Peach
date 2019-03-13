@@ -12,8 +12,8 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    authorize @article
     @article = Article.new
+    authorize @article
   end
   
   def edit
