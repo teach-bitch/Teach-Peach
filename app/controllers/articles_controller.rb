@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_to_root_if_visitor, except: [:index, :show]
+  before_action :redirect_to_root_if_visitor, except: [:index]
 
 
   def index
@@ -68,11 +68,5 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :content, :for_adult, :role)
     end
 
-    def redirect_to_root_if_visitor
-      unless user_signed_in?
-        flash[:alert] = "Veuillez vous connecter pour effectuer cette action."
-        redirect_to root_path
 
-      end
-    end
 end
