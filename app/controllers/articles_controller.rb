@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
     authorize @article
   end
-  
+
   def edit
     authorize @article
   end
@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
 
     if @article.destroy
 
-     flash[:notice] = "\"Cet article #{@article.title}\" a été supprimé avec succès."
+     flash[:notice] = "Cet article #{@article.title} a été supprimé avec succès."
       redirect_to @article
     else
       flash.now[:alert] = "Il y a eu un problème lors de la suppression de cet article."
