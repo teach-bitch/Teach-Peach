@@ -43,7 +43,7 @@ admin = User.create!(email: "admin@admin.com",
   last_name: "Peepoodo",
   username: "Peepoodo",
   birthdate: Faker::Date.birthday(9, 156),
-  role: 0)
+  role: "admin")
 puts '=== User DB created ==='
 
 
