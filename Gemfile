@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'stripe'
 gem 'pundit'
 gem 'create_api_gem', git: 'https://github.com/Typeform/create-api-gem.git'
+gem 'ultrahook'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
