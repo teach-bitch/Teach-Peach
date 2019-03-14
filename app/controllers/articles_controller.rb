@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_root_if_visitor, except: [:index]
 
-
   def index
     @articles = Article.all
   end

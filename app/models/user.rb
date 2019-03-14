@@ -3,7 +3,7 @@ class User < ApplicationRecord
   after_create :is_minor?
 
   enum role: [:admin, :user_minor, :user, :subscriber ]
-
+  
   after_initialize do
     if self.new_record?
       self.role ||= :user
