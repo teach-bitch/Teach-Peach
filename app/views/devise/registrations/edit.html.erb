@@ -7,7 +7,11 @@
     </div>
     <div class="col-6">
       <h4>Tu souhaites t'abonner ?</h4>
-      <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
+      <% if @user.subscription_id == nil %>
+        <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
+      <% else %>
+        <%= link_to "Se désabonner", subscription_path(@user.id), method: :delete, data: { confirm: "Etes-vous sûr ?" }, class: 'btn btn-danger' %>
+      <% end %>
     </div>
   </div>
 
