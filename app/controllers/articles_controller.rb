@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
     authorize @article
   end
-  
+
   def edit
     authorize @article
   end
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
       if @article.save
         format.html { redirect_to @article, notice: 'Cet article a été créé avec succès' }
       else
-        format.html { render :index }
+        format.html { render :new }
       end
     end
   end
