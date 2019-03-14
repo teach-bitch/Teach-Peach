@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #decentralise the webhook-receiving
   constraints subdomain: "hooks" do
   post '/:integration_name' => 'webhooks#receive', as: :receive_webhooks
   end
