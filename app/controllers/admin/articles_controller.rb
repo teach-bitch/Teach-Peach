@@ -27,7 +27,7 @@ class Admin::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Cet article a été créé avec succès' }
+        format.html { redirect_to  admin_article_path(@article), notice: 'Cet article a été créé avec succès' }
       else
         format.html { render :index }
       end

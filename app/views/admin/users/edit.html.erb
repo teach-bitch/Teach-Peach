@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Editer le profil</h2>
+
+  <%= form_for(@user, url: admin_user_path(@user), html: {method: "put"}) do |f| %>
+
+  <div class="field">
+    <%= f.label :email, "Email", class: 'control-label' %><br />
+    <%= f.text_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name, "Prénom", class: 'control-label' %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "Prénom", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, "Nom", class: 'control-label' %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Nom", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :username, "Nom d'utilisateur", class: 'control-label' %><br />
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Pseudo", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+  <%= f.label :birthdate, "Date de naissance", class: 'control-label' %><br />
+  <%= f.date_field :birthdate, autofocus: true, autocomplete: "birthdate", class: 'form-control' %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :role, "Role", class: 'control-label' %><br />
+    <%= f.select :role, [['admin', "admin"], ['subscriber', "subscriber"], ['user', "user"], ['user_minor', "user_minor"]] %>
+  </div>
+
+  <div class="actions">
+      <%= f.submit "Mettre à jour les données" %>
+  </div>
+
+  <% end %>
+
+  <%= link_to "Revenir à la page précédente", :back %>
+</div>
