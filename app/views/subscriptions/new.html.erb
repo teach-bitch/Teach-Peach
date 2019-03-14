@@ -1,17 +1,24 @@
-<%= form_tag subscriptions_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $10.00</span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Monthly subscription"
-          data-locale="auto"></script>
-<% end %>
+<div class="container">
+  <%= form_tag subscriptions_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Abonnement mensuel: 10€</span>
+      </label>
+    </article>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Monthly subscription"
+            data-locale="auto"></script>
+    <script type="text/javascript">
+      $(function(){
+        $('.stripe-button-el span').text("S'abonner");
+        $('.stripe-button-el').removeClass('stripe-button-el').addClass('btn btn-primary')
+      });
+    </script>
+  <% end %>
+</div>
