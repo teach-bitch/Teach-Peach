@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'articles#index'
+  resources :charges
   resources :categories
   resources :articles
   devise_for :users
