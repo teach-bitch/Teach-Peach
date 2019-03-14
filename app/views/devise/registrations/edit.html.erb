@@ -1,64 +1,19 @@
 <div class="container">
-  <h2>Editer mon profil</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="field">
-      <%= f.label :first_name, "Prénom", class: 'control-label' %><br />
-      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "Prénom", class: 'form-control' %>
+  <div class="row">
+    <div class="col-6">
+      <h4>Editer mon profil</h4>
+      <%= render 'edit_form' %>
     </div>
-
-    <div class="field">
-      <%= f.label :last_name, "Nom", class: 'control-label' %><br />
-      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Nom", class: 'form-control' %>
+    <div class="col-6">
+      <h4>Tu souhaites t'abonner ?</h4>
+      <%= link_to "Je m'abonne", new_charge_path, class: 'btn btn-primary' %>
     </div>
+  </div>
 
-    <div class="field">
-      <%= f.label :username, "Nom d'utilisateur", class: 'control-label' %><br />
-      <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Nom d'utilisateur", class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= f.label :birthdate, "Date de naissance", class: 'control-label' %><br />
-      <%= f.date_field :birthdate, autofocus: true, autocomplete: "birthdate", class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= f.label :email, "Email", class: 'control-label' %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: 'form-control' %>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :password, "Changer de mot de passe", class: 'control-label' %> <i>(Ne pas remplir ce champ si vous ne voulez pas le changer
-      <% if @minimum_password_length %>
-        <em> - <%= @minimum_password_length %> caractères minimum</em>
-      <% end %></i>)<br />
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe", class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation, "Confirmation du nouveau mot de passe", class: 'control-label' %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Mot de passe", class: 'form-control'  %>
-    </div>
-
-    <div class="field">
-      <%= f.label :current_password, "Mot de passe", class: 'control-label' %> <i>(Nous avons besoin de votre mot de passe actuel pour valider les changements)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe", class: 'form-control' %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Mettre à jour mes données" %>
-    </div>
-  <% end %>
-
-  <h3>Supprimer mon compte</h3>
-
-  <p>Pas satisfait ? <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete %></p>
-
+  <h5>Supprimer mon compte</h5>
+  <p>Pas satisfait ?</p>
+  <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete %>
+  <br>
   <%= link_to "Revenir à la page précédente", :back %>
 </div>

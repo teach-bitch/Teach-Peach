@@ -1,25 +1,39 @@
 class ChargesController < ApplicationController
+  before_action :set_user, except: [:new]
+
   def new
   end
 
   def create
-    # Amount in cents
-    @amount = 500
-
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
       source: params[:stripeToken],
     })
 
-    charge = Stripe::Charge.create({
+    subscription = Stripe::Subscription.create({
       customer: customer.id,
-      amount: @amount,
-      description: 'Rails Stripe customer',
-      currency: 'usd',
+      items: [
+        {
+          plan: 'plan_EgxsFHxvwjeTLV',
+        },
+      ],
     })
+
+    @user.update(customer_id: customer.id)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
+  end
+
+  def destroy
+    sub = Stripe::Subscription.retrieve(@user.id)
+      sub.delete
+  end
+
+  private
+
+  def set_user
+    @user = current_user
   end
 end
