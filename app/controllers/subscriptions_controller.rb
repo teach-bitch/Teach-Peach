@@ -1,25 +1,21 @@
 class SubscriptionsController < ApplicationController
   before_action :set_user, except: [:new]
+  before_action :set_customer, only: [:create]
 
   def new
   end
 
   def create
-    customer = Stripe::Customer.create({
-      email: params[:stripeEmail],
-      source: params[:stripeToken],
-    })
-
     subscription = Stripe::Subscription.create({
-      customer: customer.id,
+      customer: @customer.id,
       items: [
         {
           plan: 'plan_EgxsFHxvwjeTLV',
         },
       ],
     })
-
-    @user.update(customer_id: customer.id)
+    # After the Stripe request, store the subscription infos into users table
+    @user.update(customer_id: @customer.id, subscription_id: subscription.id)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -27,13 +23,26 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
-    sub = Stripe::Subscription.retrieve(@user.id)
+    sub = Stripe::Subscription.retrieve(@user.subscription_id)
       sub.delete
+    @user.update(subscription_id: nil)
+    redirect_to root_path
   end
 
   private
 
   def set_user
     @user = current_user
+  end
+
+  def set_customer
+    if @user.customer_id == nil
+      @customer = Stripe::Customer.create({
+        email: params[:stripeEmail],
+        source: params[:stripeToken],
+      })
+    else
+      @customer = Stripe::Customer.retrieve(@user.customer_id)
+    end
   end
 end
