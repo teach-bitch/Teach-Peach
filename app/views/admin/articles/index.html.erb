@@ -11,15 +11,15 @@
   </thead>
 
   <tbody>
-    <% @articles.each do |article| %>
+    <% @articles.reverse.each do |article| %>
       <tr>
         <td><%= article.title %></td>
         <td><%= article.content %></td>
         <td><%= article.for_adult %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Show', admin_article_path(article.id) %></td>
+        <td><%= link_to 'Edit', edit_admin_article_path(article) %></td>
 
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %></td>
+        <td><%= link_to 'Destroy', admin_article_path(article.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } %></td>
 
       </tr>
     <% end %>

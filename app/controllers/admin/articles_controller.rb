@@ -38,7 +38,7 @@ class Admin::ArticlesController < ApplicationController
     authorize @article
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Cet article a été mis à jour avec succès' }
+        format.html { redirect_to admin_article_path(@article), notice: 'Cet article a été mis à jour avec succès' }
       else
         format.html { render :edit }
       end
@@ -51,7 +51,7 @@ class Admin::ArticlesController < ApplicationController
     if @article.destroy
 
      flash[:notice] = "\"Cet article #{@article.title}\" a été supprimé avec succès."
-      redirect_to @article
+      redirect_to admin_articles_path
     else
       flash.now[:alert] = "Il y a eu un problème lors de la suppression de cet article."
       render :show
@@ -70,5 +70,5 @@ class Admin::ArticlesController < ApplicationController
     end
 
 
-  
+
 end
