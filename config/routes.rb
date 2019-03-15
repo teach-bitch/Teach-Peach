@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    root "articles#index"
     resources :categories
     resources :articles, only: [:destroy, :index, :create, :show, :edit, :update, :new]
     resources :users
@@ -13,15 +12,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :subscriptions
   resources :typeforms, only: [:show, :index]
-<<<<<<< HEAD
-<<<<<<< HEAD
   resources :static_pages, only: [:home] do
-=======
-  resources :static_pages do
->>>>>>> change links on Teach Peach
-=======
-  resources :static_pages, only: [:home] do
->>>>>>> fix routes
     get 'home', :on => :collection
   end
 end

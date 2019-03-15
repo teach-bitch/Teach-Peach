@@ -8,10 +8,15 @@
   <% if @user.subscription_id == nil %>
   <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
   <% else %>
-  <%end%>
-<%end%>  
+  <% end %>
+<% end %>  
 <div>
+        <% if @articles.last %>
+        <td><%= @articles.last.title %></td>
 
+        <td><%= link_to "Voir notre dernier article", @articles.last %></td>
+        <% end %>
+_______________________________________
 <table>
   <thead>
     <tr>
