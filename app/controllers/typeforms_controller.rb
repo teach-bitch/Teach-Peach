@@ -1,10 +1,84 @@
 class TypeformsController < ApplicationController
+<<<<<<< HEAD
   before_action :set_typeform, only: [:show]
+=======
+  before_action :set_typeform, only: [:show, :edit, :update, :destroy]
+
+  # GET /typeforms
+  # GET /typeforms.json
+  def index
+    @typeforms = Typeform.all
+    
+  end
+>>>>>>> 78eaa779451768f9fac6805b6d6b9a35b06f8000
 
   # GET /typeforms/1
   # GET /typeforms/1.json
   def show
+<<<<<<< HEAD
     @typeform_id = Typeform.last.id_typeform
+=======
+    authorize @typeform
+    # @typeform_id = Typeform.last.id_typeform
+    @dynamique_typeform_id = Typeform.find(params[:id]).id_typeform
+
+    # puts @typeform_id
+    # puts "show" * 50
+  end
+
+  # GET /typeforms/new
+  def new
+    @typeform = Typeform.new
+    authorize @typeform
+  end
+
+  # GET /typeforms/1/edit
+  def edit
+    authorize @typeform
+  end
+
+  # POST /typeforms
+  # POST /typeforms.json
+  def create
+    authorize @typeform
+    @typeform = Typeform.new(typeform_params)
+
+    respond_to do |format|
+      if @typeform.save
+        format.html { redirect_to @typeform, notice: 'Typeform was successfully created.' }
+        format.json { render :show, status: :created, location: @typeform }
+      else
+        format.html { render :new }
+        format.json { render json: @typeform.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /typeforms/1
+  # PATCH/PUT /typeforms/1.json
+  def update
+    authorize @typeform
+    respond_to do |format|
+      if @typeform.update(typeform_params)
+        format.html { redirect_to @typeform, notice: 'Typeform was successfully updated.' }
+        format.json { render :show, status: :ok, location: @typeform }
+      else
+        format.html { render :edit }
+        format.json { render json: @typeform.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /typeforms/1
+  # DELETE /typeforms/1.json
+  def destroy
+    authorize @typeform
+    @typeform.destroy
+    respond_to do |format|
+      format.html { redirect_to typeforms_url, notice: 'Typeform was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+>>>>>>> 78eaa779451768f9fac6805b6d6b9a35b06f8000
   end
 
   private
