@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <%= form_with(model: [:admin, typeform], local: true) do |form| %>
-=======
-<%= form_with scope: :typeform, url:  admin_typeform_path(@typeform), method: :put, local:true do |form| %>
->>>>>>> add error messages to admin typeforms#edit / typeforms#new and delete json.builder files
 
   <div class="field">
     <%= form.label :title %>

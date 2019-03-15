@@ -39,12 +39,8 @@ class Admin::ArticlesController < AdminController
 
   def destroy
     if @article.destroy
-<<<<<<< HEAD
-     flash[:notice] = 'Cet article a été créé avec succès.'
-=======
 
      flash[:notice] = "L'article a été supprimé avec succès."
->>>>>>> change redirect path if error on controllers
       redirect_to admin_articles_path
     else
       flash.now[:alert] = 'Il y a eu un problème lors de la suppression de cet article.'
