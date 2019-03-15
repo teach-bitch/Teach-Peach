@@ -7,7 +7,7 @@ en:
     failure:
       already_authenticated: "Vous êtes déjà connecté(e)."
       inactive: "Votre compte n'a pas encore été activé."
-      invalid: "%{authentication_keys} ou mot de passe invalides."
+      invalid: "%{authentication_keys} et/ou mot de passe invalide(s)."
       locked: "Votre compte est verrouillé."
       last_attempt: "Il vous reste encore une tentative avant que votre compte soit verrouillé."
       not_found_in_database: "%{authentication_keys} ou mot de passe invalides."
@@ -56,8 +56,20 @@ en:
       already_confirmed: "a déjà été confirmé(e). Veuillez essayer de vous connecter."
       confirmation_period_expired: "doit être confirmé(e) en %{period}, veuillez en demander un(e) autre"
       expired: "a expiré. Veuillez en demander un autre."
-      not_found: "n'a pas été trouvé(e)."
+      not_found: "Cette adresse email n'a pas été trouvée !"
       not_locked: "n'a pas été verrouillé(e)."
       not_saved:
         one: "une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
         other: "%{count} erreurs ont empêché ce %{resource} d'être enregistré(e):"
+      confirmation: "Les mots de passe ne correspondent pas !"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Tu as oublié de spécifier une adresse email !"
+            password:
+              blank: "Tu as oublié de spécifier un mot de passe !"
+            current_password:
+              blank: "Tu as oublié de spécifier ton mot de passe actuel !"
