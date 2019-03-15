@@ -5,6 +5,7 @@ class CreateTypeforms < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       t.string :id_typeform
+      t.string :id_results
 
       t.timestamps
     end
