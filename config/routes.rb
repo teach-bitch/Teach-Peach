@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :users
     resources :typeforms
   end
-  root 'articles#index'
+  root 'static_pages#home'
   resources :categories
   resources :articles
   devise_for :users
