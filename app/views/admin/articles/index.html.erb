@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>For adult</th>
+      <th>Titre</th>
+      <th>Contenu</th>
+      <th>Pour adulte</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,10 +18,10 @@
         <td><%= article.title %></td>
         <td><%= article.content %></td>
         <td><%= article.for_adult %></td>
-        <td><%= link_to 'Show', admin_article_path(article.id) %></td>
-        <td><%= link_to 'Edit', edit_admin_article_path(article) %></td>
+        <td><%= link_to "Voir l'article", admin_article_path(article.id) %></td>
+        <td><%= link_to 'Éditer', edit_admin_article_path(article) %></td>
 
-        <td><%= link_to 'Destroy', admin_article_path(article.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } %></td>
+        <td><%= link_to 'Supprimer', admin_article_path(article.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } %></td>
 
       </tr>
     <% end %>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Article', new_admin_article_path %>
+<%= link_to 'Nouvel article', new_admin_article_path %>
