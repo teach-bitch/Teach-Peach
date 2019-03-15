@@ -1,13 +1,13 @@
 class SubscriptionsController < ApplicationController
-  before_action :set_user, except: [:new]
+  before_action :set_user
   before_action :set_customer, only: [:create]
 
   def new
-    authorize @subscription
+    authorize(:subscription, :new?)
   end
 
   def create
-    authorize @subscription
+    authorize(:subscription, :create?)
     subscription = Stripe::Subscription.create({
       customer: @customer.id,
       items: [
@@ -32,6 +32,10 @@ class SubscriptionsController < ApplicationController
   end
 
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def set_user
     @user = current_user
