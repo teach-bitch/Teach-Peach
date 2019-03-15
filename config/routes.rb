@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :subscriptions
   resources :typeforms, only: [:show, :index]
+<<<<<<< HEAD
   resources :static_pages, only: [:home] do
+=======
+  resources :static_pages do
+>>>>>>> change links on Teach Peach
     get 'home', :on => :collection
   end
 end
