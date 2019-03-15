@@ -1,4 +1,4 @@
-class Admin::TypeformsController < ApplicationController
+class Admin::TypeformsController < AdminController
   before_action :set_typeform, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_root_if_not_admin
 

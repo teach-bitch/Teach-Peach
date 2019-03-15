@@ -1,4 +1,4 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < AdminController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_root_if_not_admin
 
