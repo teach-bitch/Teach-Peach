@@ -5,6 +5,7 @@ class TypeformsController < ApplicationController
   # GET /typeforms/1.json
 def index
    @typeforms = Typeform.all
+   
 end
 
   def show

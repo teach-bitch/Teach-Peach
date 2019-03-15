@@ -1,28 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Typeforms</h1>
+<h1>Influence le contenu en partageant anonymement ton experience !</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Id typeform</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @typeforms.each do |typeform| %>
-      <tr>
-        <td><%= typeform.title %></td>
-        <td><%= typeform.description %></td>
-        <td><%= typeform.id_typeform %></td>
-        <td><%= link_to 'Show', typeform %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<td><%= link_to "Partage ton avis sur " + @typeforms.last.title, typeform_path(Typeform.last.id) %></td>
 
