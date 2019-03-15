@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < AdminController
   before_action :set_user, only: [:update, :destroy, :show]
   before_action :redirect_to_root_if_not_admin
 

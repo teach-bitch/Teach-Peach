@@ -1,15 +1,4 @@
-<%= form_with scope: :article, url:  admin_article_path(@article), method: :put, local:true do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-      <% article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with(model: [:admin, article], local: true) do |form| %>
 
   <div class="field">
     <%= form.label :title %>
@@ -22,7 +11,7 @@
   </div>
 
   <div class="field">
-    <%= form.label  :for_adult %>
+    <%= form.label :for_adult %>
     <%= form.check_box :for_adult %>
   </div>
 
