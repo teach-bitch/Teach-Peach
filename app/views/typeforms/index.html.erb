@@ -2,5 +2,5 @@
 
 <h1>Influence le contenu en partageant anonymement ton experience !</h1>
 
-<td><%= link_to "Partage ton avis sur " + @typeforms.last.title, typeform_path(Typeform.last.id) %></td>
+<td><%= link_to "Partage ton avis sur " + @typeforms.last.title.downcase, typeform_path(Typeform.last.id) %></td>
 
