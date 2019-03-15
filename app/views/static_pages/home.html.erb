@@ -2,9 +2,13 @@
 
 <h3><%= link_to "Partage ton avis sur " + @typeforms.last.title.downcase, typeform_path(Typeform.last.id) %></h3>
 
+
 <div>
-<% if @user.subscription_id == nil %>
-<%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
+<% if user_signed_in? %>
+  <% if @user.subscription_id == nil %>
+  <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
+  <% else %>
+  <%end%>
 <%end%>  
 <div>
 
