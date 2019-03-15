@@ -5,15 +5,13 @@ class SubscriptionPolicy < ApplicationPolicy
     @user = user
     @subscription = subscription
   end
-  
+
   def new?
     user.role != 'user_minor'
-    
   end
 
   def create?
     user.role != 'user_minor'
-    
   end
 
 end
