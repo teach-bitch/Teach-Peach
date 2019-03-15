@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :articles
   devise_for :users
   resources :subscriptions
-  resources :typeforms, only: [:show]
+  resources :typeforms, only: [:show, :index]
 end
