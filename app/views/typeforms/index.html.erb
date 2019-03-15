@@ -19,8 +19,6 @@
         <td><%= typeform.description %></td>
         <td><%= typeform.id_typeform %></td>
         <td><%= link_to 'Show', typeform %></td>
-        <td><%= link_to 'Edit', edit_typeform_path(typeform) %></td>
-        <td><%= link_to 'Destroy', typeform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,3 @@
 
 <br>
 
-<%= link_to 'New Typeform', new_typeform_path %>
