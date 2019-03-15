@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
   before_action :set_user, only: [:update, :destroy, :show]
   before_action :redirect_to_root_if_not_admin
-  
+
   def index
     @users = User.all
   end
@@ -12,7 +12,6 @@ class Admin::UsersController < ApplicationController
 
   def new
     @user = User.new
-
   end
 
   def edit
@@ -21,13 +20,7 @@ class Admin::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
-
     respond_to do |format|
-      puts "*"*60
-      puts @user
-      puts params
-      puts "*"*60
       if @user.save
         format.html { redirect_to admin_users_path, notice: 'Cet utilisateur a été créé avec succès' }
       else
@@ -38,7 +31,6 @@ class Admin::UsersController < ApplicationController
 
   def update
     respond_to do |format|
-
       if @user.update(user_params)
         format.html { redirect_to admin_users_path(@user), notice: 'Cet utilisateur a été mis à jour avec succès' }
       else
@@ -48,9 +40,7 @@ class Admin::UsersController < ApplicationController
   end
 
     def destroy
-
     if @user.destroy
-
      flash[:notice] = "\"Cet utilisateur #{@user.email}\" a été supprimé avec succès."
      redirect_to admin_users_path
     else
@@ -60,7 +50,7 @@ class Admin::UsersController < ApplicationController
   end
 
   private
-      # Use callbacks to share common setup or constraints between actions.
+
     def set_user
       @user = User.find(params[:id])
     end
@@ -68,5 +58,5 @@ class Admin::UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :username, :email, :birthdate, :password, :password_confirmation, :role)
     end
-      # Never trust parameters from the scary internet, only allow the white list through.
+
 end
