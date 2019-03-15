@@ -1,7 +1,7 @@
 class Admin::CategoriesController < ApplicationController
 
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_to_root_if_visitor, except: [:index, :show]
+  before_action :redirect_to_root_if_not_admin
 
 
   def index

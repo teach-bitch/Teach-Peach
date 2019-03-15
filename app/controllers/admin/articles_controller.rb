@@ -1,7 +1,7 @@
 class Admin::ArticlesController < ApplicationController
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_to_root_if_visitor, except: [:index]
+  before_action :redirect_to_root_if_not_admin
 
 
   def index

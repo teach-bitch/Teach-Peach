@@ -1,17 +1,18 @@
 class Admin::TypeformsController < ApplicationController
   before_action :set_typeform, only: [:show, :edit, :update, :destroy]
-
+  before_action :redirect_to_root_if_not_admin
+  
   # GET /typeforms
   # GET /typeforms.json
   def index
     @typeforms = Typeform.all
-    
+
   end
 
   # GET /typeforms/1
   # GET /typeforms/1.json
   def show
-    
+
     @dynamique_typeform_id = Typeform.find(params[:id]).id_typeform
     @dynamique_results_id = Typeform.find(params[:id]).id_results
 
@@ -20,18 +21,18 @@ class Admin::TypeformsController < ApplicationController
   # GET /typeforms/new
   def new
     @typeform = Typeform.new
-    
+
   end
 
   # GET /typeforms/1/edit
   def edit
-    
+
   end
 
   # POST /typeforms
   # POST /typeforms.json
   def create
-    
+
     @typeform = Typeform.new(typeform_params)
 
     respond_to do |format|
@@ -48,7 +49,7 @@ class Admin::TypeformsController < ApplicationController
   # PATCH/PUT /typeforms/1
   # PATCH/PUT /typeforms/1.json
   def update
-    
+
     respond_to do |format|
       if @typeform.update(typeform_params)
         format.html { redirect_to admin_typeforms_path, notice: 'Typeform was successfully updated.' }
@@ -63,7 +64,7 @@ class Admin::TypeformsController < ApplicationController
   # DELETE /typeforms/1
   # DELETE /typeforms/1.json
   def destroy
-    
+
     @typeform.destroy
     respond_to do |format|
       format.html { redirect_to admin_typeforms_path, notice: 'Typeform was successfully destroyed.' }
