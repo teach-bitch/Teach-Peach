@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_with(model: [:admin, category], local: true) do |form| %>
+=======
+<%= form_with scope: :category, url:  admin_category_path(@category), method: :put, local:true do |form| %>
+>>>>>>> add error messages to admin categories#edit / categories#new
 
   <div class="field">
     <%= form.label :title %>
