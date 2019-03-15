@@ -24,7 +24,7 @@ class Admin::UsersController < AdminController
       if @user.save
         format.html { redirect_to admin_users_path, notice: 'Cet utilisateur a été créé avec succès' }
       else
-        format.html { render :index }
+        format.html { render :new }
       end
     end
   end

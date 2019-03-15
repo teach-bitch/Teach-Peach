@@ -30,7 +30,7 @@ class Admin::CategoriesController < AdminController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to admin_categories_path, notice: 'Cette catégorie a été mise à jour avec succès.' }
+        format.html { redirect_to admin_categories_path, notice: 'Cette catégorie a été mise à jour avec succès !' }
       else
         format.html { render :edit }
       end
@@ -38,9 +38,12 @@ class Admin::CategoriesController < AdminController
   end
 
   def destroy
-    @category.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_categories_path, notice: 'Cette catégorie a été détruite avec succès.' }
+    if @category.destroy
+     flash[:notice] = "La catégorie a été supprimée avec succès !"
+      redirect_to admin_categories_path
+    else
+      flash.now[:alert] = "Il y a eu un problème lors de la suppression de cette categorie.."
+      render :show
     end
   end
 
