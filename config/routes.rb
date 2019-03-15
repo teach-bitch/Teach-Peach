@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :subscriptions
   resources :typeforms, only: [:show, :index]
-  resources :static_pages do
+  resources :static_pages, only: [:home] do
     get 'home', :on => :collection
   end
 end
