@@ -3,6 +3,10 @@ class TypeformsController < ApplicationController
 
   # GET /typeforms/1
   # GET /typeforms/1.json
+def index
+   @typeforms = Typeform.all
+end
+
   def show
     @typeform_id = Typeform.last.id_typeform
   end
@@ -15,6 +19,6 @@ class TypeformsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def typeform_params
-      params.require(:typeform).permit(:title, :description, :id_typeform)
+      params.require(:typeform).permit(:title, :description, :id_typeform, :id_results)
     end
 end
