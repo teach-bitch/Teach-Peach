@@ -3,7 +3,7 @@ class User < ApplicationRecord
   after_create :is_minor?
 
   enum role: [:admin, :user_minor, :user, :subscriber ]
-  
+
   after_initialize do
     if self.new_record?
       self.role ||= :user
@@ -28,4 +28,16 @@ class User < ApplicationRecord
       self.user!
     end
   end
+
+  validates :username,
+    presence: { message: "Tu as oublié de spécifier un nom d'utilisateur !" }
+
+  validates :first_name,
+    presence: { message: "Tu as oublié de spécifier un prénom !" }
+
+  validates :last_name,
+    presence: { message: "Tu as oublié de spécifier un nom !" }
+
+  validates :birthdate,
+    presence: { message: "Tu as oublié de spécifier une date de naissance !" }
 end

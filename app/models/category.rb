@@ -3,5 +3,5 @@ class Category < ApplicationRecord
   has_many :articles, through: :article_categories
 
   validates :title,
-		presence: { message: "Tu as oublié le titre de la catégorie !" }
+		presence: { message: "Tu as oublié le nom de la catégorie !" }
 end
