@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     root "articles#index"
     resources :categories
@@ -12,4 +13,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :subscriptions
   resources :typeforms, only: [:show, :index]
+  resources :static_pages do
+    get 'home', :on => :collection
+  end
 end
