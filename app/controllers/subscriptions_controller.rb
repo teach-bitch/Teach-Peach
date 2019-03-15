@@ -3,9 +3,11 @@ class SubscriptionsController < ApplicationController
   before_action :set_customer, only: [:create]
 
   def new
+    authorize @subscription
   end
 
   def create
+    authorize @subscription
     subscription = Stripe::Subscription.create({
       customer: @customer.id,
       items: [
