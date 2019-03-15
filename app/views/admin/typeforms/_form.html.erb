@@ -1,4 +1,4 @@
-<%= form_with(model: typeform, local: true) do |form| %>
+<%= form_with scope: :typeform, url:  admin_typeform_path(@typeform), method: :put, local:true do |form| %>
   <% if typeform.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(typeform.errors.count, "error") %> prohibited this typeform from being saved:</h2>
