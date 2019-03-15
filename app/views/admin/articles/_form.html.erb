@@ -1,17 +1,17 @@
 <%= form_with(model: [:admin, article], local: true) do |form| %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :titre %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :contenu %>
     <%= form.text_area :content %>
   </div>
 
   <div class="field">
-    <%= form.label :for_adult %>
+    <%= form.label :pour_adulte %>
     <%= form.check_box :for_adult %>
   </div>
 
