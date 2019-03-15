@@ -7,7 +7,7 @@ class SubscriptionPolicy < ApplicationPolicy
   end
 
   def new?
-    user.role != 'user_minor'
+    user.role != 'user_minor' && user.subscription_id == nil
   end
 
   def create?
