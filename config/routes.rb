@@ -4,10 +4,12 @@ Rails.application.routes.draw do
     resources :categories
     resources :articles, only: [:destroy, :index, :create, :show, :edit, :update, :new]
     resources :users
+    resources :typeforms
   end
   root 'articles#index'
   resources :categories
   resources :articles
   devise_for :users
-    resources :subscriptions
+  resources :subscriptions
+  resources :typeforms, only: [:show]
 end
