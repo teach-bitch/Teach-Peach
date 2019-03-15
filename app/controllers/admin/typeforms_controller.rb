@@ -22,7 +22,7 @@ class Admin::TypeformsController < ApplicationController
     @typeform = Typeform.new(typeform_params)
     respond_to do |format|
       if @typeform.save
-        format.html { redirect_to admin_typeforms_path, notice: 'Ce formulaire Typeform a été ajouté avec succès.' }
+        format.html { redirect_to admin_typeforms_path, notice: 'Ce formulaire a été ajouté avec succès !' }
       else
         format.html { render :new }
       end
@@ -33,7 +33,7 @@ class Admin::TypeformsController < ApplicationController
     authorize @typeform
     respond_to do |format|
       if @typeform.update(typeform_params)
-        format.html { redirect_to admin_typeforms_path, notice: 'Ce formulaire Typeform a été mis à jour avec succès.' }
+        format.html { redirect_to admin_typeforms_path, notice: 'Ce formulaire a été mis à jour avec succès !' }
       else
         format.html { render :edit }
       end
@@ -42,8 +42,12 @@ class Admin::TypeformsController < ApplicationController
 
   def destroy
     @typeform.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_typeforms_path, notice: 'Ce formulaire Typeform a été détruit avec succès.' }
+    if @typeform.destroy
+     flash[:notice] = "Le formulaire a été supprimé avec succès !"
+      redirect_to admin_typeforms_path
+    else
+      flash.now[:alert] = "Il y a eu un problème lors de la suppression de ce formulaire.."
+      render :show
     end
   end
 

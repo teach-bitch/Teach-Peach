@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
   before_action :set_user, only: [:update, :destroy, :show]
   before_action :redirect_to_root_if_not_admin
-  
+
   def index
     @users = User.all
   end
@@ -31,7 +31,7 @@ class Admin::UsersController < ApplicationController
       if @user.save
         format.html { redirect_to admin_users_path, notice: 'Cet utilisateur a été créé avec succès' }
       else
-        format.html { render :index }
+        format.html { render :new }
       end
     end
   end
