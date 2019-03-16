@@ -14,6 +14,6 @@ after_create :new_typeform_send
     presence: { message: "Tu as oublié de mettre le lien vers les résultats du formulaire !" }
 
   def new_typeform_send
-    UserMailer.new_typeform_email(self,User.all).deliver_now
+    UserMailer.new_typeform_email(self).deliver_now
   end
 end
