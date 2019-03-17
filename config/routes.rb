@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :facturations
+  resources :line_items
+  resources :baskets
+  resources :join_product_categories
+  resources :product_categories
+  resources :products
   namespace :admins do
     root "articles#index"
     resources :categories
@@ -7,6 +13,7 @@ Rails.application.routes.draw do
     resources :users
     resources :typeforms
   end
+
   root 'static_pages#home'
   resources :categories
   resources :articles

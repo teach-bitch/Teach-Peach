@@ -12,9 +12,9 @@ class User < ApplicationRecord
   end
 
   has_many :articles
+  has_one :basket, dependent: :destroy
+  has_many :facturations, dependent: :destroy
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
