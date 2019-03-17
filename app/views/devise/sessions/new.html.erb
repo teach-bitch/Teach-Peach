@@ -1,5 +1,5 @@
 <body class="login-page">
-        <div class="page-header" filter-color="orange">
+    <div class="page-header" filter-color="orange">
         <div class="page-header-image" style="background-image:url(<%= asset_url 'devise/peach3' %>)"></div>
         <div class="content">
             <div class="container">
@@ -7,11 +7,11 @@
                     <div class="card card-login card-plain">
                         <div>
                             <div class="card-header text-center">
-                    <h4 class="card-title text-center">Se connecter</h4>
+                                <h4 class="card-title text-center">Se connecter</h4>
 
                             </div>
                             <div class="card-body">
-                              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                                 <div class="input-group form-group-no-border input-lg">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
@@ -28,16 +28,16 @@
                             </div>
 
                             <div class="card-footer text-center">
-                                    <%= f.submit "Connexion", class: "btn btn-primary btn-round btn-lg btn-block" %>
+                                <%= f.submit "Connexion", class: "btn btn-primary btn-round btn-lg btn-block" %>
                             </div>
-                              <% end %>
-                              <h6>
-                              
-                                
+                            <% end %>
+                            <h6>
+                                <div class="links-devise">
+
                                 <%= render "devise/shared/links" %>
-                                
-                            
-                              </h6>
+                                </div>
+
+                            </h6>
                         </div>
                     </div>
                 </div>
