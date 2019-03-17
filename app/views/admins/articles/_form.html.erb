@@ -1,17 +1,22 @@
-<%= form_with(model: [:admins, article], local: true) do |form| %>
+<%= form_with model: @article, local: true, multipart: true do |form| %>
 
   <div class="field">
-    <%= form.label :titre %>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title, 'titre' %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :contenu %>
+    <%= form.label :content, 'contenu' %>
     <%= form.text_area :content %>
   </div>
 
   <div class="field">
-    <%= form.label :pour_adulte %>
+    <%= form.label :for_adult, 'Pour adulte' %>
     <%= form.check_box :for_adult %>
   </div>
 

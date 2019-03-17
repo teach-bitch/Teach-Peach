@@ -15,3 +15,13 @@
 
 <%= link_to 'Éditer', edit_admins_article_path(@article) %> |
 <%= link_to 'Retour aux articles', admins_articles_path %>
+
+<h1>TEST IMAGE ARTICLE</h1>
+
+<p>Cette page concerne l'article avec l'id : <%= @article.id %></p>
+Actuellement @article.image.attached? : <%= @article.image.attached? %>
+<% if @article.image.attached? %>
+  <%= image_tag @article.image, alt: 'image' %>
+<% else %>
+  <p>=== Aucune image n'est attachée à cette article pour l'instant ===</p>
+<% end %>
