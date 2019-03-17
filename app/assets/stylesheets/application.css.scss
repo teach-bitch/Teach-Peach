@@ -34,44 +34,40 @@ div.section-image::after {
    background-color: #210b0ed6;
 }
 
-div.card-signup {
-   margin-bottom: 0px !important;
 
-}
-
-div.row-content-signup {
-   align-items: center;
-   width: 100%;
-}
-
-div.content-signup {
-   margin-top: 62px !important;
-   margin-bottom: 0px !important;
-   height: calc(100vh - 62px) !important;
-}
-
-div.container-signup {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
 
 div.alert {
    margin-bottom: auto;
+   margin-top: 62px;
 }
 
-div.footer-link {
-   a.link-session {
-      color: #ea4c89 !important;
-   }
 
-   a.link-session:hover {
-      border-color: transparent !important;
-      color: #fa7a50 !important;
-   }
+a.link-session {
+   color: #ea4c89 !important;
 }
+
+a.link-session:hover {
+   border-color: transparent !important;
+   color: #fa7a50 !important;
+}
+
 
 .btn-primary:not(:disabled):not(.disabled):active {
    background-color: #fa7a50 !important;
    border-color: transparent !important;
+}
+
+.card a:not(.btn):not(.nav-link):not([data-toggle='collapse']):not(.footer-link):hover {
+   border-color: transparent !important;
+}
+
+.card a:not(.btn):not(.nav-link):not([data-toggle='collapse']):not(.footer-link) {
+
+   color: #ea4c89 !important;
+   border-color: transparent !important;
+}
+
+.btn:not(:disabled):not(.disabled) {
+   width: -webkit-fill-available;
+
 }
