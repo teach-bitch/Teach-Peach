@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   root 'static_pages#home'
   resources :categories
-  resources :articles
+  resources :articles do
+    resources :images, only: [:create]
+  end
   devise_for :users
   resources :subscriptions
   resources :typeforms, only: [:show, :index]
