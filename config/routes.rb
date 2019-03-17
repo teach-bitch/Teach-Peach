@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :join_product_categories
   resources :product_categories
   resources :products
+
   namespace :admins do
     root "articles#index"
     resources :categories
@@ -23,4 +24,5 @@ Rails.application.routes.draw do
   resources :static_pages, only: [:home] do
     get 'home', :on => :collection
   end
+  
 end
