@@ -33,4 +33,16 @@ class User < ApplicationRecord
       self.user!
     end
   end
+
+  validates :username,
+    presence: { message: "Tu as oublié de spécifier un nom d'utilisateur !" }
+
+  validates :first_name,
+    presence: { message: "Tu as oublié de spécifier un prénom !" }
+
+  validates :last_name,
+    presence: { message: "Tu as oublié de spécifier un nom !" }
+
+  validates :birthdate,
+    presence: { message: "Tu as oublié de spécifier une date de naissance !" }
 end

@@ -1,0 +1,21 @@
+<%= form_with(model: [:admins, article], local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :titre %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contenu %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pour_adulte %>
+    <%= form.check_box :for_adult %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

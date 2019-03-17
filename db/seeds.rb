@@ -36,13 +36,21 @@ sleep(1)
     birthdate: Faker::Date.birthday(9, 156))
   print '.'
 end
+
+admin = User.create!(email: "admin@admin.com",
+  password: "peepoodo",
+  first_name: "Peepoodo",
+  last_name: "Peepoodo",
+  username: "Peepoodo",
+  birthdate: Faker::Date.birthday(9, 156),
+  role: "admin")
 puts '=== User DB created ==='
 
 
 5.times do
   category = Category.create!(
     title: Faker::Construction.heavy_equipment)
-  print '.' 
+  print '.'
 end
 puts '=== Category DB created ==='
 

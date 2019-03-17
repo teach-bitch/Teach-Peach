@@ -15,4 +15,18 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'As-tu vu nos abonnements')
     end
   end
+
+  def new_typeform_email(typeform)
+
+    @typeform = typeform
+    @url  = 'http://teach-peach.fr'
+    @users = User.all
+
+    mail(
+    bcc: @users.map(&:email).uniq,
+    subject: 'Nouveau formulaire disponible sur teach peach !'
+    )
+
+end
+
 end

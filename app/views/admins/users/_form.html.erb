@@ -1,0 +1,45 @@
+<%= form_for(@user, url:  admins_users_path(@user), html: {method: "post"}) do |f| %>
+
+<div class="field">
+  <%= f.label :first_name, "Prénom", class: 'control-label' %><br />
+  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "Prénom", class: 'form-control' %>
+</div>
+
+<div class="field">
+  <%= f.label :last_name, "Nom", class: 'control-label' %><br />
+  <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Nom", class: 'form-control' %>
+</div>
+
+<div class="field">
+  <%= f.label :username, "Nom d'utilisateur", class: 'control-label' %><br />
+  <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Nom d'utilisateur", class: 'form-control' %>
+</div>
+
+<div class="field">
+  <%= f.label :birthdate, "Date de naissance", class: 'control-label' %><br />
+  <%= f.date_field :birthdate, autofocus: true, autocomplete: "birthdate", class: 'form-control' %>
+</div>
+
+<div class="field">
+  <%= f.label :email, "Email", class: 'control-label' %><br />
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: 'form-control' %>
+</div>
+
+<div class="field">
+  <%= f.label :password, "Mot de passe", class: 'control-label' %>
+  <% if @minimum_password_length %>
+  <em>(<%= @minimum_password_length %> caractères minimum)</em>
+  <% end %><br />
+  <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe", class: 'form-control' %>
+</div>
+
+<div class="field">
+  <%= f.label :password_confirmation, "Confirmation du mot de passe", class: 'control-label' %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation du mot de passe", class: 'form-control' %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Création" %>
+</div>
+
+<% end %>

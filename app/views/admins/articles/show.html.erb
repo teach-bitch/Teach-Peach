@@ -1,0 +1,17 @@
+<p>
+ <strong>Titre:</strong>
+ <%= @article.title %>
+</p>
+
+<p>
+ <strong>Contenu:</strong>
+ <%= @article.content %>
+</p>
+
+<p>
+ <strong>Pour adulte:</strong>
+ <%= @article.for_adult %>
+</p>
+
+<%= link_to 'Éditer', edit_admins_article_path(@article) %> |
+<%= link_to 'Retour aux articles', admins_articles_path %>

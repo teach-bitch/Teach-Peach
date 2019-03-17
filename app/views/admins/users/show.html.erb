@@ -1,0 +1,23 @@
+<p>
+ <strong>Email:</strong>
+ <%= @user.email %>
+</p>
+
+<p>
+ <strong>Prénom:</strong>
+ <%= @user.first_name %>
+</p>
+
+<p>
+ <strong>Nom:</strong>
+ <%= @user.last_name %>
+</p>
+
+<p>
+ <strong>Nom d'utilisateur:</strong>
+ <%= @user.username %>
+</p>
+
+
+<%= link_to 'Éditer', edit_admins_user_path(@user) %> |
+<%= link_to 'Retour aux utilisateurs', admins_users_path %>
