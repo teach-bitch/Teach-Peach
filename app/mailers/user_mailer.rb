@@ -27,6 +27,6 @@ class UserMailer < ApplicationMailer
     subject: 'Nouveau formulaire disponible sur teach peach !'
     )
 
-end
+  end
 
 end
