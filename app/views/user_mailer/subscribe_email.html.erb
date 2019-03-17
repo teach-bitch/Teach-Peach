@@ -4,9 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Bonjour <%= @user_to_sub.first_name %>, est-ce que tu as déjà remarqué(e) nos abonnements !</h1>
+    <h1>Bonjour <%= @user.first_name %>, est-ce que tu as déjà remarqué(e) nos abonnements !</h1>
     <p>
-      N'hésites pas à y jeter un coup d'oeil sur cette <a href="#">page</a>.
+      N'hésites pas à y jeter un coup d'oeil sur cette <a href="<%= @url %>">page</a>.
     </p>
     <p> À très vite sur Teach Peach ! </p>
   </body>
