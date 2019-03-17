@@ -1,0 +1,110 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <br />
+    </div>
+    <div class="col-md-12">
+      <div class="card card-plain">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-shopping">
+              <thead class="">
+                <th class="text-center">
+                </th>
+                <th>
+                  Produit
+                </th>
+                <th>
+                  Marque
+                </th>
+                <th class="text-right">
+                  Prix
+                </th>
+                <th class="text-right">
+                  Quantité
+                </th>
+                <th class="text-right">
+                  Montant
+                </th>
+              </thead>
+              <tbody>
+                <% @current_basket.line_items.each do |item| %>
+                <tr id="item_fulldiv_<%= item.id %>">
+                  <td>
+                    <div class="img-container">
+                      <img src="http://www.kittycatconnection.org/uploads/1/6/8/9/16894946/header_images/1532312571.jpg"
+                        alt="...">
+                    </div>
+                  </td>
+                  <td class="td-name">
+                    <a href="/products/<%= item.product.id %>">
+                      <%= item.product.name %></a>
+                    <br />
+                    <small>Réf :
+                      <%= item.product.reference %></small>
+                  </td>
+                  <td>
+                    <%= item.product.brand %>
+                  </td>
+                  <td class="td-number">
+                    <%= item.product.price %><small>€</small>
+                  </td>
+
+                  <td class="td-number">
+
+                    <div class="btn-group btn-group-basket">
+
+                      <div id="item_quantity_<%= item.id%>">
+                        <%= item.quantity %>
+                      </div>
+
+                  <td class="td-number" id="item_total_<%= item.id %>">
+                    <%= (item.product.price * item.quantity).round(2) %><small>€</small>
+                  </td>
+                  <td class="td-actions">
+
+                  </td>
+                </tr>
+                <% end %>
+                <tr>
+                  <td colspan="3">
+                  </td>
+                  <td class="td-total">
+                    Total
+                  </td>
+                  <td class="td-price" id="total_price">
+                    <%= @price.round(2) %><small>€</small>
+                  </td>
+                  <td colspan="3" class="text-right">
+                    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+                    <article>
+                      <% if flash[:error].present? %>
+                      <div id="error_explanation">
+                        <p>
+                          <%= flash[:error] %>
+                        </p>
+                      </div>
+                      <% end %>
+                    </article>
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Finaliser l'achat"
+                    data-amount="<%= @amount %>"
+                    data-currency="eur"
+                    data-locale="auto"></script>
+                    <% end %>
+                  </td>
+
+                  <p>
+                    <%= link_to "Retour au panier", basket_path(@current_basket.id) , class: 'text-primary' %>
+                  </p>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
