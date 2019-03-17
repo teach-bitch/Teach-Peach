@@ -16,6 +16,7 @@ gem 'table_print'
 gem 'jquery-rails'
 gem 'stripe'
 gem 'pundit'
+gem 'trix'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

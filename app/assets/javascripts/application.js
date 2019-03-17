@@ -25,3 +25,4 @@
 //= require js/plugins/bootstrap-datetimepicker.min
 //= require js/now-ui-kit
 //= require js/plugins/presentation-page/rellax.min
+//= require trix
