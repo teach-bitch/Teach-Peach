@@ -22,11 +22,40 @@
    font-family: 'Nucleo Outline';
    src: font-url('nucleo-outline.eot');
    src: url(font-path('nucleo-outline.eot') + '?#iefix') format('embedded-opentype'),
-        font-url('nucleo-outline.woff') format('woff'),
-        font-url('nucleo-outline.woff2') format('woff2'),
-        font-url('nucleo-outline.ttf') format('truetype'),
-        url(font-path('nucleo-outline.svg') + '#nucleo-outline') format('svg');
- }
+      font-url('nucleo-outline.woff') format('woff'),
+      font-url('nucleo-outline.woff2') format('woff2'),
+      font-url('nucleo-outline.ttf') format('truetype'),
+      url(font-path('nucleo-outline.svg') + '#nucleo-outline') format('svg');
+}
 
- body {
-  margin-top: 62px !important; }
+
+
+div.section-image::after {
+   background-color: #210b0ed6;
+}
+
+div.card-signup {
+   margin-bottom: 0px !important;
+
+}
+
+div.row-content-signup {
+   align-items: center;
+   width: 100%;
+}
+
+div.content-signup {
+   margin-top: 62px !important;
+   margin-bottom: 0px !important;
+   height: calc(100vh - 62px) !important;
+}
+
+div.container-signup {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+div.alert {
+   margin-bottom: auto;
+}
