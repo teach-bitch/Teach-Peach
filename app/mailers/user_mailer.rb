@@ -3,23 +3,15 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    @url  = 'http://teach-peach.fr/login'
+    @url = 'https://www.teachpeach.fr'
     mail(to: @user.email, subject: 'Bienvenue sur Teach Peach')
   end
 
-  def subscribe_email
-    @users = User.all
-    users_to_remind_about_sub = []
-    # Find all users whom are not minor nor subscriber and add them to an array
-    @users.each do |user|
-      if (user.role != 'user_minor') && (user.subscription_id == nil)
-        users_to_remind_about_sub << user
-      end
+  def subscribe_email(user)
+    @user = user
+    # check if user is not subscribed yet nor minor
+    if (user.role != 'user_minor') && (user.subscription_id == nil)
+      mail(to: @user.email, subject: 'As-tu vu nos abonnements')
     end
-    # Send an email to each users not minor nor subscriber
-    mail(
-      bcc: users_to_remind_about_sub.map(&:email).uniq,
-      subject: "As-tu vu nos abonnements ?"
-    )
   end
 end
