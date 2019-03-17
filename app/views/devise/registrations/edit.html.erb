@@ -1,25 +1,143 @@
 <%= render 'devise/shared/errors', resource: resource %>
 
-<div class="container">
-
-  <div class="row">
-    <div class="col-6">
-      <h4>Editer mon profil</h4>
-      <%= render 'edit_form' %>
+<body class="contact-page">
+  <div class="wrapper">
+    <div class="page-header page-header-small">
+      <div class="page-header-image" data-parallax="true" style="background-image:url(<%= asset_url 'devise/peach1' %>)">
+      </div>
     </div>
-    <div class="col-6">
-      <h4>Tu souhaites t'abonner ?</h4>
-      <% if @user.subscription_id == nil %>
-        <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
-      <% else %>
-        <%= link_to "Se désabonner", subscription_path(@user.id), method: :delete, data: { confirm: "Etes-vous sûr ?" }, class: 'btn btn-danger' %>
-      <% end %>
+    <div class="main">
+      <div class="contact-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 ml-auto mr-auto">
+              <h2 class="title">Editer mon compte</h2>
+              <p class="description">Dans cet espace, vous pouvez supprimer des trucs, modifier des trucs, ajouter des
+                trucs, et même supprimer votre compte si vous êtes pas contents d'être ici.
+                <br>
+                <br>
+              </p>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <label>Prénom</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+                </div>
+                <%= f.text_field :first_name, autocomplete: "first_name", class:"form-control", placeholder:"Prénom" %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>En attente de confirmation pour:
+                  <%= resource.unconfirmed_email %>
+                </div>
+                <% end %>
+              </div>
+              <label>Nom</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+                </div>
+                <%= f.text_field :last_name, autocomplete: "last_name", class:"form-control", placeholder:"Nom" %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for:
+                  <%= resource.unconfirmed_email %>
+                </div>
+                <% end %>
+              </div>
+              <label>Nom d'utilisateur</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+                </div>
+                <%= f.text_field :username, autocomplete: "username", class:"form-control", placeholder:"Nom d'utilisateur" %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for:
+                  <%= resource.unconfirmed_email %>
+                </div>
+                <% end %>
+              </div>
+              <label>Date de naissance</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="now-ui-icons  ui-1_calendar-60"></i></span>
+                </div>
+                <%= f.date_field :birthdate, autocomplete: "birthdate", class:"form-control" %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for:
+                  <%= resource.unconfirmed_email %>
+                </div>
+                <% end %>
+              </div>
+              <label>Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                </div>
+                <%= f.email_field :email, autocomplete: "email", class:"form-control", placeholder:"Email..." %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for:
+                  <%= resource.unconfirmed_email %>
+                </div>
+                <% end %>
+              </div>
+              <label>Mot de passe actuel</label>
+              <i>(Nous avons besoin de votre mot de passe actuel pour valider les changements)</i>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="now-ui-icons ui-1_lock-circle-open"></i></span>
+                </div>
+                <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Mot de passe actuel" %>
+              </div>
+              <label>Nouveau mot de passe</label>
+              <i>(Ne pas remplir ce champ si vous ne voulez pas le changer</i>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="now-ui-icons ui-1_lock-circle-open"></i></span>
+                </div>
+                <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Nouveau mot de passe" %>
+              </div>
+              <label>Confirmation du nouveau mot de passe</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="now-ui-icons ui-1_lock-circle-open"></i></span>
+                </div>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirmation du mot de passe" %>
+              </div>
+              <div class="submit text-center mt-3">
+                <%= f.submit "Editer", class:"btn btn-primary btn-round btn-lg" %>
+              </div>
+              <% end %>
+              <p class="text-dark mt-3">Pas satisfait ?
+                <%= link_to "Supprimer mon compte", registration_path(resource_name), :class  => "link", data: { confirm: "Êtes-vous sûr de vouloir supprimer votre compte?" }, method: :delete %>
+              </p>
+            </div>
+            <div class="col-md-5 ml-auto mr-auto">
+              <div class="info info-horizontal mt-5">
+                <div class="icon icon-primary">
+                  <i class="now-ui-icons objects_key-25"></i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Tu souhaites t'abonner ?</h4>
+                   
+                  <p>Des avantages exclusifs :
+                    <br> Accés aux podcasts payants
+                    <br> Accés aux ateliers 
+                    <br> Des promos sur la boutique
+                    <% if @user.subscription_id == nil %>
+                    <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
+                    <% else %>
+                    <%= link_to "Se désabonner", subscription_path(@user.id), method: :delete, data: { confirm: "Etes-vous sûr ?" }, class: 'btn btn-danger' %>
+                    <% end %>
+                  </p>
+
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <h5>Supprimer mon compte</h5>
-  <p>Pas satisfait ?</p>
-  <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete %>
-  <br>
-  <%= link_to "Revenir à la page précédente", :back %>
-</div>
+  </div>
+</body>
