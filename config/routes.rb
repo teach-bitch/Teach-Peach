@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :static_pages, only: [:home] do
     get 'home', :on => :collection
   end
+  post 'hooks/fuckfuck'
 end
