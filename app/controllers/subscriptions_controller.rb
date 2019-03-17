@@ -17,7 +17,7 @@ class SubscriptionsController < ApplicationController
       ],
     })
     # After the Stripe request, store the subscription infos into users table
-    @user.update(customer_id: @customer.id, subscription_id: subscription.id)
+    @user.update(customer_id: @customer.id, subscription_id: subscription.id, role: 'subscriber')
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -27,7 +27,7 @@ class SubscriptionsController < ApplicationController
   def destroy
     sub = Stripe::Subscription.retrieve(@user.subscription_id)
       sub.delete
-    @user.update(subscription_id: nil)
+    @user.update(subscription_id: nil, role: 'user')
     redirect_to root_path
   end
 
