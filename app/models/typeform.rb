@@ -1,4 +1,5 @@
 class Typeform < ApplicationRecord
+after_create :new_typeform_send
 
   validates :title,
 		presence: { message: "Tu as oublié le titre du formulaire !" }
@@ -11,4 +12,8 @@ class Typeform < ApplicationRecord
 
   validates :id_results,
     presence: { message: "Tu as oublié de mettre le lien vers les résultats du formulaire !" }
+
+  def new_typeform_send
+    UserMailer.new_typeform_email(self).deliver_now
+  end
 end

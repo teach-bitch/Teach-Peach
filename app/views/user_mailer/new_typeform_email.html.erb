@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut, un nouveau formulaire est disponible !</h1>
+    <p>
+    <h3>Influence le contenu en partageant anonymement ton experience !</h3>
+
+      <td><%= link_to "Partage ton avis sur " + @typeform.title.downcase, typeform_url(@typeform.id) %></td>
+
+    </p>
+    <p> À très vite sur monsite.fr ! </p>
+  </body>
+</html>

@@ -11,4 +11,18 @@ class UserMailer < ApplicationMailer
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
     mail(to: @user.email, subject: 'Bienvenue chez nous !')
   end
+
+  def new_typeform_email(typeform)
+
+    @typeform = typeform
+    @url  = 'http://teach-peach.fr'
+    @users = User.all
+
+    mail(
+    bcc: @users.map(&:email).uniq,
+    subject: 'Nouveau formulaire disponible sur teach peach !'
+    )
+
+end
+
 end

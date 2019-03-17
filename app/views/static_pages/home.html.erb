@@ -1,0 +1,38 @@
+<h2>Influence le contenu en partageant anonymement ton experience !</h2>
+
+<h3><%= link_to "Partage ton avis sur " + @typeforms.last.title.downcase, typeform_path(Typeform.last.id) %></h3>
+
+
+<div>
+<% if user_signed_in? %>
+  <% if @user.subscription_id == nil %>
+  <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
+  <% else %>
+  <% end %>
+<% end %>  
+<div>
+        <% if @articles.last %>
+        <td><%= @articles.last.title %></td>
+
+        <td><%= link_to "Voir notre dernier article", @articles.last %></td>
+        <% end %>
+_______________________________________
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Contenu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.content %></td>
+        <td><%= link_to "Voir l'article", article %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
