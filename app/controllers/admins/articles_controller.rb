@@ -1,4 +1,4 @@
-class Admin::ArticlesController < AdminController
+class Admins::ArticlesController < AdminsController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_root_if_not_admin
 
@@ -20,7 +20,7 @@ class Admin::ArticlesController < AdminController
     @article = Article.new(article_params)
     respond_to do |format|
       if @article.save
-        format.html { redirect_to  admin_article_path(@article), notice: 'Cet article a été créé avec succès.' }
+        format.html { redirect_to  admins_article_path(@article), notice: 'Cet article a été créé avec succès.' }
       else
         format.html { render :new }
       end
@@ -30,7 +30,7 @@ class Admin::ArticlesController < AdminController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to admin_article_path(@article), notice: 'Cet article a été mis à jour avec succès.' }
+        format.html { redirect_to admins_article_path(@article), notice: 'Cet article a été mis à jour avec succès.' }
       else
         format.html { render :edit }
       end
@@ -41,7 +41,7 @@ class Admin::ArticlesController < AdminController
     if @article.destroy
 
      flash[:notice] = "L'article a été supprimé avec succès."
-      redirect_to admin_articles_path
+      redirect_to admins_articles_path
     else
       flash.now[:alert] = 'Il y a eu un problème lors de la suppression de cet article.'
       render :show

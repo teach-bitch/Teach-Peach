@@ -1,4 +1,4 @@
-class Admin::UsersController < AdminController
+class Admins::UsersController < AdminsController
   before_action :set_user, only: [:update, :destroy, :show]
   before_action :redirect_to_root_if_not_admin
 
@@ -22,7 +22,7 @@ class Admin::UsersController < AdminController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_users_path, notice: 'Cet utilisateur a été créé avec succès' }
+        format.html { redirect_to admins_users_path, notice: 'Cet utilisateur a été créé avec succès' }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class Admin::UsersController < AdminController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to admin_users_path(@user), notice: 'Cet utilisateur a été mis à jour avec succès' }
+        format.html { redirect_to admins_users_path(@user), notice: 'Cet utilisateur a été mis à jour avec succès' }
       else
           format.html { render :edit }
       end
@@ -42,7 +42,7 @@ class Admin::UsersController < AdminController
     def destroy
     if @user.destroy
      flash[:notice] = "\"Cet utilisateur #{@user.email}\" a été supprimé avec succès."
-     redirect_to admin_users_path
+     redirect_to admins_users_path
     else
       flash.now[:alert] = "Il y a eu un problème lors de la suppression de cet utilisateur."
       render :show

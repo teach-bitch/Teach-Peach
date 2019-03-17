@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     authorize @article
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to admin_article_path(@article), notice: 'Cet article a été mis à jour avec succès' }
+        format.html { redirect_to admins_article_path(@article), notice: 'Cet article a été mis à jour avec succès' }
       else
         format.html { render :edit }
       end

@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
   <% if current_user.role == "admin" %>
-    <%= link_to('Zone admin', admin_articles_path, class: 'nav-link text-primary dropdown-item') %>
+    <%= link_to('Zone admin', admins_articles_path, class: 'nav-link text-primary dropdown-item') %>
   <% end %>
 <% end %>

@@ -3,7 +3,7 @@
 <div class="container">
   <h2>Éditer le profil</h2>
 
-  <%= form_for(@user, url: admin_user_path(@user), html: {method: "put"}) do |f| %>
+  <%= form_for(@user, url: admins_user_path(@user), html: {method: "put"}) do |f| %>
 
   <div class="field">
     <%= f.label :email, "Email", class: 'control-label' %><br />

@@ -1,4 +1,4 @@
-class AdminController < ApplicationController  
+class AdminsController < ApplicationController  
 	before_action :redirect_to_root_if_not_admin  
 	
 	def redirect_to_root_if_not_admin
