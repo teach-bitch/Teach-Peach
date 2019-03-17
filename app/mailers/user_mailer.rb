@@ -9,6 +9,7 @@ class UserMailer < ApplicationMailer
 
   def subscribe_email(user)
     @user = user
+    @url = 'https://www.teachpeach.fr/abonnements'
     # check if user is not subscribed yet nor minor
     if (user.role != 'user_minor') && (user.subscription_id == nil)
       mail(to: @user.email, subject: 'As-tu vu nos abonnements')
