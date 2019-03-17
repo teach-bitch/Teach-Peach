@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  #after_create :welcome_send
+  after_create :welcome_send
   after_create :is_minor?
+  after_create :subscribe_send
 
   enum role: [:admin, :user_minor, :user, :subscriber ]
 
@@ -19,6 +20,10 @@ class User < ApplicationRecord
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
+  end
+
+  def subscribe_send
+    UserMailer.subscribe_email(self).deliver_later(wait: 1.week)
   end
 
   def is_minor?

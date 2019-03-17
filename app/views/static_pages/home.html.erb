@@ -1,7 +1,7 @@
-<h2>Influence le contenu en partageant anonymement ton experience !</h2>
-
-<h3><%= link_to "Partage ton avis sur " + @typeforms.last.title.downcase, typeform_path(Typeform.last.id) %></h3>
-
+<% if Typeform.last %>
+  <h2>Influence le contenu en partageant anonymement ton experience !</h2>
+  <h3><%= link_to "Partage ton avis sur " + @typeforms.last.title.downcase, typeform_path(Typeform.last.id) %></h3>
+<% end %>
 
 <div>
 <% if user_signed_in? %>
@@ -9,7 +9,7 @@
   <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
   <% else %>
   <% end %>
-<% end %>  
+<% end %>
 <div>
         <% if @articles.last %>
         <td><%= @articles.last.title %></td>

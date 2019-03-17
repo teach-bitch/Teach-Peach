@@ -2,14 +2,18 @@ class UserMailer < ApplicationMailer
   default from: 'no-reply@teach-peach.fr'
 
   def welcome_email(user)
-    #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
     @user = user
+    @url = 'https://www.teachpeach.fr'
+    mail(to: @user.email, subject: 'Bienvenue sur Teach Peach')
+  end
 
-    #on définit une variable @url qu'on utilisera dans la view d’e-mail
-    @url  = 'http://teach-peach.fr/login'
-
-    # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-    mail(to: @user.email, subject: 'Bienvenue chez nous !')
+  def subscribe_email(user)
+    @user = user
+    @url = 'https://www.teachpeach.fr/abonnements'
+    # check if user is not subscribed yet nor minor
+    if (user.role != 'user_minor') && (user.subscription_id == nil)
+      mail(to: @user.email, subject: 'As-tu vu nos abonnements')
+    end
   end
 
   def new_typeform_email(typeform)
@@ -23,6 +27,6 @@ class UserMailer < ApplicationMailer
     subject: 'Nouveau formulaire disponible sur teach peach !'
     )
 
-end
+  end
 
 end
