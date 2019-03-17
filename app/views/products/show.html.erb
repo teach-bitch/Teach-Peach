@@ -1,34 +1,53 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @product.brand %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @product.quantity %>
-</p>
-
-<p>
-  <strong>Reference:</strong>
-  <%= @product.reference %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<main>
+  <div class="wrapper">
+    <div class="section">
+      <div class="container">
+        <a href="<%= products_path %>"><i class="now-ui-icons arrows-1_minimal-left"></i> <span>Retour vers l'index</span></a>
+        <div class="row">
+          <div class="d-flex align-content-stretch flex-wrap">
+            <div class="col-md-6 d-flex align-content-center flex-wrap">
+              <img class="d-block img-raised align-self-center" src="https://static.wamiz.fr/images/animaux/chats/large/sphynx-2942.jpg">
+            </div>
+            <div class="col-md-5 ml-auto mr-auto">
+              <h2 class="title"><%= @product.name %></h2>
+              <h5 class="category"><%= @product.brand %> </h5>
+              <h2 class="main-price"><%= @product.price %><small>€</small></h2>
+              <% if @product.quantity.to_i > 0 %>
+                <% if user_signed_in? %>
+                <div class="card-collapse justify-content-start">
+                  <span><%= button_to 'Ajouter au panier', line_items_path(product_id: @product), class: 'btn btn-dribbble btn-round' %></span>
+                </div><br/>
+                <% else %>
+                <div class="card-collapse justify-content-start">
+                  <span><%= button_to 'Ajouter au panier', new_user_session_path, class: 'btn btn-dribbble btn-round' %></span>
+                </div><br/>
+                <% end %>
+              <% else %>
+              <h6>Out of stock</h6>
+              <%end%>
+              <div class="card-collapse">
+                <div class="card card-plain">
+                  <div class="card-header">
+                    Description
+                  </div>
+                  <div class="card-body">
+                    <p><%= @product.description %></p>
+                  </div>
+                  <div class="card-header">
+                    Reference : <%= @product.reference %>
+                  </div>
+                  <div class="card-header">
+                    Categories :
+                    <% @product.product_categories.each do |cat| %>
+                    <span class="badge badge-neutral"><%= cat.title %></span>
+                    <%end%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
