@@ -54,6 +54,9 @@ class LineItemsController < ApplicationController
 
   def destroy
     @line_item.destroy
+    respond_to do |format|
+      format.html { redirect_to @line_item.basket, notice: 'Line item was successfully destroyed.' }
+    end
   end
 
   private

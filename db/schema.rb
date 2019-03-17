@@ -57,10 +57,10 @@ ActiveRecord::Schema.define(version: 2019_03_17_163336) do
 
   create_table "join_product_categories", force: :cascade do |t|
     t.bigint "product_id"
-    t.bigint "category_id"
+    t.bigint "product_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_join_product_categories_on_category_id"
+    t.index ["product_category_id"], name: "index_join_product_categories_on_product_category_id"
     t.index ["product_id"], name: "index_join_product_categories_on_product_id"
   end
 

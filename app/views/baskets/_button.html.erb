@@ -1,0 +1,10 @@
+<% if @price != 0 %>
+  <td colspan="3" class="text-right">
+    <%= link_to new_charge_path do %>
+      <button type="button" rel="tooltip" class="btn btn-info btn-round btn-dribbble" id="checkout-btn">
+          Finaliser l'achatte
+          <i class="now-ui-icons arrows-1_minimal-right"></i>
+      </button>
+    <% end %>
+  </td>
+<% end %>
