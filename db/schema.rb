@@ -49,10 +49,12 @@ ActiveRecord::Schema.define(version: 2019_03_17_163336) do
 
   create_table "facturations", force: :cascade do |t|
     t.bigint "basket_id"
+    t.bigint "user_id"
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["basket_id"], name: "index_facturations_on_basket_id"
+    t.index ["user_id"], name: "index_facturations_on_user_id"
   end
 
   create_table "join_product_categories", force: :cascade do |t|

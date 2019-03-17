@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :facturations
   resources :line_items
   resources :baskets
+    resources :charges
   resources :join_product_categories
   resources :product_categories
   resources :products
@@ -24,5 +25,5 @@ Rails.application.routes.draw do
   resources :static_pages, only: [:home] do
     get 'home', :on => :collection
   end
-  
+
 end
