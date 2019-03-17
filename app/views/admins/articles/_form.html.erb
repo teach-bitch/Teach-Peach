@@ -1,11 +1,12 @@
 <%= form_with(model: [:admins, article], local: true) do |form| %>
-
+  
+  <div class="btn balise-h1 ">H1</div> 
   <div class="field">
     <%= form.label :titre %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field inner-content">
     <%= form.label :contenu %>
     <%= form.text_area :content %>
   </div>

@@ -1,0 +1,10 @@
+console.log("coucou")
+
+let selectH1 = document.getElementsByClassName("balise-h1")[0]
+let selectContent = document.getElementsByClassName("inner-content")[0]
+
+function innerTextH1(){ 
+  selectContent.innerHTML = "<h1></h1>"
+}
+
+selectH1.addEventListener('onclick', innerTextH1)
