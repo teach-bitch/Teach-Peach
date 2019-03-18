@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+namespace :shop do
+  root "products#index"
   resources :facturations
   resources :line_items
   resources :baskets
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   resources :join_product_categories
   resources :product_categories
   resources :products
+end
 
   namespace :admins do
     root "articles#index"
