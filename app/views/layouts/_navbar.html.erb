@@ -12,6 +12,9 @@
         </div>
         <div class="collapse navbar-collapse" data-nav-image="" data-color="orange">
             <ul class="navbar-nav ml-auto">
+              <li>
+                <%= link_to 'Shop', shop_root_path, class: "nav-link text-primary" %>
+              </li>
               <% if user_signed_in? %>
                 <li>
                   <a href="http://www.thehackingproject.org/inscription/paiement?locale=fr" class="nav-link text-primary">
