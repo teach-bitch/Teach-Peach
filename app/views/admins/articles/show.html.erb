@@ -1,6 +1,6 @@
 <p>
-  <% if @article.image.attached? %>
-    <%= image_tag @article.image, alt: 'image' %>
+  <% if @article.images.attached? %>
+    <%= image_tag @article.images, alt: 'images' %>
   <% end %>
 </p>
 
