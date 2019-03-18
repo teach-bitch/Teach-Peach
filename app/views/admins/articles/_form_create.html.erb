@@ -1,0 +1,18 @@
+<%= form_for Article.new, method: 'post', multipart: true, class: "form-group" do |form| %>
+
+    <%= form.label :image, class: 'control-label' %>
+    <%= form.file_field :image, class: 'form-control' %>
+
+    <%= form.label :title, 'titre', class: 'control-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+
+    <%= form.label :content, 'contenu', class: 'control-label' %>
+    <trix-editor input="post_content"></trix-editor>
+    <%= form.text_area :content, id: :post_content, size: "150x10", class: 'form-control' %>
+
+    <%= form.check_box :for_adult, class: 'checkbox' %>
+    <%= form.label :for_adult, 'Pour adulte', class: 'control-label' %>
+    <br>
+    <%= form.submit %>
+
+<% end %>
