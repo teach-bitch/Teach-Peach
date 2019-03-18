@@ -1,0 +1,22 @@
+<%= form_with(model: [:shop, facturation], local: true) do |form| %>
+  <% if facturation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(facturation.errors.count, "error") %> prohibited this facturation from being saved:</h2>
+
+      <ul>
+      <% facturation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :price, "Prix" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
