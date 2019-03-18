@@ -1,4 +1,10 @@
- <p>
+<p>
+  <% if @article.image.attached? %>
+    <%= image_tag @article.image, alt: 'image' %>
+  <% end %>
+</p>
+
+<p>
   <strong>Titre:</strong>
   <%= @article.title %>
 </p>
