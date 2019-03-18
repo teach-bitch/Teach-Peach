@@ -1,4 +1,15 @@
 en:
+  helpers:
+    submit:
+      product:
+        create: "Créer un produit"
+        update: "Éditer un produit"
+      product_category:
+        create: "Créer une catégorie"
+        update: "Éditer une catégorie"
+      facturation:
+        create: "Créer une facture"
+        update: "Éditer une facture"
   devise:
     confirmations:
       confirmed: "Votre email a été confirmé avec succès."
