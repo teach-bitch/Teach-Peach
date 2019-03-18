@@ -1,19 +1,33 @@
+<<<<<<< HEAD
 <%= form_with(model: [:admins, article], local: true) do |form| %>
   
+=======
+<%= form_with model: @article, local: true, multipart: true do |form| %>
+>>>>>>> 6c8f7585675333fd6452257372cb41faa8f86139
 
   <div class="field">
-    <%= form.label :titre %>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title, 'titre' %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
+<<<<<<< HEAD
     <%= form.label :contenu %>
     <trix-editor input="post_content"></trix-editor>
     <%= form.text_area :content, id: :post_content, size: "150x10" %>
+=======
+    <%= form.label :content, 'contenu' %>
+    <%= form.text_area :content %>
+>>>>>>> 6c8f7585675333fd6452257372cb41faa8f86139
   </div>
 
   <div class="field">
-    <%= form.label :pour_adulte %>
+    <%= form.label :for_adult, 'Pour adulte' %>
     <%= form.check_box :for_adult %>
   </div>
 
