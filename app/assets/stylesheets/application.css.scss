@@ -29,12 +29,9 @@
 }
 
 
-
 div.section-image::after {
    background-color: #210b0ed6;
 }
-
-
 
 div.alert {
    margin-bottom: auto;
@@ -62,14 +59,12 @@ a.link-session:hover {
 }
 
 .card a:not(.btn):not(.nav-link):not([data-toggle='collapse']):not(.footer-link) {
-
    color: #ea4c89 !important;
    border-color: transparent !important;
 }
 
 .btn:not(:disabled):not(.disabled) {
    width: -webkit-fill-available;
-
 }
 
 div.links-devise.row {
@@ -77,6 +72,5 @@ div.links-devise.row {
 }
 
 div.card-body {
-
    padding-bottom: inherit;
 }
