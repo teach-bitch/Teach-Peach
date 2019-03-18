@@ -1,7 +1,7 @@
 <%= form_for @article, method: 'put', multipart: true, class: 'form-group' do |form| %>
 
-    <%= form.label :image, class: 'control-label' %>
-    <%= form.file_field :image, class: 'form-control' %>
+    <%= form.label :images, class: 'control-label' %>
+    <%= form.file_field :images, class: 'form-control' %>
 
     <%= form.label :title, 'titre', class: 'control-label' %>
     <%= form.text_field :title, class: 'form-control' %>
@@ -12,7 +12,7 @@
 
     <%= form.check_box :for_adult, class: 'checkbox' %>
     <%= form.label :for_adult, 'Pour adulte', class: 'control-label' %>
-
+    <br>
     <%= form.submit %>
 
 <% end %>
