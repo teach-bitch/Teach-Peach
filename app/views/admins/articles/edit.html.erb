@@ -2,7 +2,7 @@
 
 <h1>Éditer l'article</h1>
 
-<%= render 'form', article: @article %>
+<%= render 'form_edit', article: @article %>
 
 <%= link_to "Voir l'article", admins_article_path(@article.id) %> |
 <%= link_to 'Retour aux articles', admins_articles_path %>
