@@ -64,8 +64,10 @@ a.link-session:hover {
    border-color: transparent !important;
 }
 
-.btn:not(:disabled):not(.disabled) {
-   width: -webkit-fill-available;
+div.unsubscribe {
+   .btn:not(:disabled):not(.disabled) {
+      width: -webkit-fill-available;
+   }
 }
 
 div.links-devise.row {
@@ -77,16 +79,16 @@ div.card-body {
 }
 
 #basketcount {
-  content:attr(value)!important;
-  font-size:10px!important;
-  background: #ea4c89!important;
-  color: white !important;
-  border-radius:50%!important;
-  padding:3px 6px!important;
-  position:relative!important;
-  left:-8px!important;
-  top:-10px!important;
-  opacity:0.9!important;
+   content: attr(value) !important;
+   font-size: 10px !important;
+   background: #ea4c89 !important;
+   color: white !important;
+   border-radius: 50% !important;
+   padding: 3px 6px !important;
+   position: relative !important;
+   left: -8px !important;
+   top: -10px !important;
+   opacity: 0.9 !important;
 }
 
 div.padding-nav {
@@ -94,38 +96,84 @@ div.padding-nav {
 }
 
 div.img-minimum-height {
-  height: 200px;
-  width: 100%;
+   height: 200px;
+   width: 100%;
 }
+
 .article-title {
-  text-align: center;
-  border-top: 6px pink solid;
-  padding-top: 15px;
+   text-align: center;
+   border-top: 6px pink solid;
+   padding-top: 15px;
 
 }
-.avoid-navabar{
-  height:150px;
+
+.avoid-navabar {
+   height: 150px;
 
 }
-.article-line {
+
+.article-line {}
+
+.article-informations {
+   border-top: 2px solid pink;
+   border-bottom: 2px solid pink;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+.article-informations-list {
+   display: inline;
+   list-style-type: none;
+}
+
+.article-informations-list-list {
+   display: inline;
+}
+
+.fb-share-button {
+   padding-right: 15px;
+}
+
+.twitter-share-button {
+   margin-right: 25px;
+}
+
+i.fab {
+
+   position: absolute !important;
+   top: 25% !important;
+   left: 30% !important;
+}
+
+div.page-header-image.image-discover {
+
+   background-position-y: 10%;
+   min-height: 70vh;
+}
+
+div.carousel-item.active {
+   height: auto;
+}
+
+div.carousel-item {
+   height: auto;
+}
+
+div.item-image {
+   width: inherit !important;
+}
+
+a.btn.btn-primary.btn-block.btn-carousel {
+   white-space: inherit !important;
+   max-width: fit-content;
 
 }
-.article-informations{
-  border-top:2px solid pink ;
-  border-bottom:2px solid pink ;
-  padding-top: 5px;
-  padding-bottom: 5px;
+
+h3.h3-responsive.btn-carousel {
+   text-align: -webkit-center;
 }
-.article-informations-list{
-  display: inline;
-  list-style-type: none;
-}
-.article-informations-list-list{
-  display: inline;
-}
-.fb-share-button{
-  padding-right: 15px;
-}
-.twitter-share-button{
-  margin-right:25px;
+
+div.card-article {
+   margin-top: 0px;
+   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1) !important;
 }
