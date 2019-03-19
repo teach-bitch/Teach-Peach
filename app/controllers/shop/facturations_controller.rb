@@ -11,42 +11,6 @@ class Shop::FacturationsController < ShopController
     end
   end
 
-  def new
-    @facturation = Facturation.new
-  end
-
-  def edit
-  end
-
-  def create
-    @facturation = Facturation.new(facturation_params)
-        respond_to do |format|
-          if @facturation.save
-            format.html { redirect_to shop_facturation_path(@facturation), notice: 'Cette facture a été créée avec succès !' }
-          else
-            format.html { render :new }
-          end
-        end
-  end
-
-  def update
-    respond_to do |format|
-
-      if @facturation.update(facturation_params)
-        format.html { redirect_to shop_facturation_path(@facturation), notice: 'Cette facture a été éditée avec succès !' }
-      else
-        format.html { render :edit }
-      end
-    end
-  end
-
-  def destroy
-    @facturation.destroy
-    respond_to do |format|
-      format.html { redirect_to shop_facturations_path, notice: 'Cette facture a été supprimée avec succès !' }
-    end
-  end
-
   private
     def set_facturation
       @facturation = Facturation.find(params[:id])
