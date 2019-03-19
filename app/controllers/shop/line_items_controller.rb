@@ -1,20 +1,10 @@
 class Shop::LineItemsController < ShopController
-  include BasketsHelper
+  include CurrentBasket
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   skip_before_action :total_items_in_current_basket
 
-  def index
-    @line_items = LineItem.all
-  end
-
-  def show
-  end
-
   def new
     @line_item = LineItem.new
-  end
-
-  def edit
   end
 
   def create
