@@ -1,23 +1,27 @@
-<p>
- <strong>Email:</strong>
- <%= @user.email %>
-</p>
+<div class="container">
 
-<p>
- <strong>Prénom:</strong>
- <%= @user.first_name %>
-</p>
+	<div class="mt-5 pt-5 text-center">
+	 <strong>Nom d'utilisateur</strong><br/>
+	 <%= @user.username %>
+	</div>
 
-<p>
- <strong>Nom:</strong>
- <%= @user.last_name %>
-</p>
+	<div class="mt-2 text-center">
+	 <strong>Prénom</strong><br/>
+	 <%= @user.first_name %>
+	</div>
 
-<p>
- <strong>Nom d'utilisateur:</strong>
- <%= @user.username %>
-</p>
+	<div class="mt-2 text-center">
+	 <strong>Nom</strong><br/>
+	 <%= @user.last_name %>
+	</div>
 
-
-<%= link_to 'Éditer', edit_admins_user_path(@user) %> |
-<%= link_to 'Retour aux utilisateurs', admins_users_path %>
+	<div class="mt-2 text-center">
+	 <strong>Email</strong><br/>
+	 <%= @user.email %>
+	</div>
+	
+	<div class="text-center mt-4">
+		<%= link_to 'Éditer', edit_admins_user_path(@user) %> |
+		<%= link_to 'Retour aux utilisateurs', admins_users_path %>
+	</div>
+</div>

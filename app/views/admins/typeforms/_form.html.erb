@@ -1,26 +1,26 @@
 <%= form_with(model: [:admins, typeform], local: true) do |form| %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, "Titre", class: 'control-label' %>
+    <%= form.text_field :title, autofocus: true, autocomplete: "Description", class: 'form-control' %>
+  </div>
+
+  <div class="field mt-2">
+    <%= form.label :description, "Description", class: 'control-label' %><br />
+    <%= form.text_field :description, autofocus: true, autocomplete: "Description", class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :id_typeform, "Id Typeform", class: 'control-label' %>
+    <%= form.text_field :id_typeform, autofocus: true, autocomplete: "Description", class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :id_typeform %>
-    <%= form.text_field :id_typeform %>
+    <%= form.label :id_results, "Id Résultats", class: 'control-label' %>
+    <%= form.text_field :id_results, autofocus: true, autocomplete: "Description", class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :id_results %>
-    <%= form.text_field :id_results %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-round btn-sm mt-3 ") do %>
+    Créer le formulaire
+  <% end %>
 <% end %>

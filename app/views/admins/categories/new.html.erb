@@ -1,7 +1,9 @@
 <%= render 'errors', category: @category %>
 
-<h1>Nouvelle catégorie</h1>
-
-<%= render 'form', category: @category %>
-
-<%= link_to 'Retour aux catégories', admins_categories_path %>
+<div class="container">
+	<div class="mt-5 pt-5 text-center">
+		<h1>Nouvelle catégorie</h1>
+	</div>
+	<%= render 'form', category: @category %>
+	 <%= link_to 'Retour aux catégories', admins_categories_path %>
+</div>
