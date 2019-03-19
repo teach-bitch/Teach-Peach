@@ -12,10 +12,8 @@
           <div class="row">
             <div class="col-md-5 ml-auto mr-auto">
               <h2 class="title">Editer mon compte</h2>
-              <p class="description">Dans cet espace, vous pouvez supprimer des trucs, modifier des trucs, ajouter des
-                trucs, et même supprimer votre compte si vous êtes pas contents d'être ici.
-                <br>
-                <br>
+              <p class="description">Bienvenue sur ton espace personnel.<br>
+                Libre à toi de modifier tes informations.
               </p>
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <label>Prénom</label>
@@ -116,10 +114,10 @@
                 </div>
                 <div class="description">
                   <h4 class="info-title">Tu souhaites t'abonner ?</h4>
-                   
+
                   <p>Des avantages exclusifs :
                     <br> Accés aux podcasts payants
-                    <br> Accés aux ateliers 
+                    <br> Accés aux ateliers
                     <br> Des promos sur la boutique
                     <% if @user.subscription_id == nil %>
                     <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
