@@ -12,43 +12,17 @@
         </div>
         <div class="collapse navbar-collapse" data-nav-image="" data-color="orange">
             <ul class="navbar-nav ml-auto">
-              <li>
-                <%= link_to 'Shop', shop_root_path, class: "nav-link text-primary" %>
-              </li>
-              <% if user_signed_in? %>
-                <li>
-                  <a href="http://www.thehackingproject.org/inscription/paiement?locale=fr" class="nav-link text-primary">
-                     Nos abonnements
-                  </a>
-                </li>
-              <% end %>
-              <% if user_signed_in? %>
-                <li>
-                  <a href="<%= shop_basket_path(@current_basket.id) %>" class="nav-link text-primary">
-                    Panier
-                    <i class="now-ui-icons shopping_cart-simple"></i>
-                    <% if @current_basket.line_items.length > 0 %>
-                    <% puts @total_items_number %>
-                      <span id="basketcount"><%= @total_items_number %></span>
-                    <% end %>
-                  </a>
-                </li>
-              <% end %>
+                      <%= render 'layouts/subscriptions' %>
+                      <%= render 'layouts/shop' %>
+                      <%= render 'layouts/basket_icon' %>
                 <li class="nav-item dropdown">
-                    <a href="" class="nav-link dropdown-toggle text-primary" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <i class="now-ui-icons users_single-02" aria-hidden="true"></i>
-                        <% if user_signed_in? %>
-                          <p>Bonjour, <strong><%= current_user.username %></strong></p>
-                        <% else %>
-                          <p>Compte</p>
-                        <% end %>
-                    </a>
+                      <%= render 'layouts/account_button' %>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                       <%= render 'devise/menu/login_items' %>
                       <%= render 'devise/menu/registration_items' %>
+                      <%= render 'layouts/facturations' %>
                       <%= render 'layouts/admin_area' %>
-
-                  </div>
+                    </div>
                 </li>
             </ul>
         </div>

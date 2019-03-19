@@ -9,10 +9,12 @@ module CurrentBasket
 	end
 
 	def total_items_in_current_basket
-		@total_items_number = 0
-		@current_basket.line_items.each do |item|
-			@total_items_number +=	item.quantity
+		if user_signed_in?
+			@total_items_number = 0
+			@current_basket.line_items.each do |item|
+				@total_items_number +=	item.quantity
+			end
+			return @total_items_number
 		end
-		return @total_items_number
 	end
 end

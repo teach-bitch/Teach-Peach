@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <li>
+    <a href="<%= shop_basket_path(@current_basket.id) %>" class="nav-link text-primary">
+      Panier
+      <i class="now-ui-icons shopping_cart-simple"></i>
+      <% if @current_basket.line_items.length > 0 %>
+      <% puts @total_items_number %>
+        <span id="basketcount"><%= @total_items_number %></span>
+      <% end %>
+    </a>
+  </li>
+<% end %>

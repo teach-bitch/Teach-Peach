@@ -1,0 +1,8 @@
+<a href="" class="nav-link dropdown-toggle text-primary" id="navbarDropdownMenuLink" data-toggle="dropdown">
+    <i class="now-ui-icons users_single-02" aria-hidden="true"></i>
+    <% if user_signed_in? %>
+      <p>Bonjour, <strong><%= current_user.username %></strong></p>
+    <% else %>
+      <p>Compte</p>
+    <% end %>
+</a>
