@@ -64,8 +64,10 @@ a.link-session:hover {
    border-color: transparent !important;
 }
 
-.btn:not(:disabled):not(.disabled) {
-   width: -webkit-fill-available;
+div.unsubscribe {
+   .btn:not(:disabled):not(.disabled) {
+      width: -webkit-fill-available;
+   }
 }
 
 div.links-devise.row {
@@ -74,4 +76,44 @@ div.links-devise.row {
 
 div.card-body {
    padding-bottom: inherit;
+}
+
+i.fab {
+
+   position: absolute !important;
+   top: 25% !important;
+   left: 30% !important;
+}
+
+div.page-header-image.image-discover {
+
+   background-position-y: 10%;
+   min-height: 70vh;
+}
+
+div.carousel-item.active {
+   height: auto;
+}
+
+div.carousel-item {
+   height: auto;
+}
+
+div.item-image {
+   width: inherit !important;
+}
+
+a.btn.btn-primary.btn-block.btn-carousel {
+   white-space: inherit !important;
+   max-width: fit-content;
+
+}
+
+h3.h3-responsive.btn-carousel {
+   text-align: -webkit-center;
+}
+
+div.card-article {
+   margin-top: 0px;
+   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1) !important;
 }
