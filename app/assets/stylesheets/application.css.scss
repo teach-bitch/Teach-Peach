@@ -75,3 +75,16 @@ div.links-devise.row {
 div.card-body {
    padding-bottom: inherit;
 }
+
+#basketcount {
+  content:attr(value)!important;
+  font-size:10px!important;
+  background: #ea4c89!important;
+  color: white !important;
+  border-radius:50%!important;
+  padding:3px 6px!important;
+  position:relative!important;
+  left:-8px!important;
+  top:-10px!important;
+  opacity:0.9!important;
+}

@@ -22,6 +22,7 @@ class Shop::LineItemsController < ShopController
 
     respond_to do |format|
       if @line_item.save
+        total_items_in_current_basket
         format.html { redirect_to shop_basket_path(@line_item.basket), notice: 'Ce produit a été ajouté à votre panier avec succès !' }
       else
         format.html { render :new }
@@ -36,11 +37,13 @@ class Shop::LineItemsController < ShopController
         @line_item.update(:quantity => @line_item.quantity + 1 )
         @line_item_total = @line_item.product.price * @line_item.quantity.round(2)
         set_price
+        total_items_in_current_basket
         format.js
       elsif  @operator == "reduce"
         @line_item.update(:quantity => @line_item.quantity - 1)
         @line_item_total = @line_item.product.price * @line_item.quantity.round(2)
         set_price
+        total_items_in_current_basket
         if @line_item.quantity == 0
           @line_item.destroy
         end
