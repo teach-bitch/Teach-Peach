@@ -1,0 +1,87 @@
+<div class="container">
+  <h1 class="mt-5 pt-5 text-center">Produits</h1>
+  <div class="text-center">
+    <span class="mr-2"><%= link_to 'Gérer les factures', admins_shop_facturations_path %></span>|
+    <span class="ml-2 mr-2"><%= link_to 'Gérer les catégories de produit', admins_shop_product_categories_path %></span>|
+    <div class="mt-2"><%= link_to 'Créer un produit', new_admins_shop_product_path %></div>
+  </div>
+</div>
+
+<div class="col-md-8 ml-auto mr-auto">
+  <div class="card card-plain">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="">
+            <th class="text-left">
+              Nom
+            </th>
+            <th>
+              Description
+            </th>
+            <th>
+              Marque
+            </th>
+            <th class="text-center">
+              Catégorie
+            </th>
+            <th>
+              Prix
+            </th>
+            <th>
+              Qté en stock
+            </th>
+            <th class="text-right">
+              Référence
+            </th>
+          </thead>
+          <tbody>
+            <% @products.reverse.each do |product| %>
+            <tr>
+              <td class="text-center">
+                <%= product.name %>
+              </td>
+              <td>
+                <%= product.description %>
+              </td>
+              <td>
+                <%= product.brand %>
+              </td>
+              <td class="dropdown show">
+                <button class="btn btn-primary btn-round dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <%= product.product_categories.first.title %>
+                </button>
+                <div class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink" x-placement="bottom-start" style="position: absolute; transform: translate3d(1px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
+                  <% product.product_categories.each do |category| %>
+                    <a class="dropdown-item" href="#"> <%= category.title%></a>
+                  <% end %>
+                </div>
+              </td>
+              <td>
+                <%= product.price %>
+              </td>
+              <td class="text-center">
+                <%= product.quantity %>
+              </td>
+              <td class="text-right">
+                <%= product.reference %>
+              </td>
+              <td class="text-right">
+                <%= link_to admins_shop_product_path(product) do %>
+                <i class="now-ui-icons travel_info mr-2"></i>
+                <% end %>
+                <%= link_to edit_admins_shop_product_path(product) do %>
+                <i class="now-ui-icons ui-2_settings-90 mr-2 color-alert"></i>
+                <% end %>
+                <%= link_to admins_shop_product_path(product.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } do %>
+                <i class="now-ui-icons ui-1_simple-remove"></i>
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
