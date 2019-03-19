@@ -1,8 +1,10 @@
-<%= render 'errors', typeform: @typeform %>
+<div class="container text-center">
+	<%= render 'errors', typeform: @typeform %>
 
-<h1>Editing Typeform</h1>
+	<h1 class="mt-5 pt-5">Editing Typeform</h1>
 
-<%= render 'form', typeform: @typeform %>
+	<%= render 'form', typeform: @typeform %>
 
-<%= link_to 'Show', admins_typeform_path(@typeform.id) %>
-<%= link_to 'Back', admins_typeforms_path %>
+	<%= link_to 'Voir le formulaire', admins_typeform_path(@typeform.id) %> |
+	<%= link_to 'Retour aux formulaires', admins_typeforms_path %>
+</div>

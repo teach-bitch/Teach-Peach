@@ -1,7 +1,7 @@
 <%= form_with(model: [:admins, typeform], local: true) do |form| %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :title, "Titre" %>
     <%= form.text_field :title %>
   </div>
 
@@ -11,16 +11,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :id_typeform %>
+    <%= form.label :id_typeform, "Id Typeform" %>
     <%= form.text_field :id_typeform %>
   </div>
 
   <div class="field">
-    <%= form.label :id_results %>
+    <%= form.label :id_results, "Id Résultats" %>
     <%= form.text_field :id_results %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-round btn-sm mt-3 ") do %>
+    Créer le formulaire
+  <% end %>
 <% end %>
