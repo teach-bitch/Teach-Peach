@@ -29,16 +29,21 @@
                 <div class="description">
                   <h4 class="info-title">Tu souhaites t'abonner ?</h4>
 
-                  <p>Des avantages exclusifs :
-                    <br> Accés aux podcasts payants
-                    <br> Accés aux ateliers
-                    <br> Des promos sur la boutique
-                    <% if @user.subscription_id == nil %>
-                    <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
-                    <% else %>
-                    <%= link_to "Se désabonner", subscription_path(@user.id), method: :delete, data: { confirm: "Etes-vous sûr ?" }, class: 'btn btn-danger' %>
-                    <% end %>
-                  </p>
+                  <% if @user.role != 'user_minor' %>
+                    <p>Des avantages exclusifs :
+                      <br> Accés aux podcasts payants
+                      <br> Accés aux ateliers
+                      <br> Des promos sur la boutique
+                      <% if @user.subscription_id == nil %>
+                      <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
+                      <% else %>
+                      <%= link_to "Se désabonner", subscription_path(@user.id), method: :delete, data: { confirm: "Etes-vous sûr ?" }, class: 'btn btn-danger' %>
+                      <% end %>
+                    </p>
+                  <% else %>
+                    <p>Malheureusement tu n'as pas accès aux abonnements.</p>
+                    <p>Reviens quand tu auras 18 ans.</p>
+                  <% end %>
 
                 </div>
               </div>
