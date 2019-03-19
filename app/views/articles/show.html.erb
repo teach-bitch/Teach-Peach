@@ -10,11 +10,12 @@
   <strong>Titre:</strong>
   <%= @article.title %>
 </p>
-
+<%= render 'layouts/social' %>
 <p>
   <strong>Contenu:</strong>
   <%= @article.content %>
 </p>
+<%= render 'layouts/social' %>
 
 
 <%= link_to 'Retour aux articles', articles_path %>

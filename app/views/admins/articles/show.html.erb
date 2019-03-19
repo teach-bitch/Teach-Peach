@@ -9,12 +9,16 @@
 <p>
  <strong>Titre:</strong>
  <%= @article.title %>
+ <%= render 'layouts/social' %>
 </p>
 
 <p>
  <strong>Contenu:</strong>
+
  <%= raw @article.content %>
+ <%= render 'layouts/social' %>
 </p>
+
 
 <p>
  <strong>Pour adulte:</strong>
