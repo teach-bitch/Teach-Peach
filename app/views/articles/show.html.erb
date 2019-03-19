@@ -1,21 +1,50 @@
+<div class="row justify-content-center">
+<div class="col-md-6 col-xs-12 col-s-12 col-lg-6">
+
 <p>
-  <% if @article.images.attached? %>
-    <% @article.images.each do |image| %>
-      <%= image_tag image, alt: 'image' %> <br />
+  <div class="row article-line "></div>
+  <div class="article-title"><h1><strong><%= @article.title %></strong></h1></div>
+  <div class="row article-line "></div>
+</p>
+
+  <div class="container article-informations">
+
+      <ul class="pull-center article-informations-list-list">
+          <li class="article-informations-list-list">
+                                      <%= @article.created_at%>
+          </li>
+          <li class="article-informations-list-list">
+                                        Presentation
+          </li>
+          <li class="article-informations-list-list">
+                                        Discover
+          </li>
+          <li class="article-informations-list-list">
+                                        Payment
+          </li>
+          <li class="article-informations-list-list">
+                                        Contact Us
+          </li>
+          <li class="article-informations-list-list pull-right">
+            <%= render 'layouts/social' %>
+          </li>
+
+      </ul>
+
+  </div>
+
+
+<p>
+  <p>
+    <% if @article.images.attached? %>
+      <% @article.images.each do |image| %>
+        <%= image_tag image, alt: 'image' %> <br />
+      <% end %>
     <% end %>
-  <% end %>
+  </p>
+  <%= raw @article.content %>
 </p>
-
-<p>
-  <strong>Titre:</strong>
-  <%= @article.title %>
-</p>
-<%= render 'layouts/social' %>
-<p>
-  <strong>Contenu:</strong>
-  <%= @article.content %>
-</p>
-<%= render 'layouts/social' %>
-
-
 <%= link_to 'Retour aux articles', articles_path %>
+</div>
+
+</div>
