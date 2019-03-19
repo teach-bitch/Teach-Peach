@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="">
+      <h1>GROS TITRE</h1>
+    </div>
+  <p>
+    <strong>Prix:</strong>
+    <%= @facturation.price %>
+    <%= User.find(@facturation.user_id).first_name %>
+    <%= User.find(@facturation.user_id).last_name %>
+  </p>
+
+  <%= link_to 'Retour aux factures', admins_shop_facturations_path %>
+
+</div>

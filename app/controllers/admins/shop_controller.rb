@@ -1,0 +1,3 @@
+class ShopController < AdminsController
+
+end

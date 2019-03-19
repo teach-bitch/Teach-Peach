@@ -2,22 +2,22 @@
 
   <div class="field">
     <%= form.label :title, "Titre", class: 'control-label' %>
-    <%= form.text_field :title, autofocus: true, autocomplete: "Description", class: 'form-control' %>
+    <%= form.text_field :title, autofocus: true, autocomplete: "title", placeholder: "Titre", class: 'form-control' %>
   </div>
 
   <div class="field mt-2">
-    <%= form.label :description, "Description", class: 'control-label' %><br />
-    <%= form.text_field :description, autofocus: true, autocomplete: "Description", class: 'form-control' %>
+    <%= form.label :description, "Description", class: 'control-label' %>
+    <%= form.text_field :description, autofocus: true, autocomplete: "Description", placeholder: "Description", class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :id_typeform, "Id Typeform", class: 'control-label' %>
-    <%= form.text_field :id_typeform, autofocus: true, autocomplete: "Description", class: 'form-control' %>
+    <%= form.text_field :id_typeform, autofocus: true, autocomplete: "id_typeform", placeholder: "Id Typeform", class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :id_results, "Id Résultats", class: 'control-label' %>
-    <%= form.text_field :id_results, autofocus: true, autocomplete: "Description", class: 'form-control' %>
+    <%= form.text_field :id_results, autofocus: true, autocomplete: "id_results", placeholder: "Id Résultats", class: 'form-control' %>
   </div>
 
   <%= button_tag(type: 'submit', class: "btn btn-primary btn-round btn-sm mt-3 ") do %>

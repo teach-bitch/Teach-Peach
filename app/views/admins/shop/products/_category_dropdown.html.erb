@@ -1,0 +1,5 @@
+<div class="container">
+  <div class="col-4">
+    <%= collection_select(:product_categories, :id, ProductCategory.all, :id, :title, {}, { :multiple => true, class: 'selectpicker', title: 'Choix des catégories', :data => { :style => 'btn btn-primary btn-round'}}) %>
+  </div>
+</div>

@@ -17,6 +17,12 @@ Rails.application.routes.draw do
       resources :articles, only: [:destroy, :index, :create, :show, :edit, :update, :new]
       resources :users
       resources :typeforms
+      namespace :shop do
+        resources :facturations
+        resources :join_product_categories
+        resources :product_categories
+        resources :products
+      end
     end
 
     root 'static_pages#home'
