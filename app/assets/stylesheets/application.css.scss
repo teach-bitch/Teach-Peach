@@ -91,29 +91,7 @@ div.page-header-image.image-discover {
    min-height: 70vh;
 }
 
-div.carousel-item.active {
-   height: auto;
-}
+div.row.feature-subscriber {
 
-div.carousel-item {
-   height: auto;
-}
-
-div.item-image {
-   width: inherit !important;
-}
-
-a.btn.btn-primary.btn-block.btn-carousel {
-   white-space: inherit !important;
-   max-width: fit-content;
-
-}
-
-h3.h3-responsive.btn-carousel {
-   text-align: -webkit-center;
-}
-
-div.card-article {
-   margin-top: 0px;
-   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1) !important;
+   justify-content: space-around !important;
 }
