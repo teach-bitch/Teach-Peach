@@ -1,6 +1,5 @@
 <div class="container">
   <h1 class="mt-5 pt-5 text-center" >Utilisateurs</h1>
-
   <div class="text-center">
    <span class="mr-2"><%= link_to 'Gérer les articles', admins_articles_path %></span>|
    <span class="ml-2 mr-2"><%= link_to 'Gérer les catégories', admins_categories_path %></span>|
@@ -10,64 +9,64 @@
 </div>
 
 <div class="col-md-8 ml-auto mr-auto">
-  <div class="card card-plain">
-      <div class="card-body">
-          <div class="table-responsive">
-              <table class="table">
-                  <thead class="">
-                      <th class="text-center">
-                          Nom
-                      </th>
-                      <th>
-                          Prénom
-                      </th>
-                      <th>
-                          Nom d'utilisateur
-                      </th>
-                      <th class="text-center">
-                          Email
-                      </th>
-                      <th class="text-right">
-                          Rôle
-                      </th>
-                      <th class="text-right">
-                          Actions
-                      </th>
-                  </thead>
-                  <tbody>
-                    <% @users.reverse.each do |user| %>
-                      <tr>
-                          <td class="text-center">
-                              <%= user.last_name %>
-                          </td>
-                          <td>
-                              <%= user.first_name %>
-                          </td>
-                          <td>
-                              <%= user.username %>
-                          </td>
-                          <td class="text-center">
-                              <%= user.email %>
-                          </td>
-                          <td class="text-right">
-                              <%= user.role %>
-                          </td>
-                          <td class="text-right">
-                              <%= link_to admins_user_path(user) do %>
-                                <i class="now-ui-icons users_single-02 mr-2"></i>
-                              <% end %>
-                              <%= link_to edit_admins_user_path(user) do %>
-                                <i class="now-ui-icons ui-2_settings-90 mr-2 color-alert"></i>
-                              <% end %>
-                              <%= link_to admins_user_path(user.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } do %>
-                                <i class="now-ui-icons ui-1_simple-remove"></i>
-                              <% end %>
-                          </td>
-                      </tr>
-                       <% end %>
+    <div class="card card-plain">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="">
+                        <th class="text-center">
+                            Nom
+                        </th>
+                        <th>
+                            Prénom
+                        </th>
+                        <th>
+                            Nom d'utilisateur
+                        </th>
+                        <th class="text-center">
+                            Email
+                        </th>
+                        <th class="text-right">
+                            Rôle
+                        </th>
+                        <th class="text-right">
+                            Actions
+                        </th>
+                    </thead>
+                    <tbody>
+                        <% @users.reverse.each do |user| %>
+                            <tr>
+                                <td class="text-center">
+                                    <%= user.last_name %>
+                                </td>
+                                <td>
+                                    <%= user.first_name %>
+                                </td>
+                                <td>
+                                    <%= user.username %>
+                                </td>
+                                <td class="text-center">
+                                    <%= user.email %>
+                                </td>
+                                <td class="text-right">
+                                    <%= user.role %>
+                                </td>
+                                <td class="text-right">
+                                    <%= link_to admins_user_path(user) do %>
+                                        <i class="now-ui-icons users_single-02 mr-2"></i>
+                                    <% end %>
+                                    <%= link_to edit_admins_user_path(user) do %>
+                                        <i class="now-ui-icons ui-2_settings-90 mr-2 color-alert"></i>
+                                    <% end %>
+                                    <%= link_to admins_user_path(user.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } do %>
+                                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                                    <% end %>
+                                </td>
+                            </tr>
+                        <% end %>
                     </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>   
-<br>
+                </table>
+            </div>
+        </div>
+    </div> 
+</div>  
