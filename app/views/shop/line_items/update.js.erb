@@ -8,3 +8,9 @@
 <% if @price == 0 %>
   $('#checkout-btn').fadeOut('2000')
 <% end %>
+<% if @total_items_number > 0 %>
+  $('#basketcount').html('<%= @total_items_number %>')
+<% end %>
+<% if @total_items_number == 0 %>
+  $('#basketcount').fadeOut('2000')
+<% end %>
