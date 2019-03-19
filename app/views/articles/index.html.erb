@@ -1,29 +1,31 @@
-<div class="col-md-10 ml-auto mr-auto padding-nav">
-  <h2 class="title">Nos articles</h2>
+<div class="container padding-nav">
+  <div class="col md-auto ml-auto mr-auto">
+    <h2 class="title">Nos articles</h2>
 
-  <br>
-  <% @articles.reverse.each do |article| %>
-    <div class="card card-plain card-blog">
-      <div class="row">
-        <div class="col-md-5">
-          <% if article.images.attached? %>
-            <%= link_to article_path(article) do %>
-            <div class="card card-background img-minimum-height" style="background-image: url('<%= url_for(article.images[0]) %>')">
-            </div>
+    <br>
+    <% @articles.reverse.each do |article| %>
+      <div class="card card-plain card-blog">
+        <div class="row">
+          <div class="col-md-4">
+            <% if article.images.attached? %>
+              <%= link_to article_path(article) do %>
+              <div class="card card-background img-minimum-height" style="background-image: url('<%= url_for(article.images[0]) %>')">
+              </div>
+              <% end %>
+            <% else %>
+              <div class="card-image"></div>
             <% end %>
-          <% else %>
-            <div class="card-image"></div>
-          <% end %>
-        </div>
-        <div class="col-md-7">
-          <h3 class="card-title">
-            <%= link_to "#{article.title}", article_path(article) %>
-          </h3>
-          <p class="card-description">
-            <%= raw article.content.split[0..50].join(" ") %>... <%= link_to "Lire l'article", article_path(article) %>
-          </p>
+          </div>
+          <div class="col-md-8">
+            <h3 class="card-title">
+              <%= link_to "#{article.title}", article_path(article) %>
+            </h3>
+            <p class="card-description">
+              <%= raw article.content.split[0..50].join(" ") %>... <%= link_to "Lire l'article", article_path(article) %>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
