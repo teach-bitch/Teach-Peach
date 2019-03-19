@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Cet article a été créé avec succès' }
+        format.html { redirect_to admins_article_path(@article), notice: 'Cet article a été créé avec succès' }
       else
         format.html { render :new }
       end
@@ -64,8 +64,7 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :for_adult, :role)
+      params.require(:article).permit(:title, :content, :for_adult, :role, images: [])
     end
-
 
 end

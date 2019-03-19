@@ -21,12 +21,17 @@ end
 
   root 'static_pages#home'
   resources :categories
-  resources :articles
+  resources :articles do
+    resources :images, only: [:create]
+  end
   devise_for :users
   resources :subscriptions
   resources :typeforms, only: [:show, :index]
   resources :static_pages, only: [:home] do
     get 'home', :on => :collection
   end
+<<<<<<< HEAD
 
+=======
+>>>>>>> plug-active-storage
 end
