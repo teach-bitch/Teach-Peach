@@ -1,11 +1,14 @@
 <%= form_with(model: [:admins, category], local: true) do |form| %>
 
-  <div class="field">
-    <%= form.label :titre %>
+  <div class="field text-center">
+    <%= form.label :title, "Titre" %>
     <%= form.text_field :title %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <div class="text-center">
+	  <%= button_tag(type: 'submit', class: "btn btn-primary btn-round btn-sm mt-3 ") do %>
+	 		Créer la catégorie
+		<% end %>
+	</div>
 <% end %>
+
+
