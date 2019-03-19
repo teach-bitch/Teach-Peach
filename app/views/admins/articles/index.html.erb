@@ -1,33 +1,60 @@
-<h1>Articles</h1>
+<div class="container">
+  <h1 class="mt-5 pt-5 text-center" >Articles</h1>
+  <div class="text-center">
+   <span class="mr-2"><%= link_to 'Gérer les utilisateurs', admins_users_path %></span>|
+   <span class="ml-2 mr-2"><%= link_to 'Gérer les catégories', admins_categories_path %></span>|
+   <span class="ml-2"><%= link_to 'Gérer les typeforms', admins_typeforms_path %></span>
+   <div class="mt-2"><%= link_to 'Nouvel article', new_admins_article_path %></div>
+  </div>
+</div>
 
-<%= link_to 'Gérer les utilisateurs', admins_users_path %>|<%= link_to 'Gérer les catégories', admins_categories_path %>|<%= link_to 'Gérer les typeforms', admins_typeforms_path %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Contenu</th>
-      <th>Pour adulte</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.reverse.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%= article.for_adult %></td>
-        <td><%= link_to "Voir l'article", admins_article_path(article.id) %></td>
-        <td><%= link_to 'Éditer', edit_admins_article_path(article) %></td>
-
-        <td><%= link_to 'Supprimer', admins_article_path(article.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } %></td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Nouvel article', new_admins_article_path %>
+<div class="col-md-8 ml-auto mr-auto">
+  <div class="card card-plain">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="">
+            <th class="text-center">
+              Titre
+            </th>
+            <th class="text-center">
+              Contenu
+            </th>
+            <th class="text-right">
+              Pour adulte ?
+            </th>
+            <th class="text-right">
+              Actions
+            </th>
+          </thead>
+          <tbody>
+            <% @articles.reverse.each do |article| %>
+              <tr>
+                <td class="text-center">
+                  <%= article.title %>
+                </td>
+                <td>
+                  <%= article.content %>
+                </td>
+                <td class="text-center">
+                  <%= article.for_adult %>
+                </td>
+                <td class="text-right">
+                  <%= link_to admins_article_path(article) do %>
+                    <i class="now-ui-icons ui-1_zoom-bold mr-2"></i>
+                  <% end %>
+                  <%= link_to edit_admins_article_path(article) do %>
+                    <i class="now-ui-icons ui-2_settings-90 mr-2"></i>
+                  <% end %>
+                  <%= link_to admins_article_path(article.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } do %>
+                    <i class="now-ui-icons ui-1_simple-remove"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div> 
+</div>  
