@@ -96,4 +96,35 @@ div.padding-nav {
 div.img-minimum-height {
   height: 200px;
   width: 100%;
+.article-title {
+  text-align: center;
+  border-top: 6px pink solid;
+  padding-top: 15px;
+
+}
+.avoid-navabar{
+  height:150px;
+
+}
+.article-line {
+
+}
+.article-informations{
+  border-top:2px solid pink ;
+  border-bottom:2px solid pink ;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.article-informations-list{
+  display: inline;
+  list-style-type: none;
+}
+.article-informations-list-list{
+  display: inline;
+}
+.fb-share-button{
+  padding-right: 15px;
+}
+.twitter-share-button{
+  margin-right:25px;
 }
