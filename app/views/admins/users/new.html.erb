@@ -1,7 +1,9 @@
 <%= render 'errors', user: @user %>
 
-<h1>Créer un utilisateur</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Retour aux utilisateurs', admins_users_path %>
+<div class="container">
+	<h1 class="mt-5 pt-5 text-center">Créer un utilisateur</h1>
+	<%= render 'form', user: @user %>
+	<div class="mt-2">
+		<%= link_to 'Retour aux utilisateurs', admins_users_path %>
+	</div>
+</div>
