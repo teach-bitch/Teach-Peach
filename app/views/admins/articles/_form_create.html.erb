@@ -3,7 +3,7 @@
   <%= form.file_field :images, multiple: true, class: 'form-control' %>
 
   <%= form.label :title, 'Titre', class: 'control-label mt-2' %>
-  <%= form.text_field :title, class: 'form-control' %>
+  <%= form.text_field :title, autofocus: true, autocomplete: "title", placeholder: "Titre", class: 'form-control' %>
 
   <%= form.label :content, 'Contenu', class: 'control-label mt-2' %>
   <trix-editor input="post_content"></trix-editor>
