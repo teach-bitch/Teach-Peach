@@ -6,8 +6,15 @@ class ApplicationController < ActionController::Base
   before_action :total_items_in_current_basket
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  # Def to catch all unregistered routes
+  def index
+    flash.notice = 'Pas de page trouvée à cette adresse !'
+    redirect_to root_path
+  end
+
   protected
 
+  # Allow devise custom fields
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :birthdate, :role])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :username, :birthdate, :role])

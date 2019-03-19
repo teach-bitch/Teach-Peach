@@ -31,4 +31,8 @@ Rails.application.routes.draw do
       get 'home', :on => :collection
     end
 
+    get '*all', to: 'application#index', constraints: lambda { |req|
+        req.path.exclude? 'rails/active_storage'
+      }
+
 end
