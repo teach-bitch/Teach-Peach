@@ -1,25 +1,54 @@
-<h1>Factures</h1>
+<div class="container mt-5"><br/><br/><br/><br/>
+  <h1>Factures</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Prix</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @facturations.each do |facturation| %>
-      <tr>
-        <td><%= facturation.price %></td>
-        <td><%= link_to 'Voir', shop_facturation_path(facturation) %></td>
-        <td><%= link_to 'Editer', edit_shop_facturation_path(facturation) %></td>
-        <td><%= link_to 'Supprimer', shop_facturation_path(facturation), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br/>
+    </div>
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-shopping">
+                        <thead>
+                            <th class="text-left">
+                                N° de facture
+                            </th>
+                            <th class="text-center">
+                                Date de facturation
+                            </th>
+                            <th class="text-right">
+                                Prix total
+                            </th>
+                            <th>
 
-<br>
-
-<%= link_to 'New Facturation', new_shop_facturation_path %>
+                            </th>
+                        </thead>
+                        <tbody>
+                          <% User.find(current_user.id).facturations.each do |bill| %>
+                            <tr>
+                                <td class="td-name">
+                                    <a><%= bill.id %></a>
+                                </td>
+                                <td class="td-number text-center">
+                                    <%= bill.created_at %>
+                                </td>
+                                <td class="td-number">
+                                  <%= bill.price %><small>€</small>
+                                </td>
+                                <td>
+                                  <%= button_to 'Voir la facture', shop_facturation_path(bill), class: 'btn btn-neutral', method: :get %>
+                                </td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
