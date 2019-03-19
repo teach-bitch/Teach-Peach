@@ -34,11 +34,11 @@
   </div>
 
 
-<p>
-  <p>
+<p >
+  <p >
     <% if @article.images.attached? %>
       <% @article.images.each do |image| %>
-        <%= image_tag image, alt: 'image' %> <br />
+        <p class="row justify-content-center"><%= image_tag image, alt: 'image' %> </p>
       <% end %>
     <% end %>
   </p>
