@@ -1,12 +1,4 @@
 <p>
-  <% if @article.images.attached? %>
-    <% @article.images.each do |image| %>
-      <%= image_tag image, alt: 'image' %> <br />
-    <% end %>
-  <% end %>
-</p>
-
-<p>
  <strong>Titre:</strong>
  <%= @article.title %>
 </p>
@@ -15,6 +7,8 @@
  <strong>Contenu:</strong>
  <%= raw @article.content %>
 </p>
+
+<%= render 'layouts/social' %>
 
 <p>
  <strong>Pour adulte:</strong>
