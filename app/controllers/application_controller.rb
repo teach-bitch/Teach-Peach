@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include CurrentBasket
   before_action :current_basket
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :total_items_in_current_basket
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   protected
