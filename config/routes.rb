@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  match '*path' => redirect('/'), via: :get
-
     namespace :shop do
       root "products#index"
       resources :facturations
