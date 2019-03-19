@@ -27,5 +27,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def set_customer
+    if current_user.customer_id == nil
+      @customer = Stripe::Customer.create({
+        email: params[:stripeEmail],
+        source: params[:stripeToken],
+      })
+    else
+      @customer = Stripe::Customer.retrieve(current_user.customer_id)
+    end
+  end
 
 end
