@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :users
       resources :typeforms
       namespace :shop do
+        root "products#index"
         resources :facturations
         resources :join_product_categories
         resources :product_categories
