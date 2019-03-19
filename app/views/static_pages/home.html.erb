@@ -4,13 +4,12 @@
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
         </ol>
         <div class="carousel-inner" role="listbox">
 
             <div class="carousel-item active">
                 <div class="page-header header-filter">
-                    <div class="page-header-image" style="background-image: url(<%= asset_path 'peach4.jpeg' %>)"></div>
+                    <div class="page-header-image" style="background-image: url(<%= asset_path 'peach3_crop.jpeg' %>)"></div>
 
 
                     <div class="content-center">
@@ -39,7 +38,7 @@
 
             <div class="carousel-item">
                 <div class="page-header header-filter">
-                    <div class="page-header-image" style="background-image: url(<%= asset_path 'peach3_crop.jpeg' %>)"></div>
+                    <div class="page-header-image" style="background-image: url(<%= asset_path 'peach4.jpeg' %>)"></div>
 
                     <div class="content-center">
                         <div class="container">
@@ -79,29 +78,30 @@
 
 
 
-    <div class="container">
+    <div class="container" >
         <div class="features-4">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto text-center">
 
-                        <h2 class="title">Les derniers articles <strong>publiques</strong></h2>
-                        <h4 class="description">Les derniers sujets publiques abordés par Teach Peach, influencé
+                        <h2 class="title">Les derniers articles publiques</h2>
+                        <h4 class="description">Les derniers sujets publiques abordés par Teach Peach et influencé
                             par la
-                            communauté.</h4>
+                            communauté. </h4>
+
                     </div>
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container" >
 
-                <div class="row justify-content-center">
-                    <div class="col-sm-8" style="border: solid 1px red">
+                <div class="row justify-content-center " >
+                    <div class="col-sm-8 no-padding padding-right-10px">
 
-                        <div class="card card-background card-background-product card-no-shadow" style="background-image: url(<%= asset_path 'peach2.jpeg' %>)">
+                        <div class="card card-background card-background-product card-no-shadow no-margin-top" style="background-image: url(<%= asset_path 'peach2.jpeg' %>)">
                             <div class="card-body">
                                 <h3 class="card-title">
-                                    <%= Article.last.title %>
+                                    <%= Article.last.title.capitalize %>
                                 </h3>
                                 <p class="card-description">
 
@@ -111,19 +111,19 @@
                             </div>
                         </div>
                     </div>
-                    </div>
 
 
-                    <div class="col-sm-4" style="border: solid 1px green">
 
-                        <div class="card card-background card-background-product card-no-shadow" style="background-image: url('<%= asset_path 'peach5.jpeg' %>')">
+                    <div class="col-sm-4 no-padding">
+
+                        <div class="card card-background card-background-product card-no-shadow no-margin-top" style="background-image: url('<%= asset_path 'peach5.jpeg' %>')">
                             <div class="card-body">
                                 <h3 class="card-title">
-                                    <%= Article.last(2).first.title %>
+                                    <%= Article.last(2).first.title.capitalize %>
                                 </h3>
                                 <p class="card-description">
 
-                                    <%= @second_article_text_raw_light.split[0..20].join(" ")%>...
+                                    <%= @second_article_text_raw_light.split[0..15].join(" ")%>...
                                 </p>
                                 <%= button_to "Voir l'article", article_path(Article.last(2).first), class: 'btn btn-neutral btn-round', method: :get %>
                             </div>
@@ -133,66 +133,22 @@
                     </div>
                 </div>
 
-            </div>
 
+            </div>
         </div>
 
+    </div>
 
-        <div class="features-5">
-            <div class="container">
-                <div class="row feature-subscriber">
-                    <div class="col-md-5">
-                        <h2 class="title">Abonne toi</h2>
-                        <div class="info info-horizontal">
-                            <div class="icon icon-primary icon-circle">
 
-                                <i class="now-ui-icons ui-1_lock-circle-open"></i>
-                            </div>
-                            <div class="description">
+<div class="page-header page-header-small">
+            <div class="page-header-image"  style="background-image: url(<%= asset_path 'devise/peach3.jpeg' %>);">
+            </div>
+            <div class="content-center">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h2 class="title">Rejoins-nous pour voir le contenu adulte</h2>
+                        <%= link_to "Je m'inscris", new_user_registration_path, class: 'btn btn-primary btn-round btn-lg' %>
 
-                                <h4 class="info-title">Accés à tous les podcasts payants</h4>
-                                <p>Toute la bibliothéque des histoires erotiques sans limite</p>
-                            </div>
-                        </div>
-                        <div class="info info-horizontal">
-                            <div class="icon icon-primary icon-circle">
-                                <i class="now-ui-icons ui-2_favourite-28"></i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">Accés à tous les ateliers</h4>
-                                <p>Vis l'experience Teach Peach en allant aux ateliers pour en apprendre plus sur
-                                    les
-                                    thémes de
-                                    la sexualité</p>
-                            </div>
-                        </div>
-                        <div class="info info-horizontal">
-                            <div class="icon icon-primary icon-circle">
-                                <i class="now-ui-icons shopping_bag-16"></i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">Des réductions sur la boutique</h4>
-                                <p>Profite des reductions sur tous le shop</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <div class="buttons">
-                                    <% if user_signed_in? %>
-                                    <% if @user.subscription_id == nil %>
-                                    <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary btn-round btn-lg' %>
-                                    <% else %>
-                                    <% end %>
-                                    <% end %>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card card-background-product card-raised">
-                            <%= image_tag "peach4" %>
-
-                        </div>
                     </div>
                 </div>
             </div>
@@ -204,5 +160,72 @@
 
 
 
+
+    <div class="features-5">
+        <div class="container">
+            <div class="row feature-subscriber">
+                <div class="col-md-5">
+                    <h2 class="title">Abonne toi</h2>
+                    <div class="info info-horizontal">
+                        <div class="icon icon-primary icon-circle">
+
+                            <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                        </div>
+                        <div class="description">
+
+                            <h4 class="info-title">Accés à tous les podcasts payants</h4>
+                            <p>Toute la bibliothéque des histoires erotiques sans limite</p>
+                        </div>
+                    </div>
+                    <div class="info info-horizontal">
+                        <div class="icon icon-primary icon-circle">
+                            <i class="now-ui-icons ui-2_favourite-28"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Accés à tous les ateliers</h4>
+                            <p>Vis l'experience Teach Peach en allant aux ateliers pour en apprendre plus sur
+                                les
+                                thémes de
+                                la sexualité</p>
+                        </div>
+                    </div>
+                    <div class="info info-horizontal">
+                        <div class="icon icon-primary icon-circle">
+                            <i class="now-ui-icons shopping_bag-16"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Des réductions sur la boutique</h4>
+                            <p>Profite des reductions sur tous le shop</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="buttons">
+                                <% if user_signed_in? %>
+                                <% if @user.subscription_id == nil %>
+                                <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary btn-round btn-lg' %>
+                                <% else %>
+                                <% end %>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-background-product card-raised">
+                        <%= image_tag "peach4" %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
+
+
 </div>
