@@ -4,7 +4,7 @@ class Shop::ProductsController < ShopController
 
   def index
     @products = Product.all
-    @categories = Category.all
+    @product_categories = ProductCategory.all
   end
 
   def show
