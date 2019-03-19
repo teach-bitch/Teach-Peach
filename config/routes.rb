@@ -30,8 +30,4 @@ end
   resources :static_pages, only: [:home] do
     get 'home', :on => :collection
   end
-<<<<<<< HEAD
-
-=======
->>>>>>> plug-active-storage
 end
