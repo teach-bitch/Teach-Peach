@@ -13,18 +13,11 @@
           <li class="article-informations-list-list">
                                       <%= @article.created_at%>
           </li>
+          <% @article.categories.each do |category| %>
           <li class="article-informations-list-list">
-                                        Presentation
+              <%= category.title %>
           </li>
-          <li class="article-informations-list-list">
-                                        Discover
-          </li>
-          <li class="article-informations-list-list">
-                                        Payment
-          </li>
-          <li class="article-informations-list-list">
-                                        Contact Us
-          </li>
+          <% end %>
           <li class="article-informations-list-list pull-right">
             <%= render 'layouts/social' %>
           </li>
@@ -48,3 +41,5 @@
 </div>
 
 </div>
+
+
