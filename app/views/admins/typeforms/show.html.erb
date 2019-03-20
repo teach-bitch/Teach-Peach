@@ -1,29 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="mt-5 pt-5 d-flex justify-content-center">
+	<div class="col-md-6 col-lg-4">
+	  <div class="card">
+	      <div class="card-body">
+	          <h6 class="category text-danger">
+	              <i class="far fa-edit"></i> Formulaire 
+	          </h6>
+	          <h5 class="card-title">
+	              <a href="#pablo"><%= @typeform.title %></a>
+	          </h5>
+	          <p class="card-description">
+	              <%= @typeform.description %>
+	          </p>
+	          <div class="card-footer">
+	              <div class="author">
+	                  <span>Id Typeform: <%= @typeform.id_typeform %></span>
+	              </div>
+	              <div class="author pull-right">
+	                  <span>Id Typeform: <%= @typeform.id_results %></span>
+	              </div>
+	          </div>
+	      </div>
+	  </div>
+	</div>
+</div>
+<div class="text-center">
+	<%= link_to 'Éditer', edit_admins_typeform_path(@typeform) %> |
+	<%= link_to 'Retour aux formulaires', admins_typeforms_path %>
+</div>
+                               
 
-<p>
-  <strong>Title:</strong>
-  <%= @typeform.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @typeform.description %>
-</p>
-
-<p>
-  <strong>Id typeform:</strong>
-  <%= @typeform.id_typeform %>
-</p>
-
-<p>
-  <strong>Id results:</strong>
-  <%= @typeform.id_results %>
-</p>
-
-<%= link_to 'Edit', edit_admins_typeform_path(@typeform) %>
-<%= link_to 'Back', admins_typeforms_path %>
-
-<!-- show typeform result admins !-->
 
 <div class="typeform-widget" data-url="https://yacinth.typeform.com/report/<%= @dynamique_typeform_id%>/<%= @dynamique_results_id %>" style="width: 100%; height: 500px;"></div> 
 <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> 
