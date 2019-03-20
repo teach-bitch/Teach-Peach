@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+            <h2 class="title">La boutique Teach Peach</h2>
+            <h4 class="description">Parcours notre selection d'articles pour augmenter ton plaisir</h4>
+            <div class="section-space"></div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-5 ml-auto">
+            <div class="card card-background card-background-product card-raised">
+                <%= image_tag "loveshop" %>
+
+            </div>
+        </div>
+
+        <div class="col-md-5 mr-auto">
+            <div class="info info-horizontal">
+                <div class="icon icon-danger">
+                    <i class="now-ui-icons ui-2_chat-round"></i>
+                </div>
+                <div class="description">
+                    <h4 class="info-title">Des références testées et approuvées</h4>
+                    <p class="description">
+                        Profite d'une selection puisée dans les habitudes de la communauté qui a validé les produits.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info info-horizontal">
+                <div class="icon icon-danger">
+                    <i class="now-ui-icons business_chart-pie-36"></i>
+                </div>
+                <div class="description">
+                    <h4 class="info-title">Des produits de qualités</h4>
+                    <p class="description">
+                        Nos muqueuses sont fragiles, il faut en prendre soin.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info info-horizontal">
+                <div class="icon icon-danger">
+                    <i class="now-ui-icons design-2_ruler-pencil"></i>
+                </div>
+                <div class="description">
+                    <h4 class="info-title">Collectionne les !</h4>
+                    <p class="description">
+                        Remplis ta boite à plaisir prés du lit pour tes moments en solo ou à plusieurs...
+                    </p>
+                </div>
+            </div>
+
+            <% if user_signed_in? && current_user.role != 'user_minor'%>
+
+            <div class="info info-horizontal">
+                <div class="description">
+                    <div class="buttons">
+            <% if @user.subscription_id == nil %>
+                        <%= link_to "Je découvre la selection", new_subscription_path, class: 'btn btn-primary btn-round btn-lg' %>
+                        <% else %>
+                        <%= link_to "Je découvre la selection", new_subscription_path, class: 'btn btn-primary btn-round btn-lg' %>
+
+                        <% end %>
+                        <%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <% if !user_signed_in? && current_user.role == 'user_minor' %>
+                <div class="info info-horizontal">
+                    <div class="icon icon-primary icon-circle">
+                        <i class="now-ui-icons shopping_bag-16"></i>
+                    </div>
+                    <div class="description">
+                        <h4 class="info-title">Interdit aux mineurs</h4>
+                        <p>La legislation francaise preconise d'interdire l'accés à la boutique aux mineurs</p>
+                    </div>
+                </div>
+                <% else %>
+                <% end %>
+
+    </div>
+
+</div>
+
+
+</div>

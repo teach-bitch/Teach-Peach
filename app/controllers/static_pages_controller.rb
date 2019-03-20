@@ -1,12 +1,11 @@
 class StaticPagesController < ApplicationController
   before_action :set_user
-  include StaticPagesHelper
-
+  include ArticlesHelper
   
   def home
-    @articles = Article.all
-    @typeforms = Typeform.all
+    set_articles
     article_clean
+    @typeforms = Typeform.all
   end
 
     private

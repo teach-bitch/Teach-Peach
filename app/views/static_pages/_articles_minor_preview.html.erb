@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="features-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+
+                    <h2 class="title">Les derniers articles publics</h2>
+                    <h4 class="description">Les derniers sujets publics abordés par Teach Peach et influencés
+                        par la
+                        communauté. </h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row justify-content-center ">
+                <div class="col-sm-8 no-padding padding-right-10px">
+
+                    <div class="card card-background card-background-product card-no-shadow margin-top-40" style="background-image: url(<%= asset_path 'peach2.jpeg' %>)">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <%= @articles.last.title.capitalize %>
+                            </h3>
+                            <p class="card-description text-white">
+
+                                <%= @last_article_text_raw_light.split[0..20].join(" ") %>...
+                            </p>
+                            <%= button_to "Voir l'article", article_path(Article.last), class: 'btn btn-neutral btn-round', method: :get %>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-4 no-padding">
+
+                    <div class="card card-background card-background-product card-no-shadow margin-top-40" style="background-image: url('<%= asset_path 'peach5.jpeg' %>')">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <%= @articles.last(2).first.title.capitalize %>
+                            </h3>
+                            <p class="card-description">
+
+                                <%= @second_article_text_raw_light.split[0..15].join(" ")%>...
+                            </p>
+                            <%= button_to "Voir l'article", article_path(Article.last(2).first), class: 'btn btn-neutral btn-round', method: :get %>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-12 no-padding mt-2">
+
+                    <div class="card card-background card-background-product card-no-shadow mt-0" style="background-image: url('<%= asset_path 'grapefruit.jpeg' %>')">
+                        <div class="card-body">
+                            <h3 class="card-title padding-bottom-inherit">
+                                Accès à tous les articles de Teach Peach...
+                            </h3>
+                            <%= button_to "Voir tout nos articles", articles_path, class: 'btn btn-neutral btn-round btn-lg', method: :get %>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
