@@ -20,7 +20,5 @@
     <%= form.text_field :id_results, autofocus: true, autocomplete: "id_results", placeholder: "Id Résultats", class: 'form-control' %>
   </div>
 
-  <%= button_tag(type: 'submit', class: "btn btn-primary btn-round btn-sm mt-3 ") do %>
-    Créer le formulaire
-  <% end %>
+  <%= form.submit class: "btn btn-primary btn-round btn-sm mt-3"%>
 <% end %>

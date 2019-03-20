@@ -5,9 +5,7 @@
     <%= form.text_field :title, autofocus: true, autocomplete: "title", placeholder: "Titre", class: 'form-control' %>
   </div>
   <div>
-	  <%= button_tag(type: 'submit', class: "btn btn-primary btn-round btn-sm mt-3 ") do %>
-	 		Créer la catégorie
-		<% end %>
+		<%= form.submit class: "btn btn-primary btn-round btn-sm mt-3" %>
 	</div>
 <% end %>
 
