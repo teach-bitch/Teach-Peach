@@ -10,6 +10,12 @@ en:
       facturation:
         create: "Créer une facture"
         update: "Éditer une facture"
+      category: 
+        create: "Créer une catégorie"
+        update: "Éditer la catégorie"
+      typeform:
+        create: "Créer un formulaire"
+        update: "Éditer un formulaire"
   devise:
     confirmations:
       confirmed: "Votre email a été confirmé avec succès."
