@@ -173,7 +173,7 @@ div.padding-right-10px {
    padding-right: 10px;
 }
 
-div.text-white {
+.text-white {
    color: white;
 }
 
@@ -189,4 +189,13 @@ div.justify-center {
 h3.padding-bottom-inherit {
    padding-bottom: inherit !important;
 
+}
+
+.gradient-sulphurous {
+
+   background-image: linear-gradient(#ffffff00, #dc35458f);
+}
+
+.black-50-transparency {
+   background-color: rgba(0, 0, 0, 0.5);
 }
