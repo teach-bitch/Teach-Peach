@@ -32,20 +32,16 @@
                     <h5>Notre site</h5>
                     <ul class="links-vertical">
                         <li>
-                            <a href="#pablo" class="text-muted">
-                                Vos questions
-                            </a>
+                          <%= link_to "Articles", articles_path, class:"text-muted" %>
                         </li>
                         <li>
-                            <a href="#pablo" class="text-muted">
-                                S'inscrire
-                            </a>
+                          <%= link_to 'Shop', shop_root_path, class:"text-muted" %>
                         </li>
-                    
                         <li>
-                            <a href="#pablo" class="text-muted">
-                                Les transactions
-                            </a>
+                          <%= link_to "S'inscrire", new_user_registration_path, class:"text-muted" %>
+                        </li>
+                        <li>
+                          <%= link_to "Abonnements", new_subscription_path, class:"text-muted" %>
                         </li>
 
                     </ul>
