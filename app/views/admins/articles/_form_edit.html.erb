@@ -1,4 +1,4 @@
-<%= form_for @article, method: 'put', multipart: true, class: 'form-group' do |form| %>
+<%= form_for [:admins,@article], method: 'put', multipart: true, class: 'form-group' do |form| %>
   <%= form.label :images, 'Images', class: 'control-label' %>
   <%= form.file_field :images, multiple: true, class: 'form-control' %>
 
