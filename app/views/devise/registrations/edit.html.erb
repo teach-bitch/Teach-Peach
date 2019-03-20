@@ -31,8 +31,8 @@
 
                   <% if @user.role != 'user_minor' %>
                     <p>Des avantages exclusifs :
-                      <br> Accés aux podcasts payants
-                      <br> Accés aux ateliers
+                      <br> Accès aux podcasts payants
+                      <br> Accès aux ateliers
                       <br> Des promos sur la boutique
                       <% if @user.subscription_id == nil %>
                       <%= link_to "Je m'abonne", new_subscription_path, class: 'btn btn-primary' %>
