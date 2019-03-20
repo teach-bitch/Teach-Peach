@@ -39,7 +39,7 @@
         <% if !user_signed_in?  %>
         <%= link_to "Je m'inscris pour découvrir le shop", new_user_registration_path, class: 'btn btn-primary btn-round btn-lg' %>
         <% elsif user_signed_in? && current_user.role != 'user_minor'%>
-        <%= link_to "Je découvre la selection", new_subscription_path, class: 'btn btn-primary btn-round btn-lg' %>
+        <%= link_to "Je découvre la selection", shop_root_path, class: 'btn btn-primary btn-round btn-lg' %>
         <% else %>
         <h4 class="info-title">Interdit aux mineurs</h4>
         <p class="text-white">La legislation francaise preconise d'interdire l'accés à la boutique aux mineurs</p>
