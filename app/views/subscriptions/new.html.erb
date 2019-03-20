@@ -1,24 +1,76 @@
-<div class="container">
-  <%= form_tag subscriptions_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
+<header>
+ <%= render 'layouts/navbar' %>
+</header>
+
+<div class="pricing-5 section-pricing-5 section-image" id="pricing-5" style="background-image: url(<%= asset_path 'bg-subscribe-page.jpeg' %>)">
+
+  <div class="container padding-nav">
+    <%= form_tag subscriptions_path do %>
+    <% if flash[:error].present? %>
+    <div id="error_explanation">
+      <p><%= flash[:error] %></p>
+    </div>
+    <% end %>
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="title">Choisis ton abonnement</h2>
+
+        <p class="description">Grâce aux abonnements, profites de Teach Peach en toute liberté.
+        <br>Et parcours l'ensemble de notre contenu réservé aux abonnés</p>
+      </div>
+
+      <div class="col-md-7 ml-auto mr-auto">
+        <div class="tab-content tab-space">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card card-pricing card-raised">
+                <div class="card-body">
+                  <h5 class="category">Early Bird</h5>
+                  <h1 class="card-title"><small>€</small>150</h1>
+                  <ul>
+                    <li>Un paiement <b>unique</b></li>
+                    <li>Accès garantie <b>à vie</b> à tout le contenu</li>
+                    <li>Accès aux <b>podcasts</b></li>
+                    <li>Accés aux <b>ateliers</b></li>
+                  </ul>
+                  <span class="btn btn-muted btn-round">
+                    Á venir ...
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card card-pricing card-plain">
+                <div class="card-body">
+                  <h5 class="category">Découverte</h5>
+                  <h1 class="card-title"><small>€</small>10 / mois</h1>
+                  <ul>
+                    <li>Paiement <b>mensuel</b> que tu peux arrêter quand tu le souhaites</li>
+                    <li>Accés <b>illimité</b> au contenu privé</li>
+                    <li>Accès aux <b>podcasts</b></li>
+                    <li>Accés aux <b>ateliers</b></li>
+                  </ul>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Offre Découverte"
+                  data-locale="auto"></script>
+                  <!-- get checkout button from stripe script -->
+                  <script type="text/javascript">
+                    $(function(){
+                      $('.stripe-button-el span').text("Offre Découverte");
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-      <% end %>
-      <label class="amount">
-        <span>Abonnement mensuel: 10€</span>
-      </label>
-    </article>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="Monthly subscription"
-            data-locale="auto"></script>
-    <script type="text/javascript">
-      $(function(){
-        $('.stripe-button-el span').text("S'abonner");
-        $('.stripe-button-el').removeClass('stripe-button-el').addClass('btn btn-primary')
-      });
-    </script>
-  <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+<% end %>
+</div>
+<%= render 'layouts/footer' %>
