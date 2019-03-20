@@ -19,14 +19,12 @@
                                     <div class="col-md-9 ml-auto mr-auto text-center">
                                         <h1 class="title">Découvre la sexualité avec Teach Peach</h1>
 
-                                        <h4 class="description ">Beaucoup de gens se posent des questions sur la
+                                        <h4 class="description text-white">Beaucoup de gens se posent des questions sur la
                                             sexualité,
                                             Teach Peach a pour vocation d'y répondre en apportant un contenu
                                             personnalisé.
                                         </h4>
-
                                         <br>
-
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +46,7 @@
                                         <h1 class="title">Influence le contenu en partageant anonymement ton
                                             experience
                                             !</h1>
-                                        <h4 class="description ">Chaque mois Teach Peach écoute tes questionnements
+                                        <h4 class="description text-white">Chaque mois Teach Peach écoute tes questionnements
                                             et
                                             prend en compte ton
                                             point de vu pour décider des prochains sujets abordés. </h4>
@@ -98,12 +96,12 @@
                 <div class="row justify-content-center " >
                     <div class="col-sm-8 no-padding padding-right-10px">
 
-                        <div class="card card-background card-background-product card-no-shadow no-margin-top" style="background-image: url(<%= asset_path 'peach2.jpeg' %>)">
+                        <div class="card card-background card-background-product card-no-shadow margin-top-40" style="background-image: url(<%= asset_path 'peach2.jpeg' %>)">
                             <div class="card-body">
                                 <h3 class="card-title">
                                     <%= Article.last.title.capitalize %>
                                 </h3>
-                                <p class="card-description">
+                                <p class="card-description text-white">
 
                                     <%= @last_article_text_raw_light.split[0..20].join(" ") %>...
                                 </p>
@@ -116,7 +114,7 @@
 
                     <div class="col-sm-4 no-padding">
 
-                        <div class="card card-background card-background-product card-no-shadow no-margin-top" style="background-image: url('<%= asset_path 'peach5.jpeg' %>')">
+                        <div class="card card-background card-background-product card-no-shadow margin-top-40" style="background-image: url('<%= asset_path 'peach5.jpeg' %>')">
                             <div class="card-body">
                                 <h3 class="card-title">
                                     <%= Article.last(2).first.title.capitalize %>
@@ -131,6 +129,23 @@
 
 
                     </div>
+
+
+                    <div class="col-md-12 no-padding mt-2">
+
+                        <div class="card card-background card-background-product card-no-shadow mt-0" style="background-image: url('<%= asset_path 'grapefruit.jpeg' %>')">
+                            <div class="card-body">
+                                <h3 class="card-title padding-bottom-inherit">    
+                                    Accès à tous les articles de Teach Peach...
+                                </h3>
+                  <%= button_to "Voir tout nos articles", articles_path, class: 'btn btn-neutral btn-round btn-lg', method: :get %>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
                 </div>
 
 
@@ -164,8 +179,8 @@
     <div class="features-5">
         <div class="container">
             <div class="row feature-subscriber">
-                <div class="col-md-5">
-                    <h2 class="title">Abonne toi</h2>
+                <div class="col-md-6">
+                    <h2 class="title padding-top-10">Abonne toi</h2>
                     <div class="info info-horizontal">
                         <div class="icon icon-primary icon-circle">
 
@@ -198,7 +213,7 @@
                             <p>Profite des reductions sur tous le shop</p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row justify-center">
                         <div class="col-xs-4">
                             <div class="buttons">
                                 <% if user_signed_in? %>
