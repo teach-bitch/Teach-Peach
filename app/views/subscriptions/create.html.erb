@@ -1,58 +1,63 @@
-<div class="row mb-2">
-  <div class="col-md-8 ml-auto mr-auto text-center">
-    <h2>Merci</h2>
-    <p>Tu es bien abonné(e)</p>
-    <%= link_to "Revenir à l'accueil", root_path, class: "btn btn-primary btn-round" %>
-  </div>
-</div>
+<div class="features-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto text-center">
+        <h2 class="title">Merci</h2>
+        <h4 class="description">Tu es bien abonné(e)</h4>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="col-md-6 px-0">
-    <div class="card card-background card-background-product card-no-shadow" style="background-image: url(<%= asset_path 'after-sub-articles.jpeg' %>)">
-      <div class="card-body">
-        <h3 class="card-title">Articles</h3>
-        <p class="card-description text-white">
-          Tu as sûrement déjà lu certains de nos articles et bien tu en auras bien plus encore pour régaler tes pupilles.
-        </p>
-        <%= link_to 'Voir les articles', articles_path, class: 'btn btn-primary btn-round' %>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card card-background card-raised" style="background-image: url(<%= asset_path 'after-sub-articles.jpeg' %>)">
+          <div class="info">
+            <div class="icon icon-white">
+              <i class="now-ui-icons files_paper"></i>
+            </div>
+            <div class="description text-white">
+              <h4 class="title">Articles</h4>
+              <p class="stronger-text text-white">Tu as sûrement déjà lu certains de nos articles et bien tu en auras bien plus encore pour régaler tes pupilles.</p>
+              <%= link_to 'Voir les articles', articles_path, class: 'btn btn-primary btn-round' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-background card-raised" style="background-image: url(<%= asset_path 'after-sub-ateliers.jpeg' %>)">
+          <div class="info">
+            <div class="icon icon-white">
+              <i class="now-ui-icons ui-1_calendar-60"></i>
+            </div>
+            <div class="description text-white">
+              <h4 class="title">Ateliers</h4>
+              <p class="stronger-text text-white">Organisés réguliérement et de thèmes divers et variés, ces ateliers sauront te combler, j'en suis sûr.</p>
+              <a href="https://www.facebook.com/Teach-Peach-310297123035920/" class="btn btn-info btn-round" target="_blank">Sur Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-background card-raised" style="background-image: url(<%= asset_path 'after-sub-shop.jpeg' %>)">
+          <div class="info">
+            <div class="icon icon-white">
+              <i class="now-ui-icons shopping_shop"></i>
+            </div>
+            <div class="description text-white">
+              <h4 class="title">Boutique</h4>
+              <p class="stronger-text text-white">Tu avais déjà accès à la boutique, mais nous aimons bien faire profiter nos abonnés d'offres promotionnelles.</p>
+              <%= link_to 'Voir la boutique', shop_root_path, class: 'btn btn-primary btn-round'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto text-center">
+        <p>Et bientôt en plus du contenu déjà présent, les podcasts !!</p>
+        <%= link_to "Revenir à l'accueil", root_path %>
       </div>
     </div>
   </div>
-
-  <div class="col-md-6 px-0">
-    <div class="card card-raised card-background card-background-product card-no-shadow" style="background-image: url(<%= asset_path 'after-sub-ateliers.jpeg' %>)">
-      <div class="card-body">
-        <h3 class="card-title">Ateliers</h3>
-        <p class="card-description text-white">
-          Organisés réguliérement et de thèmes divers et variés ces ateliers sauront te combler j'en suis sûr.
-        </p>
-        <span class="btn btn-muted btn-round">Á venir ...</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 px-0">
-    <div class="card card-background card-background-product card-no-shadow" style="background-image: url(<%= asset_path 'after-sub-podcasts.jpeg' %>)">
-      <div class="card-body">
-        <h3 class="card-title">Podcasts</h3>
-        <p class="card-description text-white">
-          Des heures d'écoute son maintenant à ta disposition. De quoi en apprendre davantage sur bien des sujets.
-        </p>
-        <span class="btn btn-muted btn-round">Á venir ...</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 px-0">
-    <div class="card card-background card-background-product card-no-shadow" style="background-image: url(<%= asset_path 'after-sub-shop.jpeg' %>)">
-      <div class="card-body">
-        <h3 class="card-title">Boutique</h3>
-        <p class="card-description text-white">
-          Tu avais déjà accès à la boutique, mais nous aimons bien faire profiter nos abonnés d'offres promotionnelles.
-        </p>
-        <%= link_to 'Voir la boutique', shop_root_path, class: 'btn btn-primary btn-round'%>
-      </div>
-    </div>
-  </div>
-
 </div>
