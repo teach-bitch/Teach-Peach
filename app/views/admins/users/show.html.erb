@@ -1,27 +1,23 @@
-<div class="container">
-
-	<div class="mt-5 pt-5 text-center">
-	 <strong>Nom d'utilisateur</strong><br/>
-	 <%= @user.username %>
-	</div>
-
-	<div class="mt-2 text-center">
-	 <strong>Prénom</strong><br/>
-	 <%= @user.first_name %>
-	</div>
-
-	<div class="mt-2 text-center">
-	 <strong>Nom</strong><br/>
-	 <%= @user.last_name %>
-	</div>
-
-	<div class="mt-2 text-center">
-	 <strong>Email</strong><br/>
-	 <%= @user.email %>
-	</div>
-	
-	<div class="text-center mt-4">
-		<%= link_to 'Éditer', edit_admins_user_path(@user) %> |
-		<%= link_to 'Retour aux utilisateurs', admins_users_path %>
-	</div>
+<div class="container d-flex justify-content-center mt-5 pt-5">
+  <div class="col-md-6 col-lg-3 ">
+      <div class="card card-pricing">
+          <div class="card-body">
+              <h4 class="category now-ui-icons business_badge text-primary mr-2"> <span> Profil</span></h4>
+              <h2 class="card-title">
+                <%= @user.username %>
+              </h2>
+              <ul>
+                  <li><i class="now-ui-icons users_single-02 mr-1"></i><%= @user.first_name %> <span><%= @user.last_name %></span></li>
+                  <li><i class="now-ui-icons ui-1_email-85 mr-1"></i><%= @user.email %></li>
+                  <li><i class="fas fa-birthday-cake"></i> <%= ((Time.zone.now - @user.birthdate.to_time) / 1.year.seconds).floor %> ans</li>
+              </ul>
+              <div class="mt-2"><%= link_to 'Éditer', edit_admins_user_path(@user), class: 'btn btn-primary btn-round' %>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
+
+<div class="text-center"><%= link_to 'Retour aux utilisateurs', admins_users_path %></div> 
+
+
