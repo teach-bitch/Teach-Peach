@@ -1,38 +1,38 @@
 <% @product_categories.each do |category| %>
-<div class="tab-pane active show" id="link-<%= category.id %>">
-  <!-- Product Card -->
-  <div class="col-md-12">
-    <div class="row">
-      <% category.products.each do |product|%>
-      <div class="col-lg-4 col-md-6">
-        <div class="card card-product">
-          <div class="card-image">
-            <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0062/5141/3622/products/HTB1IHYNXZ_vK1Rjy0Foq6xIxVXa8_1024x1024.jpg?v=1543918333"), shop_product_path(product) %>
-          </div>
-          <div class="card-body">
-            <h6 class="category">
-              <%= product.brand %>
-            </h6>
-            <h5 class="card-title">
-              <div class="card-link ">
-                <%= product.name %>
+  <div class="tab-pane" id="link-<%= category.id %>">
+    <!-- Product Card -->
+    <div class="col-md-12">
+      <div class="row">
+        <% category.products.each do |product|%>
+          <div class="col-lg-4 col-md-6">
+            <div class="card card-product">
+              <div class="card-image">
+                <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0062/5141/3622/products/HTB1IHYNXZ_vK1Rjy0Foq6xIxVXa8_1024x1024.jpg?v=1543918333"), shop_product_path(product) %>
               </div>
-            </h5>
-            <div class="card-footer ">
-              <div class="price-container">
-                <span class="price ">
-                  <%= product.price %>€</span>
-              </div>
-              <div class="row">
-                <span>
-                  <%= button_to 'Voir le produit', shop_product_path(product), class: 'btn btn-neutral', method: :get %></span>
+              <div class="card-body">
+                <h6 class="category">
+                  <%= product.brand %>
+                </h6>
+                <h5 class="card-title">
+                  <div class="card-link ">
+                    <%= product.name %>
+                  </div>
+                </h5>
+                <div class="card-footer ">
+                  <div class="price-container">
+                    <span class="price ">
+                      <%= product.price %>€</span>
+                  </div>
+                  <div class="row">
+                    <span>
+                      <%= button_to 'Voir le produit', shop_product_path(product), class: 'btn btn-neutral', method: :get %></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end%>
       </div>
-      <% end%>
     </div>
   </div>
-</div>
 <% end %>
