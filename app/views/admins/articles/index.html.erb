@@ -34,7 +34,7 @@
                   <%= article.title %>
                 </td>
                 <td>
-                  <%= article.content %>
+                  <%= raw article.content[0..50] %>...
                 </td>
                 <td class="text-center">
                   <%= article.for_adult %>
