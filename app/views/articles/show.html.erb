@@ -11,9 +11,10 @@
 
       <ul class="pull-center article-informations-list-list">
           <li class="article-informations-list-list">
-                                      <%= @article.created_at%>
+            <%= @article.created_at.strftime("%m/%d/%Y") %>
+            -
           </li>
-          <% @article.categories.each do |category| %>
+            <% @article.categories.each do |category| %>
           <li class="article-informations-list-list">
               <%= category.title %>
           </li>
