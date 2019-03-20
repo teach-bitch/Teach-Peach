@@ -27,7 +27,7 @@ class SubscriptionsController < ApplicationController
     sub = Stripe::Subscription.retrieve(current_user.subscription_id)
       sub.delete
     current_user.update(subscription_id: nil, role: 'user')
-    redirect_to root_path
+    redirect_to edit_user_registration_path
   end
 
   private
