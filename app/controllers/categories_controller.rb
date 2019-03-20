@@ -10,47 +10,6 @@ class CategoriesController < ApplicationController
   def show
   end
 
-  def new
-    @category = Category.new
-    authorize @category
-  end
-
-  def edit
-    authorize @category
-  end
-
-  def create
-    @category = Category.new(category_params)
-    authorize @category
-
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-      else
-        format.html { render :new }
-      end
-    end
-  end
-
-  def update
-    authorize @category
-    respond_to do |format|
-      if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
-    end
-  end
-
-  def destroy
-    authorize @category
-    @category.destroy
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
