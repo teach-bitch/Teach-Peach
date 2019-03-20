@@ -1,3 +1,3 @@
-class ShopController < AdminsController
+class Admins::ShopController < AdminsController
 
 end
