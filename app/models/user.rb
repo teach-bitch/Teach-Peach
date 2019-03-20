@@ -11,6 +11,8 @@ class User < ApplicationRecord
     end
   end
 
+
+
   has_many :articles
   has_one :basket, dependent: :destroy
   has_many :facturations, dependent: :destroy
