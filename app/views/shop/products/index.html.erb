@@ -8,168 +8,108 @@
   </div>
 </div>
 
-<div class="section">
-  <div class="container">
+<div class="container">
+  <div class="col-md-12">
+    <p class="category">Produits</p>
     <div class="row">
-      <div class="col-md-3">
-        <div class="collapse-panel" id="sticky-panel">
-          <div class="card-body">
-            <div class="card card-refine card-plain">
-              <h4 class="card-title">
-                Affiner la recherche
-                <button class="btn btn-default btn-icon btn-neutral pull-right" rel="tooltip" title="Reset Filter">
-                  <i class="arrows-1_refresh-69 now-ui-icons"></i>
-                </button>
-              </h4>
-              <div class="card-header" role="tab" id="headingOne">
-                <h6 class="mb-0">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne">
-                    Fourchatte de prix
-                    <i class="now-ui-icons arrows-1_minimal-down"></i>
-                  </a>
-                </h6>
-              </div>
-              <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                <div class="card-body">
-                  <span id="price-left" class="price-left pull-left" data-currency="&euro;">100</span>
-                  <span id="price-right" class="price-right pull-right" data-currency="&euro;">850</span>
-                  <div class="clearfix mb-2"></div>
-                  <div id="sliderRefine" class="slider slider-refine"></div>
-                </div>
-              </div>
-            </div>
-            <!-- Checkbox 'Marques' -->
-            <div class="card card-refine card-plain">
-              <div class="card-header" role="tab" id="headingTwo">
-                <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-                    aria-expanded="false" aria-controls="collapseTwo">
-                    Marque
-                    <i class="now-ui-icons arrows-1_minimal-down"></i>
-                  </a>
-                </h6>
-              </div>
-              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="card-body">
-                  <div class="checkbox">
-                    <input id="checkbox_brand" type="checkbox">
-                    <label for="checkbox_brand">
-                      Toutes <3 </label> </div> <!-- Boucle pour les marques -->
-                        <% @products.each do |product| %>
-                        <div class="checkbox">
-                          <input id="checkbox_" type="checkbox">
-                          <label for="checkbox_">
-                            <%= product.brand %>
-                          </label>
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-pills-primary flex-column" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active show" data-toggle="tab" href="#link4" role="tablist">
+              Sextoys
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#link5" role="tablist">
+              VHS
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#link6" role="tablist">
+              Préservatifs
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-10">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="link4">
+            <!-- Carte Produit -->
+            <div class="col-md-12">
+              <div class="row">
+                <% @products.each do |product|%>
+                <div class="col-lg-4 col-md-6">
+                  <div class="card card-product">
+                    <div class="card-image">
+                      <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0062/5141/3622/products/HTB1IHYNXZ_vK1Rjy0Foq6xIxVXa8_1024x1024.jpg?v=1543918333"), shop_product_path(product) %>
+                    </div>
+                    <div class="card-body">
+                      <h6 class="category">
+                        <%= product.brand %>
+                      </h6>
+                      <h5 class="card-title">
+                        <div class="card-link ">
+                          <%= product.name %>
                         </div>
-                        <% end %>
-                        <!-- Fin de boucle -->
-                  </div>
-                </div>
-              </div>
-              <!-- Fin Checkbox 'Marques' -->
-              <!-- Checkbox 'Catégories' -->
-              <div class="card card-refine card-plain">
-                <div class="card-header" role="tab" id="headingfour">
-                  <h6 class="mb-0">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsefour"
-                      aria-expanded="false" aria-controls="collapsefour">
-                      Cat-égories
-                      <i class="now-ui-icons arrows-1_minimal-down"></i>
-                    </a>
-                  </h6>
-                </div>
-                <div id="collapsefour" class="collapse" role="tabpanel" aria-labelledby="headingfour">
-                  <div class="card-body">
-                    <div class="checkbox">
-                      <input id="checkbox_cat" type="checkbox">
-                      <label for="checkbox_cat">
-                        Toutes
-                      </label>
-                    </div>
-                    <% @categories.each do |category| %>
-                    <div class="checkbox">
-                      <input id="checkbox_<%= category.id %>" type="checkbox">
-                      <label for="checkbox_<%= category.id %>">
-                        <%= category.title %>
-                      </label>
-                    </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-              <!-- Fin Checkbox 'Catégories' -->
-            </div>
-          </div>
-        </div>
-
-
-
-        <!-- Carte Produit -->
-        <div class="col-md-9">
-          <div class="row">
-            <% @products.each do |product|%>
-            <div class="col-lg-4 col-md-6">
-              <div class="card card-product">
-                <div class="card-image">
-                  <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0062/5141/3622/products/HTB1IHYNXZ_vK1Rjy0Foq6xIxVXa8_1024x1024.jpg?v=1543918333"), shop_product_path(product) %>
-                </div>
-                <div class="card-body">
-                  <h6 class="category">
-                    <%= product.brand %>
-                  </h6>
-                  <h5 class="card-title">
-                    <div class="card-link ">
-                      <%= product.name %>
-                    </div>
-                  </h5>
-                  <div class="card-footer ">
-                    <div class="price-container">
-                      <span class="price ">
-                        <%= product.price %>€</span>
-                    </div>
-                    <div class="row">
-                      <span>
-                        <%= button_to 'Voir le produit', shop_product_path(product), class: 'btn btn-neutral', method: :get %></span>
+                      </h5>
+                      <div class="card-footer ">
+                        <div class="price-container">
+                          <span class="price ">
+                            <%= product.price %>€</span>
+                        </div>
+                        <div class="row">
+                          <span>
+                            <%= button_to 'Voir le produit', shop_product_path(product), class: 'btn btn-neutral', method: :get %></span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <% end%>
               </div>
             </div>
-            <% end%>
+          </div>
+          <div class="tab-pane" id="link5">
+            <!-- Carte Produit -->
+            <div class="col-md-12">
+              <div class="row">
+                <% @products.each do |product|%>
+                <div class="col-lg-4 col-md-6">
+                  <div class="card card-product">
+                    <div class="card-image">
+                      <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0062/5141/3622/products/HTB1IHYNXZ_vK1Rjy0Foq6xIxVXa8_1024x1024.jpg?v=1543918333"), shop_product_path(product) %>
+                    </div>
+                    <div class="card-body">
+                      <h6 class="category">
+                        <%= product.brand %>
+                      </h6>
+                      <h5 class="card-title">
+                        <div class="card-link ">
+                          <%= product.name %>
+                        </div>
+                      </h5>
+                      <div class="card-footer ">
+                        <div class="price-container">
+                          <span class="price ">
+                            <%= product.price %>€</span>
+                        </div>
+                        <div class="row">
+                          <span>
+                            <%= button_to 'Voir le produit', shop_product_path(product), class: 'btn btn-neutral', method: :get %></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% end%>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="link6">
+            bite
           </div>
         </div>
-
-        <!-- Fin de la Carte Produit -->
       </div>
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function () {
-
-    var slider2 = document.getElementById('sliderRefine');
-
-    noUiSlider.create(slider2, {
-      start: [69, 666],
-      connect: true,
-      range: {
-        'min': [30],
-        'max': [900]
-      }
-    });
-
-    var limitFieldMin = document.getElementById('price-left');
-    var limitFieldMax = document.getElementById('price-right');
-
-    slider2.noUiSlider.on('update', function (values, handle) {
-      if (handle) {
-        limitFieldMax.innerHTML = $('#price-right').data('currency') + Math.round(values[handle]);
-      } else {
-        limitFieldMin.innerHTML = $('#price-left').data('currency') + Math.round(values[handle]);
-      }
-    });
-  });
-</script>
