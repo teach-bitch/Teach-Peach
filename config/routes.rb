@@ -6,8 +6,6 @@ Rails.application.routes.draw do
       resources :line_items
       resources :baskets
         resources :charges
-      resources :join_product_categories
-      resources :product_categories
       resources :products
     end
 

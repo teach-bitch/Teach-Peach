@@ -1,0 +1,14 @@
+<ul class="nav nav-pills nav-pills-primary flex-column" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active show" data-toggle="tab" href="#link-all" role="tablist">
+      Tous les produits
+    </a>
+  </li>
+  <% @product_categories.each do |category| %>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#link-<%= category.id %>" role="tablist">
+        <%= category.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
