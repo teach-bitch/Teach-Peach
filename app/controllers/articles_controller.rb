@@ -11,52 +11,6 @@ class ArticlesController < ApplicationController
     authorize @article
   end
 
-  def new
-    @article = Article.new
-    authorize @article
-  end
-
-  def edit
-    authorize @article
-  end
-
-  def create
-    @article = Article.new(article_params)
-    authorize @article
-
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to admins_article_path(@article), notice: 'Cet article a été créé avec succès' }
-      else
-        format.html { render :new }
-      end
-    end
-  end
-
-  def update
-    authorize @article
-    respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to admins_article_path(@article), notice: 'Cet article a été mis à jour avec succès' }
-      else
-        format.html { render :edit }
-      end
-    end
-  end
-
-  def destroy
-    authorize @article
-
-    if @article.destroy
-
-     flash[:notice] = "Cet article #{@article.title} a été supprimé avec succès."
-      redirect_to @article
-    else
-      flash.now[:alert] = "Il y a eu un problème lors de la suppression de cet article."
-      render :show
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
