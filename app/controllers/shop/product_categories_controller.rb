@@ -2,7 +2,6 @@ class Shop::ProductCategoriesController < ShopController
   before_action :set_product_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @product_categories = ProductCategory
     @products = Product.all
     @product_categories = ProductCategory.all
   end
