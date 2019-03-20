@@ -55,7 +55,7 @@ class Admins::ArticlesController < AdminsController
     end
 
     def article_params
-      params.require(:article).permit(:title, :content, :for_adult, :role)
+      params.require(:article).permit(:title, :content, :for_adult, :role, images: [])
     end
 
 end
