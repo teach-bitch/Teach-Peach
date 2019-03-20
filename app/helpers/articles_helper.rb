@@ -15,11 +15,16 @@ module ArticlesHelper
   end
 
   def article_clean
-    @second_article_text_raw = @articles.last(2).first.content.gsub(/<[^>]*>/, '')
-    @second_article_text_raw_light = @second_article_text_raw.gsub(/&nbsp;/, ' ')
-
-    @last_article_text_raw = @articles.last.content.gsub(/<[^>]*>/, '')
-    @last_article_text_raw_light = @last_article_text_raw.gsub(/&nbsp;/, ' ')
+    
+    if @articles != nil
+      
+      @second_article_text_raw = @articles.last(2).first.content.gsub(/<[^>]*>/, '')
+      @second_article_text_raw_light = @second_article_text_raw.gsub(/&nbsp;/, ' ')
+  
+      @last_article_text_raw = @articles.last.content.gsub(/<[^>]*>/, '')
+      @last_article_text_raw_light = @last_article_text_raw.gsub(/&nbsp;/, ' ')
+      
+    end
   end
 
 end
