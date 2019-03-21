@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     end
 
     namespace :admins do
-      root "articles#index"
       resources :categories
       resources :articles, only: [:destroy, :index, :create, :show, :edit, :update, :new]
       resources :users
@@ -24,16 +23,20 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :admins, only: [:index]
+
     root 'static_pages#home'
-    resources :categories
+
+    devise_for :users
     resources :articles do
       resources :images, only: [:create]
     end
-    devise_for :users
+    resources :categories
     resources :subscriptions
     resources :typeforms, only: [:show, :index]
-    resources :static_pages, only: [:home] do
+    resources :static_pages, path: "", only: [:home, :contact] do
       get 'home', :on => :collection
+      get 'contact', :on => :collection
     end
 
     get '*all', to: 'application#index', constraints: lambda { |req|

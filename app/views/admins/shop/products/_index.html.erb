@@ -1,9 +1,7 @@
 <div class="container">
-  <h1 class="mt-5 pt-5 text-center">Produits</h1>
+  <h1 class="mt-2 text-center">Produits</h1>
   <div class="text-center">
-    <span class="mr-2"><%= link_to 'Gérer les factures', admins_shop_facturations_path %></span>|
-    <span class="ml-2 mr-2"><%= link_to 'Gérer les catégories de produit', admins_shop_product_categories_path %></span>|
-    <div class="mt-2"><%= link_to 'Créer un produit', new_admins_shop_product_path %></div>
+    <div class="mt-2"><%= link_to 'Créer un produit', new_admins_shop_product_path, class: 'btn btn-primary btn-round col-sm-3' %></div>
   </div>
 </div>
 
@@ -57,7 +55,11 @@
                     data-animation="true"
                     data-delay="100"
                     data-original-title="">
-                    <%= product.product_categories.first.title %>
+                    <% if product.product_categories.first != nil %>
+                      <%= product.product_categories.first.title %>
+                    <% else %>
+                      Pas de Catégorie
+                    <% end %>
                   </button>
               </td>
               <td>

@@ -32,10 +32,6 @@ class Admins::Shop::ProductsController < ShopController
             @product.join_product_categories.create(:product_category_id => category)
           end
         end
-
-        puts "Q" * 100
-        puts params
-        puts "Q" * 100
       else
         format.html { render :new }
       end
@@ -55,7 +51,7 @@ class Admins::Shop::ProductsController < ShopController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to admins_shop_products_path, notice: 'Ce produit a été supprimé avec succès !' }
+      format.html { redirect_to admins_path, notice: 'Ce produit a été supprimé avec succès !' }
     end
   end
 

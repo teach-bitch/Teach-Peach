@@ -1,6 +1,8 @@
-<h1>Editer le produit</h1>
+<div class="container">
+  <h1 class="mt-5 pt-5">Éditer le produit</h1>
 
-<%= render 'form', product: @product %>
+  <%= render 'form', product: @product %>
 
-<%= link_to 'Voir le produit', admins_shop_product_path(@product) %> |
-<%= link_to 'Retour aux produits', admins_shop_products_path %>
+  <%= link_to 'Voir le produit', admins_shop_product_path(@product) %> |
+  <%= link_to 'Retour aux produits', admins_path %>
+</div>

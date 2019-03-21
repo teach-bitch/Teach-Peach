@@ -1,0 +1,18 @@
+<div class="col-md-2">
+    <h5>Mon compte</h5>
+    <ul class="links-vertical">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "Modifier mon compte", edit_user_registration_path, class:"text-muted" %>
+        </li>
+        <li>
+          <%= link_to "Mes factures", shop_facturations_path, class:"text-muted" %>
+        </li>
+        <% if current_user.role == 'admin' %>
+          <li>
+            <%= link_to "Zone Admin", admins_path, class:"text-muted" %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+</div>

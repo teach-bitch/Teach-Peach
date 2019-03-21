@@ -1,45 +1,34 @@
 <%= form_with(model: [:admins, :shop, product], local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= form.label :name, "Nom" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, autofocus: true, placeholder: "Nom du produit", class: 'form-control' %>
   </div>
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :description, class: 'control-label' %>
+    <%= form.text_area :description, placeholder: "Description", class: 'form-control' %>
   </div>
   <div class="field">
-    <%= form.label :brand, "Marque" %>
-    <%= form.text_field :brand %>
+    <%= form.label :brand, "Marque", class: 'control-label' %>
+    <%= form.text_field :brand, placeholder: "Marque", class: 'form-control' %>
   </div>
   <div class="field">
-    <%= form.label :product_category, "Catégorie" %>
+    <%= form.label :product_category, "Catégorie", class: 'control-label' %>
     <%= render 'category_dropdown' %>
   </div>
   <div class="field">
-    <%= form.label :price, "Prix" %>
-    <%= form.text_field :price %>
+    <%= form.label :price, "Prix", class: 'control-label' %>
+    <%= form.text_field :price, placeholder: "666 €", class: 'form-control' %>
   </div>
   <div class="field">
-    <%= form.label :quantity, "Quantité" %>
-    <%= form.text_field :quantity %>
+    <%= form.label :quantity, "Quantité", class: 'control-label' %>
+    <%= form.text_field :quantity, placeholder: "Quantité", class: 'form-control' %>
   </div>
   <div class="field">
-    <%= form.label :reference, "Référence" %>
-    <%= form.text_field :reference %>
+    <%= form.label :reference, "Référence", class: 'control-label' %>
+    <%= form.text_field :reference, placeholder: "Référence", class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary btn-round col-sm-3 btn-sm' %>
   </div>
 <% end %>

@@ -1,0 +1,82 @@
+<br/><br/><div class="col-md-12 ml-auto mr-auto text-center">
+  <h2 class="title">Panel Admin</h2>
+<div class="container">
+  <div class="row">
+    <ul class="nav nav-pills nav-pills-primary" role="tablist">
+        <li class="nav-item col-6">
+          <h2 class="text-primary">Blog</h2>
+        </li>
+        <li class="nav-item col-6">
+            <h2 class="text-primary">Shop</h2>
+        </li>
+        <li class="nav-item col-6 justify-content-center d-flex">
+          <a class="nav-link col-3" data-toggle="tab" href="#articles" role="tablist">
+            Articles
+          </a>
+        </li>
+      <li class="nav-item col-6 justify-content-center d-flex">
+        <a class="nav-link col-3" data-toggle="tab" href="#products" role="tablist">
+          Produits
+        </a>
+      </li>
+      <li class="nav-item col-6 justify-content-center d-flex mt-2">
+        <a class="nav-link col-3" data-toggle="tab" href="#categories" role="tablist">
+          Catégories
+        </a>
+      </li>
+      <li class="nav-item col-6 justify-content-center d-flex mt-2">
+        <a class="nav-link col-3" data-toggle="tab" href="#product_categories" role="tablist">
+          Catégories
+        </a>
+      </li>
+      <li class="nav-item col-6 justify-content-center d-flex mt-2">
+        <a class="nav-link col-3" data-toggle="tab" href="#forms" role="tablist">
+          Formulaires
+        </a>
+      </li>
+      <li class="nav-item col-6 justify-content-center d-flex mt-2">
+        <a class="nav-link col-3" data-toggle="tab" href="#facturations" role="tablist">
+          Factures
+        </a>
+      </li>
+      <li class="nav-item col-12 justify-content-center d-flex mt-2">
+        <a class="nav-link col-3" data-toggle="tab" href="#users" role="tablist">
+          Utilisateurs
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  <div class="tab-content tab-space">
+
+    <div class="tab-pane col-12" id="articles">
+      <%= render 'admins/articles/index' %>
+    </div>
+
+    <div class="tab-pane col-12" id="categories">
+      <%= render 'admins/categories/index' %>
+    </div>
+
+    <div class="tab-pane col-12" id="forms">
+      <%= render 'admins/typeforms/index' %>
+    </div>
+
+    <div class="tab-pane col-12" id="products">
+      <%= render 'admins/shop/products/index' %>
+    </div>
+
+    <div class="tab-pane col-12" id="product_categories">
+      <%= render 'admins/shop/product_categories/index' %>
+    </div>
+
+    <div class="tab-pane col-12" id="facturations">
+      <%= render 'admins/shop/facturations/index' %>
+    </div>
+
+    <div class="tab-pane col-12" id="users">
+      <%= render 'admins/users/index' %>
+    </div>
+
+  </div>
+</div>

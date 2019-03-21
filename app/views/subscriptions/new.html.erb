@@ -49,16 +49,21 @@
                     <li>Accès aux <b>podcasts</b></li>
                     <li>Accès aux <b>ateliers</b></li>
                   </ul>
-                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="Offre Découverte"
-                  data-locale="auto"></script>
-                  <!-- get checkout button from stripe script -->
-                  <script type="text/javascript">
-                    $(function(){
-                      $('.stripe-button-el span').text("Offre Découverte");
-                    });
-                  </script>
+                  <% if current_user.role != 'admin' %>
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Offre Découverte"
+                    data-locale="auto"></script>
+                    <!-- get checkout button from stripe script -->
+                    <script type="text/javascript">
+                      $(function(){
+                        $('.stripe-button-el span').text("Offre Découverte");
+                      });
+                    </script>
+                    <% else %>
+                      <div class="btn btn-muted btn-round">Tu es admin !</div>
+
+                  <% end %>
                 </div>
               </div>
             </div>
