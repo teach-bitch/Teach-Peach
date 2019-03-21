@@ -8,5 +8,7 @@ class ImagesController < ApplicationController
       @product = Product.find(params[:product_id])
       @product.images.attach(params[:images])
       redirect_to(admins_shop_product_path(@product))
+    end
   end
+
 end
