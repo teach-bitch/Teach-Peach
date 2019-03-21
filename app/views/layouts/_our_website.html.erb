@@ -5,9 +5,11 @@
         <li>
           <%= link_to "Articles", articles_path, class:"text-muted" %>
         </li>
-        <li>
-          <%= link_to "Formulaires", typeform_path(Typeform.last.id), class:"text-muted" %>
-        </li>
+          <% if @typeforms.last %>
+           <li>
+           <%= link_to "Formulaires", typeform_path(@typeforms.last.id), class:"text-muted" %>
+           </li>
+          <%end%>
         <li>
           <%= link_to 'Shop', shop_root_path, class:"text-muted" %>
         </li>
@@ -21,9 +23,11 @@
         <li>
           <%= link_to "Se connecter", new_user_session_path, class:"text-muted" %>
         </li>
-        <li>
-          <%= link_to "Formulaires", typeform_path(Typeform.last.id), class:"text-muted" %>
-        </li>
+          <% if @typeforms.last %>
+          <li>
+            <%= link_to "Formulaires", typeform_path(@typeforms.last.id), class:"text-muted" %>
+          </li>
+          <%end%>
       <% end %>
     </ul>
 </div>
