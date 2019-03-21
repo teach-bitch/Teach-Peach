@@ -7,7 +7,8 @@
     <!-- feature articles !-->
     <% if !user_signed_in? || current_user.role == 'user_minor' %>
     <%= render 'articles_minor_preview' %>
-    <%else%>
+    <%elsif @articles == nil %>
+    <% else%>
     <%= render 'articles_adult_preview' %>
     <% end %>
     <!-- end feature articles !-->
@@ -31,6 +32,5 @@
     <!-- feature shop !-->
     <%= render 'shop' %>
     <!-- end feature shop !-->
-
 
 </div>
