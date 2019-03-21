@@ -3,12 +3,11 @@
     <!-- end feature carousel !-->
 
     <!-- feature articles !-->
-    <% if @articles != nil %>
-      <% if !user_signed_in? || current_user.role == 'user_minor' %>
-      <%= render 'articles_minor_preview' %>
-      <% else%>
-      <%= render 'articles_adult_preview' %>
-      <% end %>
+    <% if !user_signed_in? || current_user.role == 'user_minor' %>
+    <%= render 'articles_minor_preview' %>
+    <%elsif @articles == nil %>
+    <% else%>
+    <%= render 'articles_adult_preview' %>
     <% end %>
     <!-- end feature articles !-->
 

@@ -1,7 +1,6 @@
 module ArticlesHelper
 
   def set_articles
-    if @articles != nil
       if !user_signed_in? || current_user.role == 'user_minor'
         @articles = []
         Article.all.each do |article|
@@ -12,7 +11,6 @@ module ArticlesHelper
       else
         @articles = Article.all
       end
-    end
   end
 
   def article_clean
