@@ -7,7 +7,7 @@ RSpec.describe LineItem, type: :model do
   end
 
   it "has a valid factory" do
-    expect(build(:user)).to be_valid
+    expect(build(:line_item)).to be_valid
   end
 
   context "validation" do
