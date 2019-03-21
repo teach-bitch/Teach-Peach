@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :total_items_in_current_basket
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  include TypeformsHelper
+  before_action :set_typeforms
 
   # Def to catch all unregistered routes
   def index
