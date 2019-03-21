@@ -1,23 +1,23 @@
 <%= form_with(model: [:admins, typeform], local: true) do |form| %>
 
   <div class="field">
-    <%= form.label :title, "Titre", class: 'control-label' %>
-    <%= form.text_field :title, autofocus: true, autocomplete: "title", placeholder: "Titre", class: 'form-control' %>
+    <%= form.label :title, "Titre"%>
+    <%= form.text_field :title, placeholder: "Titre", class: 'form-control' %>
   </div>
 
   <div class="field mt-2">
-    <%= form.label :description, "Description", class: 'control-label' %>
-    <%= form.text_field :description, autofocus: true, autocomplete: "Description", placeholder: "Description", class: 'form-control' %>
+    <%= form.label :description, "Description" %>
+    <%= form.text_field :description, placeholder: "Description", class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :id_typeform, "Id Typeform", class: 'control-label' %>
-    <%= form.text_field :id_typeform, autofocus: true, autocomplete: "id_typeform", placeholder: "Id Typeform", class: 'form-control' %>
+    <%= form.label :id_typeform, "Id Typeform" %>
+    <%= form.text_field :id_typeform, placeholder: "Id Typeform", class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :id_results, "Id Résultats", class: 'control-label' %>
-    <%= form.text_field :id_results, autofocus: true, autocomplete: "id_results", placeholder: "Id Résultats", class: 'form-control' %>
+    <%= form.label :id_results, "Id Résultats" %>
+    <%= form.text_field :id_results, placeholder: "Id Résultats", class: 'form-control' %>
   </div>
 
   <%= form.submit class: "btn btn-primary btn-round btn-sm mt-3"%>

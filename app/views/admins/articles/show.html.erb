@@ -8,20 +8,13 @@
 	  <div class="container article-informations">
 	    <ul class="pull-center article-informations-list-list">
         <li class="article-informations-list-list">
-          <%= @article.created_at%>
+          <%= @article.created_at%> - 
         </li>
-        <li class="article-informations-list-list">
-          Presentation
-        </li>
-        <li class="article-informations-list-list">
-          Discover
-        </li>
-        <li class="article-informations-list-list">
-          Payment
-        </li>
-        <li class="article-informations-list-list">
-          Contact Us
-        </li>
+        <% @article.categories.each do |category| %>
+          <li class="article-informations-list-list">
+              <%= category.title %>
+          </li>
+          <% end %>
         <li class="article-informations-list-list pull-right">
           <%= render 'layouts/social' %>
         </li>

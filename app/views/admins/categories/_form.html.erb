@@ -1,8 +1,8 @@
 <%= form_with(model: [:admins, category], local: true) do |form| %>
 
   <div class="field">
-    <%= form.label :title, "Titre", class: 'control-label' %>
-    <%= form.text_field :title, autofocus: true, autocomplete: "title", placeholder: "Titre", class: 'form-control' %>
+    <%= form.label :title, "Titre" %>
+    <%= form.text_field :title, placeholder: "Titre", class: 'form-control' %>
   </div>
   <div>
 		<%= form.submit class: "btn btn-primary btn-round btn-sm mt-3" %>
