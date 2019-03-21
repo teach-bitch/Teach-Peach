@@ -20,5 +20,10 @@
     <%= form.text_field :id_results, placeholder: "Id Résultats", class: 'form-control' %>
   </div>
 
+  <div class="field">
+    <%= form.check_box :for_adult, class: 'checkbox mt-2' %>
+    <%= form.label :for_adult, 'Pour adulte'%>
+  </div>
+
   <%= form.submit class: "btn btn-primary btn-round btn-sm mt-3"%>
 <% end %>
