@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :product do
-    name { "MyString" }
-    description { "MyText" }
-    brand { "MyString" }
-    price { "9.99" }
-    quantity { 1 }
-    reference { "MyString" }
+    name { Faker::FunnyName.name }
+    description { Faker::GreekPhilosophers.quote }
+    brand { Faker::Company.name }
+    price { Faker::Number.decimal(2) }
+    quantity { Faker::Number.number(2) }
+    reference { Faker::IDNumber.brazilian_citizen_number }
   end
 end
