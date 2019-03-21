@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :typeform do
-    title { "MyString" }
-    description { "MyText" }
-    id_typeform { "MyString" }
+    title { Faker::House.furniture }
+    description { Faker::GreekPhilosophers.quote }
+    id_typeform { Faker::IDNumber.brazilian_citizen_number }
   end
 end
