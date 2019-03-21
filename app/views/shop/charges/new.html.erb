@@ -32,8 +32,11 @@
                 <tr id="item_fulldiv_<%= item.id %>">
                   <td>
                     <div class="img-container">
-                      <img src="https://i.ebayimg.com/images/g/nSEAAOSwdJ9aTPFA/s-l1600.jpg"
-                        alt="...">
+                      <% if item.product.images != nil %>
+                        <% item.product.images.each do |image| %>
+                          <%= image_tag image, alt: 'image', class: 'd-block img-raised align-self-center' %>
+                        <% end %>
+                      <% end %>
                     </div>
                   </td>
                   <td class="td-name">
