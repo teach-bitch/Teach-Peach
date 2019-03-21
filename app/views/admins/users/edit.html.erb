@@ -1,6 +1,6 @@
 <%= render 'errors', user: @user %>
 
-<div class="container col-6">
+<div class="container">
   <h2 class="mt-5 pt-5 text-center">Éditer le profil</h2>
 
   <%= form_for(@user, url: admins_user_path(@user), html: {method: "put"}) do |f| %>
@@ -36,7 +36,7 @@
     <%= f.select :role, [['admin', "admin"], ['subscriber', "subscriber"], ['user', "user"], ['user_minor', "user_minor"]] %>
   </div>
 
-  <%= button_tag(type: 'submit', class: "btn btn-primary btn-round btn-sm mt-3 col-4") do %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-round btn-sm mt-3 col-sm-3") do %>
     Mettre à jour les données
   <% end %>
 
