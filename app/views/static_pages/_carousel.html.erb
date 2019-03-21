@@ -9,7 +9,6 @@
             <div class="page-header gradient-sulphurous">
                 <div class="page-header-image" style="background-image: url(<%= asset_path 'peach3_crop.jpeg' %>)"></div>
 
-
                 <div class="content-center">
                     <div class="container">
                         <div class="content-center">
@@ -31,7 +30,6 @@
             </div>
         </div>
 
-
         <div class="carousel-item">
             <div class="page-header header-filter gradient-sulphurous">
                 <div class="page-header-image" style="background-image: url(<%= asset_path 'peach4.jpeg' %>)"></div>
@@ -51,10 +49,7 @@
                                         point de vue pour décider des prochains sujets abordés. </h4>
                                     <br>
                                     <% if Typeform.last %>
-
                                     <%= link_to "Partage ton avis sur " + @typeforms.last.title.downcase, typeform_path(Typeform.last.id), class: 'btn btn-primary btn-round btn-lg' %>
-
-
                                     <% end %>
 
                                 </div>
