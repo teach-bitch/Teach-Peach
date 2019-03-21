@@ -49,7 +49,11 @@ RSpec.describe User, type: :model do
   end
 
   context "associations" do
-    
+    describe "users" do
+      it { expect(@user).to have_many(:articles) }
+      it { expect(@user).to have_many(:facturations) }
+      it { expect(@user).to have_one(:basket) }
+    end
   end
 
   context "public instance methods" do
