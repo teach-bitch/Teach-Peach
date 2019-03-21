@@ -3,7 +3,7 @@
   <%= form.file_field :images, multiple: true, class: 'form-control' %>
 
   <%= form.label :title, 'Titre', class: 'mt-2' %>
-  <%= form.text_field :title, placeholder: "Titre", class: 'form-control' %>
+  <%= form.text_field :title, placeholder: "Titre", autofocus: true, class: 'form-control' %>
 
   <%= form.label :content, 'Contenu', class: 'control-label mt-2' %>
   <trix-editor input="post_content"></trix-editor>
@@ -12,7 +12,7 @@
   <div class="field">
     <%= form.label :category, "Catégorie" %>
     <%= render 'category_dropdown' %>
-  </div> 
+  </div>
 
   <%= form.check_box :for_adult, class: 'checkbox mt-2' %>
   <%= form.label :for_adult, 'Pour adulte'%>
