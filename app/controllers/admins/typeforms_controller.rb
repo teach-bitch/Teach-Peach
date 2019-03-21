@@ -3,7 +3,6 @@ class Admins::TypeformsController < AdminsController
   before_action :redirect_to_root_if_not_admin
 
   def index
-    @typeforms = Typeform.all
   end
 
   def show
