@@ -32,7 +32,11 @@
                             <tr id="item_fulldiv_<%= item.id %>">
                                 <td>
                                     <div class="img-container">
-                                        <img src="http://www.kittycatconnection.org/uploads/1/6/8/9/16894946/header_images/1532312571.jpg" alt="...">
+                                      <% if item.product.images != nil %>
+                                        <% item.product.images.each do |image| %>
+                                          <%= image_tag image, alt: 'image', class: 'd-block img-raised align-self-center' %>
+                                        <% end %>
+                                      <% end %>
                                     </div>
                                 </td>
                                 <td class="td-name">

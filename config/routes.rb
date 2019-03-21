@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       resources :line_items
       resources :baskets
         resources :charges
-      resources :products
+      resources :products do
+        resources :images, only: [:create]
+      end
     end
 
     namespace :admins do
@@ -19,7 +21,9 @@ Rails.application.routes.draw do
         resources :facturations
         resources :join_product_categories
         resources :product_categories
-        resources :products
+        resources :products do
+          resources :images, only: [:create]
+        end
       end
     end
 

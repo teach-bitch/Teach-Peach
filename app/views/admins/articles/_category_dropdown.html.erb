@@ -1,5 +1,3 @@
-<div class="container">
-  <div class="col-4">
-    <%= collection_select(:categories, :ids, Category.all, :id, :title, {}, { :multiple => true, class: 'selectpicker', title: 'Choix des catégories', :data => { :style => 'btn btn-primary btn-round'}}) %>
-  </div>
+<div class="col-sm-3">
+  <%= collection_select(:categories, :ids, Category.all, :id, :title, {}, { :multiple => true, class: 'selectpicker', title: 'Choix des catégories', :data => { :style => 'btn btn-primary btn-round'}}) %>
 </div>
