@@ -32,6 +32,7 @@ class Admins::Shop::ProductsController < ShopController
             @product.join_product_categories.create(:product_category_id => category)
           end
         end
+
       else
         format.html { render :new }
       end
@@ -62,7 +63,7 @@ class Admins::Shop::ProductsController < ShopController
     end
 
     def product_params
-      params.require(:product).permit(:name, :description, :price, :quantity, :reference, :brand)
+      params.require(:product).permit(:name, :description, :price, :quantity, :reference, :brand, images: [])
     end
 
 end

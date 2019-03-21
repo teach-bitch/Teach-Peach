@@ -1,0 +1,23 @@
+<div class="description unsubscribe">
+
+  <% case @user.role %>
+    <% when 'user_minor' %>
+      <h4 class="info-title">Tu souhaites t'abonner ?</h4>
+      <p>Malheureusement tu n'as pas accès aux abonnements.</p>
+      <p>Reviens nous voir quand tu auras 18 ans.</p>
+    <% when 'subscriber' %>
+      <h4 class="info-title">Abonnement en cours</h4>
+      <p>Tu es déjà abonné à Teach Peach !</p>
+      <p>Nous espérons que tu apprécies de faire partie de notre communauté</p>
+        <%= render 'subscribe_button' %>
+    <% else %>
+      <h4 class="info-title">Tu souhaites t'abonner ?</h4>
+      <p>Des avantages exclusifs :
+        <br> Accès aux podcasts payants
+        <br> Accès aux ateliers
+        <br> Des promos sur la boutique
+        <%= render 'subscribe_button' %>
+      </p>
+  <% end %>
+
+</div>

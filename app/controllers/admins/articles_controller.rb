@@ -11,6 +11,7 @@ class Admins::ArticlesController < AdminsController
 
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   def edit
@@ -18,9 +19,16 @@ class Admins::ArticlesController < AdminsController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
     respond_to do |format|
       if @article.save
         format.html { redirect_to  admins_article_path(@article), notice: 'Cet article a été créé avec succès.' }
+
+        params[:categories][:ids].each do |category|
+          if !category.empty?
+            @article.article_categories.create(:category_id => category)
+          end
+        end
       else
         format.html { render :new }
       end
@@ -55,7 +63,7 @@ class Admins::ArticlesController < AdminsController
     end
 
     def article_params
-      params.require(:article).permit(:title, :content, :for_adult, :role, images: [])
+      params.require(:article).permit(:title, :content, :for_adult, :role, :user_id, images: [])
     end
 
 end

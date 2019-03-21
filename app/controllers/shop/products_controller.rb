@@ -19,7 +19,7 @@ class Shop::ProductsController < ShopController
     end
 
     def product_params
-      params.require(:product).permit(:name, :description, :price, :quantity, :reference, :brand)
+      params.require(:product).permit(:name, :description, :price, :quantity, :reference, :brand, images: [])
     end
 
 end

@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
-#  has_one_attached :image
   has_many :line_items, dependent: :nullify
   has_many :join_product_categories
   has_many :product_categories, through: :join_product_categories
+  has_many_attached :images
 
   validates :name,
     presence: true,

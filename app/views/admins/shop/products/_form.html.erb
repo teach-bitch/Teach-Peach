@@ -1,6 +1,11 @@
 <%= form_with(model: [:admins, :shop, product], local: true) do |form| %>
 
   <div class="field">
+    <%= form.label :images, 'Images',class: 'control-label' %>
+    <%= form.file_field :images, multiple: true, class: 'form-control' %>
+  </div>
+
+  <div class="field">
     <%= form.label :name, "Nom" %>
     <%= form.text_field :name, autofocus: true, placeholder: "Nom du produit", class: 'form-control' %>
   </div>
