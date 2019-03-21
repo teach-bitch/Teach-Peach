@@ -91,7 +91,7 @@ div.card-body {
    opacity: 0.9 !important;
 }
 
-div.padding-nav {
+.padding-nav {
    margin-top: 62px;
 }
 
@@ -252,4 +252,9 @@ p.stronger-text {
 
 .black-50-transparency {
    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.typeform-fullheight {
+   width: 100%;
+   height: calc(100vh - 62px)
 }
