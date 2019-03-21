@@ -31,7 +31,7 @@ context "validation" do
   describe "#description" do
     it do
       should validate_presence_of(:description).
-	with_message("Tu as oublié le contenu de ton product !")
+	with_message("Tu as oublié de spécifier une description !")
     end
 
     it "description length" do
@@ -41,8 +41,8 @@ context "validation" do
 
   describe "#price" do
     it do
-      should validate_presence_of(:content).
-	with_message("Tu as oublié le contenu de ton product !")
+      should validate_presence_of(:description).
+	with_message("Tu as oublié de spécifier une description !")
     end
 
     it "description length" do
@@ -71,17 +71,9 @@ context "public instance methods" do
 
  end
 
- describe "#price" do
-
-   it "should return a string" do
-     expect(@product.price).to be_a(Integer)
-   end
-
- end
-
  describe "#quantity" do
 
-   it "should return a string" do
+   it "should return an Integer" do
      expect(@product.quantity).to be_a(Integer)
    end
 
@@ -90,7 +82,7 @@ context "public instance methods" do
  describe "#reference" do
 
  it "should return a string" do
-   expect(@product.reference).to be_a(Integer)
+   expect(@product.reference).to be_a(String)
  end
 
 end
