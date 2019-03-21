@@ -11,6 +11,7 @@ class Admins::ArticlesController < AdminsController
 
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   def edit
@@ -21,6 +22,12 @@ class Admins::ArticlesController < AdminsController
     respond_to do |format|
       if @article.save
         format.html { redirect_to  admins_article_path(@article), notice: 'Cet article a été créé avec succès.' }
+
+        params[:categories][:ids].each do |category|
+          if !category.empty?
+            @article.article_categories.create(:category_id => category)
+          end
+        end
       else
         format.html { render :new }
       end
