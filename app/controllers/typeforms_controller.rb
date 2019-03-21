@@ -1,6 +1,6 @@
 class TypeformsController < ApplicationController
   before_action :set_typeform, only: [:show]
-   include TypeformsHelper
+
 
   def show
     set_typeforms
