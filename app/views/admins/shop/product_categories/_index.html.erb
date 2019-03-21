@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="mt-2 text-center" >Catégories de produit</h1>
+  <div class="text-center">
+   <div class="mt-2"><%= link_to 'Nouvelle catégorie', new_admins_shop_product_category_path, class: 'btn btn-primary btn-round' %></div>
+  </div>
+</div>
+
+<div class="col-md-4 ml-auto mr-auto">
+  <div class="card card-plain">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="">
+            <th class="text-left">
+              Titre
+            </th>
+            <th class="text-right">
+              Actions
+            </th>
+          </thead>
+          <tbody>
+            <% @product_categories.reverse.each do |category| %>
+              <tr>
+                <td class="text-left">
+                  <%= category.title %>
+                </td>
+                <td class="text-right">
+                  <%= link_to edit_admins_shop_product_category_path(category) do %>
+                    <i class="now-ui-icons ui-2_settings-90 mr-2"></i>
+                  <% end %>
+                  <%= link_to admins_shop_product_category_path(category.id), method: :delete, data: { confirm: 'Êtes-vous sûr?' } do %>
+                    <i class="now-ui-icons ui-1_simple-remove"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

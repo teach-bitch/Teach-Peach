@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     end
 
     namespace :admins do
-      root "articles#index"
       resources :categories
       resources :articles, only: [:destroy, :index, :create, :show, :edit, :update, :new]
       resources :users
@@ -23,6 +22,8 @@ Rails.application.routes.draw do
         resources :products
       end
     end
+
+    resources :admins, only: [:index]
 
     root 'static_pages#home'
 

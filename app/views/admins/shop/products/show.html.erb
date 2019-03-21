@@ -2,7 +2,9 @@
   <div class="wrapper">
     <div class="section">
       <div class="container">
-        <a href="<%= admins_shop_products_path %>"><i class="now-ui-icons arrows-1_minimal-left"></i> <span>Retour vers l'index</span></a>
+        <%= link_to admins_path do %>
+          <i class='now-ui-icons arrows-1_minimal-left'>Retour vers l'index</i>
+        <% end %>
         <div class="row">
           <div class="d-flex align-content-stretch flex-wrap">
             <div class="col-md-6 d-flex align-content-center flex-wrap">
@@ -14,7 +16,7 @@
               <h2 class="main-price"><%= @product.price %><small>€</small></h2>
               <% if @product.quantity.to_i > 0 %>
                 <div class="card-collapse justify-content-start">
-                  <span><%= link_to 'Ajouter au panier', admins_shop_products_path, class: 'btn btn-dribbble btn-round' %></span>
+                  <span><%= link_to 'Ajouter au panier', admins_path, class: 'btn btn-dribbble btn-round' %></span>
                 </div><br/>
               <% else %>
               <h6>Out of stock</h6>

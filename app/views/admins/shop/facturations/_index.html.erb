@@ -1,0 +1,45 @@
+<div class="container">
+  <h1 class="mt-2 text-center" >Factures</h1>
+  <div class="text-center">
+   <div class="mt-2"><%= link_to 'Nouvelle facture', new_admins_shop_facturation_path, class: 'btn btn-primary btn-round' %></div>
+  </div>
+</div>
+
+<div class="col-md-4 ml-auto mr-auto">
+  <div class="card card-plain">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="">
+            <th class="text-left">
+              Client
+            </th>
+            <th>
+              Prix
+            </th>
+            <th class="text-right">
+              Actions
+            </th>
+          </thead>
+          <tbody>
+            <% @facturations.reverse.each do |facturation| %>
+              <tr>
+                <td class="text-left">
+                  <%= User.find(facturation.user_id).first_name %> <%= User.find(facturation.user_id).first_name %>
+                </td>
+                <td>
+                  <%= facturation.price %>
+                </td>
+                <td class="text-right">
+                  <%= link_to admins_shop_facturation_path(facturation.id) do %>
+                    <i class="now-ui-icons ui-1_zoom-bold"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

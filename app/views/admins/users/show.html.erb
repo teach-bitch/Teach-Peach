@@ -2,8 +2,7 @@
   <div class="col-md-6 col-lg-3 ">
       <div class="card card-pricing">
           <div class="card-body">
-              <h4 class="category now-ui-icons business_badge text-primary mr-2"> <strong> Profil</strong></h4>
-              <h2 class="card-title">
+              <h2 class="card-title text-primary">
                 <%= @user.username %>
               </h2>
               <ul>
@@ -18,6 +17,4 @@
   </div>
 </div>
 
-<div class="text-center"><%= link_to 'Retour aux utilisateurs', admins_users_path %></div> 
-
-
+<div class="text-center"><%= link_to 'Retour aux utilisateurs', admins_users_path %></div>
