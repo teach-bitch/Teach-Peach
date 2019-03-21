@@ -10,7 +10,7 @@
         </li>
         <% if current_user.role == 'admin' %>
           <li>
-            <%= link_to "Zone Admin", admins_root_path, class:"text-muted" %>
+            <%= link_to "Zone Admin", admins_path, class:"text-muted" %>
           </li>
         <% end %>
       <% end %>
