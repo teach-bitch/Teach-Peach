@@ -1,5 +1,6 @@
 class Typeform < ApplicationRecord
-after_create :new_typeform_send
+  belongs_to :user
+  after_create :new_typeform_send
 
   validates :title,
 		presence: { message: "Tu as oublié le titre du formulaire !" }
