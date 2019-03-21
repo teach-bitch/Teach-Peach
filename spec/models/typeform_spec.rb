@@ -47,4 +47,19 @@ RSpec.describe Typeform, type: :model do
     end
   end
 
+  context "class" do
+    it "should return a string" do
+      expect(@typeform.title).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@typeform.description).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@typeform.id_typeform).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@typeform.id_results).to be_a(String)
+    end
+  end
+
 end
