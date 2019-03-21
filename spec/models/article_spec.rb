@@ -3,64 +3,55 @@ require 'rails_helper'
 RSpec.describe Article, type: :model do
 
   before(:each) do
-  @article = FactoryBot.create(:article)
-end
-
-it "has a valid factory" do
-  # teste toujours tes factories pour voir si elles sont valides
-  expect(build(:article)).to be_valid
-end
-
-context "validation" do
-
-  it "is valid with valid attributes" do
-    expect(@article).to be_a(Article)
+    @article = FactoryBot.create(:article)
   end
 
-  describe "#title" do
-    it do
-      should validate_presence_of(:title).
-      with_message("Tu as oublié le titre de ton article !")
-    end
-
-    it "title length" do
-      expect(@article.title.length).to be >3 && be <30
-    end
+  it "has a valid factory" do
+    expect(build(:article)).to be_valid
   end
 
-  describe "#content" do
-    it do
-      should validate_presence_of(:content).
-	with_message("Tu as oublié le contenu de ton article !")
+  context "validation" do
+
+    it "is valid with valid attributes" do
+      expect(@article).to be_a(Article)
     end
 
-    it "description length" do
-      expect(@article.content.length).to be >20 && be <1000
+    describe "#title" do
+      it do
+        should validate_presence_of(:title).
+        with_message("Tu as oublié le titre de ton article !")
+      end
+      it "title length" do
+        expect(@article.title.length).to be >3 && be <30
+      end
     end
+
+    describe "#content" do
+      it do
+        should validate_presence_of(:content).
+        with_message("Tu as oublié le contenu de ton article !")
+      end
+      it "description length" do
+        expect(@article.content.length).to be >20 && be <1000
+      end
+    end
+
   end
 
+  context "public instance methods" do
 
-end
+    describe "#title" do
+      it "should return a string" do
+        expect(@article.title).to be_a(String)
+      end
+    end
 
+    describe "#content" do
+      it "should return a string" do
+        expect(@article.content).to be_a(String)
+      end
+    end
 
-context "public instance methods" do
+  end
   
- describe "#title" do
-
-   it "should return a string" do
-     expect(@article.title).to be_a(String)
-   end
-
- end
-
- describe "#content" do
-
-   it "should return a string" do
-     expect(@article.content).to be_a(String)
-   end
-
- end
-
-end
-
 end
