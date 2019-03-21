@@ -3,11 +3,12 @@
     <!-- end feature carousel !-->
 
     <!-- feature articles !-->
-    <% if !user_signed_in? || current_user.role == 'user_minor' %>
-    <%= render 'articles_minor_preview' %>
-    <%elsif @articles == nil %>
-    <% else%>
-    <%= render 'articles_adult_preview' %>
+    <% if @articles != nil %>
+      <% if !user_signed_in? || current_user.role == 'user_minor' %>
+      <%= render 'articles_minor_preview' %>
+      <% else%>
+      <%= render 'articles_adult_preview' %>
+      <% end %>
     <% end %>
     <!-- end feature articles !-->
 
@@ -19,7 +20,7 @@
 
     <!-- feature subcribing !-->
     <% unless user_signed_in? %>
-      <%= render 'subscriber_public'%>  
+      <%= render 'subscriber_public'%>
     <% end %>
     <% if user_signed_in? && current_user.role != 'user_minor' &&  current_user.subscription_id == nil %>
       <%= render 'subscriber' %>
@@ -30,4 +31,3 @@
     <!-- feature shop !-->
     <%= render 'shop' %>
     <!-- end feature shop !-->
-
