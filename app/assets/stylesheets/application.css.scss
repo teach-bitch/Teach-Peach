@@ -29,7 +29,6 @@
       url(font-path('nucleo-outline.svg') + '#nucleo-outline') format('svg');
 }
 
-
 div.section-image::after {
    background-color: #210b0ed6;
 }
@@ -39,7 +38,6 @@ div.alert {
 
 }
 
-
 a.link-session {
    color: #ea4c89 !important;
 }
@@ -48,7 +46,6 @@ a.link-session:hover {
    border-color: transparent !important;
    color: #fa7a50 !important;
 }
-
 
 .btn-primary:not(:disabled):not(.disabled):active {
    background-color: #fa7a50 !important;
@@ -244,7 +241,6 @@ p.stronger-text {
    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif !important;
 }
 
-
 .gradient-sulphurous {
 
    background-image: linear-gradient(#ffffff00, #dc35458f);
@@ -261,4 +257,8 @@ p.stronger-text {
 
 .fullheight {
    height: calc(100vh - 62px) !important;
+}
+
+.mb-62px {
+   margin-bottom: 62px;
 }
