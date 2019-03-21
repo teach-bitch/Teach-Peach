@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_223327) do
+ActiveRecord::Schema.define(version: 2019_03_21_124841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_223327) do
     t.string "id_results"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "for_adult", default: false
     t.index ["user_id"], name: "index_typeforms_on_user_id"
   end
 
