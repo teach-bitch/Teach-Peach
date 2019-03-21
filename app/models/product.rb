@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   has_many_attached :images
 
   validates :name,
-    presence: { message: "Tu as oublié de spécifier le nom du produit !" },
+    presence: { message: "Tu as oublié le titre de ton produit !" },
     length: { in: 3..140 }
 
   validates :price,
