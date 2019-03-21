@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if (user_signed_in? && current_user.role != 'user_minor' && current_user.role != 'subscriber') %>
   <li>
     <%= link_to 'Nos abonnements', new_subscription_path, class: "nav-link text-primary" %>
   </li>
