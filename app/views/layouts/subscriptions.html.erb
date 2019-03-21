@@ -3,7 +3,20 @@
   <head>
     <%= render 'layouts/head' %>
   </head>
+    <header>
+ <%= render 'layouts/navbar' %>
+</header>
+
   <body>
+
+    <!-- Alerts -->
+ <div class="padding-nav">
+  <%= render 'layouts/alerts' %>
+ <!-- Alerts -->
     <%= yield %>
+      <!-- Footer -->
+   <%= render 'layouts/footer' %>
+  <!-- Footer -->
+  </div>
   </body>
 </html>
