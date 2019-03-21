@@ -56,4 +56,25 @@ RSpec.describe User, type: :model do
     end
   end
 
+  context "class" do
+    it "should return a string" do
+      expect(@user.first_name).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@user.last_name).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@user.username).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@user.email).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@user.password).to be_a(String)
+    end
+    it "should return a date" do
+      expect(@user.birthdate).to be_a(ActiveSupport::TimeWithZone)
+    end
+  end
+
 end

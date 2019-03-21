@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :product_category do
-    title { Faker::Food.sushi }
+    title { Faker::Coin.flip }
   end
 end
