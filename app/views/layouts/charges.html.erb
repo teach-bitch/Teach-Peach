@@ -18,10 +18,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+  <header>
+ <%= render 'layouts/navbar' %>
+</header>
+
   <body>
-    <%= render 'layouts/navbar' %>
+   <!-- Alerts -->
+ <div class="padding-nav">
+  <%= render 'layouts/alerts' %>
+ <!-- Alerts -->
+   
     <%= yield %>
-    <%= render 'layouts/footer' %>
+    
+    <!-- Footer -->
+   <%= render 'layouts/footer' %>
+  <!-- Footer -->
+  </div>
   </body>
 
 </html>
