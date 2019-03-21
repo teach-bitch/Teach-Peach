@@ -1,0 +1,59 @@
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+
+  before(:each) do
+    @user = FactoryBot.create(:user)
+  end
+
+  it "has a valid factory" do
+    expect(build(:user)).to be_valid
+  end
+
+  context "validation" do
+
+    it "is valid with valid attributes" do
+      expect(@user).to be_a(User)
+    end
+
+    it "validates presence of first name" do
+      should validate_presence_of(:first_name).
+      with_message("Tu as oublié de spécifier un prénom !")
+    end
+
+    it "validates presence of last name" do
+      should validate_presence_of(:last_name).
+      with_message("Tu as oublié de spécifier un nom !")
+    end
+
+    it "validates presence of username" do
+      should validate_presence_of(:username).
+      with_message("Tu as oublié de spécifier un nom d'utilisateur !")
+    end
+
+    it "validates presence of email" do
+      should validate_presence_of(:email).
+      with_message("Tu as oublié de spécifier une adresse email !")
+    end
+
+    it "validates presence of birthdate" do
+      should validate_presence_of(:birthdate).
+      with_message("Tu as oublié de spécifier une date de naissance !")
+    end
+
+    it "validates presence of password" do
+      should validate_presence_of(:password).
+      with_message("Tu as oublié de spécifier un mot de passe !")
+    end
+
+  end
+
+  context "associations" do
+    
+  end
+
+  context "public instance methods" do
+
+  end
+
+end
