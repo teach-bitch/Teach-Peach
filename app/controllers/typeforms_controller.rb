@@ -1,7 +1,6 @@
 class TypeformsController < ApplicationController
   before_action :set_typeform, only: [:show]
 
-
   def show
     set_typeforms
     @typeform_id = @typeforms.last.id_typeform
