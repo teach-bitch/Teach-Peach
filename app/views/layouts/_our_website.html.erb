@@ -1,0 +1,29 @@
+<div class="col-md-4 ">
+    <h5>Notre site</h5>
+    <ul class="links-vertical">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "Articles", articles_path, class:"text-muted" %>
+        </li>
+        <li>
+          <%= link_to "Formulaires", typeform_path(Typeform.last.id), class:"text-muted" %>
+        </li>
+        <li>
+          <%= link_to 'Shop', shop_root_path, class:"text-muted" %>
+        </li>
+        <li>
+          <%= link_to "Abonnements", new_subscription_path, class:"text-muted" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "S'inscrire", new_user_registration_path, class:"text-muted" %>
+        </li>
+        <li>
+          <%= link_to "Se connecter", new_user_session_path, class:"text-muted" %>
+        </li>
+        <li>
+          <%= link_to "Formulaires", typeform_path(Typeform.last.id), class:"text-muted" %>
+        </li>
+      <% end %>
+    </ul>
+</div>

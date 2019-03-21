@@ -3,73 +3,10 @@
         <div class="content ">
             <div class="row  d-flex justify-content-between">
 
-                <div class="col-md-2">
-                    <h5>À propos</h5>
-                    <ul class="links-vertical">
-                        <li>
-                            <a href="#pablo" class="text-muted">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="text-muted">
-                                À propos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="text-muted">
-                                Presentation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="text-muted">
-                                Nous contacter
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4 ">
-                    <h5>Notre site</h5>
-                    <ul class="links-vertical">
-                        <li>
-                          <%= link_to "Articles", articles_path, class:"text-muted" %>
-                        </li>
-                        <li>
-                          <%= link_to 'Shop', shop_root_path, class:"text-muted" %>
-                        </li>
-                        <li>
-                          <%= link_to "S'inscrire", new_user_registration_path, class:"text-muted" %>
-                        </li>
-                        <li>
-                          <%= link_to "Abonnements", new_subscription_path, class:"text-muted" %>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="d-flex justify-content-around">
-                <div class="col">
-                    <h5>Suivez nous</h5>
-                    <ul class="social-buttons">
-                        <li>
-                            <a href="#pablo" class="btn btn-icon btn-neutral btn-twitter btn-round">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/teach.peach" class="btn btn-icon btn-neutral btn-facebook btn-round">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#pablo" class="btn btn-icon btn-neutral btn-instagram btn-round">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-                </div>
+                <%= render 'layouts/about_us' %>
+                <%= render 'layouts/our_website' %>
+                <%= render 'layouts/my_account' %>
+                <%= render 'layouts/social_links' %>
             </div>
         </div>
         <hr />
