@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :facturation do
-    price { "9.99" }
+    price { Faker::Number.decimal(2) }
   end
 end
