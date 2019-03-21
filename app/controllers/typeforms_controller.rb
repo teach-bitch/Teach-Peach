@@ -1,8 +1,10 @@
 class TypeformsController < ApplicationController
   before_action :set_typeform, only: [:show]
+   include TypeformsHelper
 
   def show
-    @typeform_id = Typeform.last.id_typeform
+    set_typeforms
+    @typeform_id = @typeforms.last.id_typeform
   end
 
   private
@@ -11,6 +13,6 @@ class TypeformsController < ApplicationController
     end
 
     def typeform_params
-      params.require(:typeform).permit(:title, :description, :id_typeform, :id_results)
+      params.require(:typeform).permit(:title, :description, :id_typeform, :id_results, :for_adult)
     end
 end
