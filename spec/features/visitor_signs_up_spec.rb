@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rails_helper'
 
-feature 'Visitor signs up' do
+Rspec.feature 'Visitor signs up', :devise do
   scenario 'with valid email and password' do
     sign_up_with 'valid@example.com', 'password'
 
@@ -22,8 +22,9 @@ feature 'Visitor signs up' do
 
   def sign_up_with(email, password)
     visit new_user_registration_path
-    fill_in 'Email', with: email
-    fill_in 'Password', with: password
+    fill_in 'email', with: email
+    fill_in 'password', with: password
     click_button "C'est parti !" 
   end
+
 end
