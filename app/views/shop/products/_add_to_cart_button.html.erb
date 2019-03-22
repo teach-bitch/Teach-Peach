@@ -1,0 +1,17 @@
+<% if @product.quantity.to_i > 0 %>
+  <% if user_signed_in? %>
+  <div class="row justify-content-end">
+    <%= link_to shop_line_items_path(product_id: @product) do %>
+      <span class="btn btn-primary btn-round font-weight-bold">Ajouter au panier <i class="now-ui-icons shopping_cart-simple font-weight-bold"></i></span>
+    <% end %>
+  </div>
+  <% else %>
+  <div class="row justify-content-end">
+    <%= link_to new_user_session_path do %>
+      <span class="btn btn-primary btn-round font-weight-bold">Ajouter au panier <i class="now-ui-icons shopping_cart-simple font-weight-bold"></i></span>
+    <% end %>
+  </div>
+  <% end %>
+<% else %>
+  <span class="btn btn-danger btn-round font-weight-bold disabled"> Plus de stock !</span>
+<%end%>

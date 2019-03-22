@@ -40,8 +40,9 @@ Rails.application.routes.draw do
     resources :typeforms, only: [:show, :index]
     resources :static_pages, path: "", only: [:home, :contact] do
       get 'home', :on => :collection
-      get 'contact', :on => :collection
+      get 'team', :on => :collection
     end
+    resources :messages, only: [:new, :create]
 
     get '*all', to: 'application#index', constraints: lambda { |req|
         req.path.exclude? 'rails/active_storage'

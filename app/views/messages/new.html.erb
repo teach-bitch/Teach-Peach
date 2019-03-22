@@ -1,0 +1,94 @@
+<body class="contact-page">
+    <div class="wrapper">
+        <div class="page-header page-header-small">
+            <div class="page-header-image" data-parallax="true" style="background-image:url(<%= asset_url 'contactus' %>)">
+            </div>
+        </div>
+        <div class="main">
+            <div class="contact-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 ml-auto mr-auto">
+                            <h2 class="title">Envoie nous un message</h2>
+                            <p class="description">N'hésitez pas à nous contacter pour toute question relative à notre site ou à nos produits. Nous essaierons de vous répondre dans les plus brefs délais.
+                                <br>
+                                <br>
+                            </p>
+                                <%= form_with(model: @message, local: true) do |form| %>
+                                <label>Ton nom</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+                                    </div>
+                                        <%= form.text_field :name, class: 'form-control', placeholder: "Ton nom..." %>
+                                </div>
+                                <label>Ton adresse email</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                                    </div>
+                                <%= form.text_field :email, class: 'form-control', placeholder: "Ton email..." %>
+                                </div>
+                                <label>Ton téléphone</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="now-ui-icons tech_mobile"></i></span>
+                                    </div>
+                                <%= form.text_field :phone_number, class: 'form-control', placeholder: "Ton téléphone..." %>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ton message</label>
+                                <%= form.text_area :body, class: 'form-control', placeholder: "Ton message..." %>
+                                </div>
+                                <div class="submit text-center">
+                                <%= form.submit "Envoyer", class: 'btn btn-primary btn-round col-sm-3 btn-sm'%>
+                                </div>
+                                <% end %>
+                        </div>
+                        <div class="col-md-5 ml-auto mr-auto">
+                            <div class="info info-horizontal mt-5">
+                                <div class="icon icon-primary">
+                                    <i class="now-ui-icons location_pin"></i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Nous écrire</h4>
+                                    <p>Teach-Peach
+                                       <br> 9 Rue Bergère
+                                        <br> 75009 Paris
+                                        <br> France
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info info-horizontal">
+                                <div class="icon icon-primary">
+                                    <i class="now-ui-icons tech_mobile"></i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Nous appeler</h4>
+                                    <p> Cynthia Jacquelet
+                                        <br> +33 636656565
+                                        <br>Du lundi au vendredi, de 8h00 à 22h00
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info info-horizontal">
+                                <div class="icon icon-primary">
+                                    <i class="business_briefcase-24 now-ui-icons"></i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Informations légales</h4>
+                                    <p> Teach-Peach Inc.
+                                        <br> SIRET : 24857874545454545
+                                        <br> IBAN : EN8732ENGB2300099
+                                        <br> La Banque Postale
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <%= render 'map' %>
+    </div>
+</body>
