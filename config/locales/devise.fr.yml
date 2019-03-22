@@ -3,22 +3,22 @@ en:
     submit:
       product:
         create: "Créer un produit"
-        update: "Éditer un produit"
+        update: "Éditer le produit"
       product_category:
         create: "Créer une catégorie"
-        update: "Éditer une catégorie"
+        update: "Éditer la catégorie"
       facturation:
         create: "Créer une facture"
-        update: "Éditer une facture"
+        update: "Éditer la facture"
       category:
         create: "Créer une catégorie"
         update: "Éditer la catégorie"
       typeform:
         create: "Créer un formulaire"
-        update: "Éditer un formulaire"
+        update: "Éditer le formulaire"
       article:
         create: "Créer un article"
-        update: "Éditer un article"
+        update: "Éditer l'article"
   devise:
     confirmations:
       confirmed: "Votre email a été confirmé avec succès."
