@@ -1,4 +1,8 @@
 class Typeform < ApplicationRecord
+<<<<<<< HEAD
+=======
+  belongs_to :user
+>>>>>>> a0b85fa720f1d5550396ee568de3af9cd85e7380
   after_create :new_typeform_send
 
   validates :title,
