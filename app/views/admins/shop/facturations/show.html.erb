@@ -32,7 +32,7 @@
                             </th>
                         </thead>
                         <tbody>
-                          <% Basket.find(@facturation.basket_id).line_items.each do |item| %>
+                          <% Basket.find(@facturation.basket_id).line_items.reverse.each do |item| %>
                             <tr id="item_fulldiv_<%= item.id %>">
                                 <td class="td-name">
                                     <a><%= item.product.name %></a>
