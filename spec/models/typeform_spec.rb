@@ -16,10 +16,6 @@ RSpec.describe Typeform, type: :model do
       expect(@typeform).to be_a(Typeform)
     end
 
-    it "validates presence of for_adult" do
-      should validate_presence_of(:for_adult)
-    end
-
     it "validates presence of title" do
       should validate_presence_of(:title).
       with_message("Tu as oublié le titre du formulaire !")
