@@ -1,51 +1,52 @@
-<main>
+<body class="product-page">
   <div class="wrapper">
+    <div class="page-header page-header-mini">
+      <div class="page-header-image" data-parallax="true" style="background-image: url(https://images.pexels.com/photos/193356/pexels-photo-193356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); transform: translate3d(0px, 76.3333px, 0px);">
+      </div>
+    </div>
     <div class="section">
       <div class="container">
-        <a href="<%= shop_products_path %>"><i class="now-ui-icons arrows-1_minimal-left"></i> <span>Retour vers l'index</span></a>
         <div class="row">
           <div class="col-md-5">
             <%= render 'carousel' %>
           </div>
           <div class="col-md-6 ml-auto mr-auto">
-            <h2 class="title"><%= @product.name %></h2>
-            <h5 class="category"><%= @product.brand %> </h5>
-            <h2 class="main-price"><%= @product.price %><small>€</small></h2>
-            <% if @product.quantity.to_i > 0 %>
-              <% if user_signed_in? %>
-              <div class="card-collapse justify-content-start">
-                <span><%= button_to 'Ajouter au panier', shop_line_items_path(product_id: @product), class: 'btn btn-dribbble btn-round' %></span>
-              </div><br/>
-              <% else %>
-              <div class="card-collapse justify-content-start">
-                <span><%= button_to 'Ajouter au panier', new_user_session_path, class: 'btn btn-dribbble btn-round' %></span>
-              </div><br/>
-              <% end %>
-            <% else %>
-            <h6>Out of stock</h6>
-            <%end%>
-            <div class="card-collapse">
+            <h2 class="title">
+              <%= @product.name %>
+            </h2>
+            <h5 class="category">
+              <%= @product.brand %>
+            </h5>
+            <% @product.product_categories.each do |category| %>
+              <span class="tag badge badge-primary">
+                <%= category.title %>
+              </span>
+            <% end %>
+            <h2 class="main-price">
+              <%= @product.price %> €
+            </h2>
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
               <div class="card card-plain">
-                <div class="card-header">
-                  Description
+                <div class="card-header" role="tab" id="headingOne">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Description
+                    <i class="now-ui-icons arrows-1_minimal-down"></i>
+                  </a>
                 </div>
-                <div class="card-body">
-                  <p><%= @product.description %></p>
-                </div>
-                <div class="card-header">
-                  Reference : <%= @product.reference %>
-                </div>
-                <div class="card-header">
-                  Categories :
-                  <% @product.product_categories.each do |cat| %>
-                  <span class="badge badge-neutral"><%= cat.title %></span>
-                  <%end%>
+                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="card-body">
+                    <p>
+                      <%= @product.description %>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+            <%= render 'add_to_cart_button' %>
           </div>
         </div>
       </div>
     </div>
+    <%= render 'related_products' %>
   </div>
-</main>
+</body>
