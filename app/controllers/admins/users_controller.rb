@@ -22,7 +22,7 @@ class Admins::UsersController < AdminsController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admins_users_path, notice: 'Cet utilisateur a été créé avec succès' }
+        format.html { redirect_to admins_user_path(@user), notice: 'Cet utilisateur a été créé avec succès' }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class Admins::UsersController < AdminsController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to admins_users_path(@user), notice: 'Cet utilisateur a été mis à jour avec succès' }
+        format.html { redirect_to admins_user_path(@user), notice: 'Cet utilisateur a été mis à jour avec succès' }
       else
           format.html { render :edit }
       end

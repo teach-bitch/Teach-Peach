@@ -21,7 +21,7 @@ class Admins::TypeformsController < AdminsController
     @typeform = Typeform.new(typeform_params)
     respond_to do |format|
       if @typeform.save
-        format.html { redirect_to admins_typeforms_path, notice: 'Ce formulaire a été ajouté avec succès !' }
+        format.html { redirect_to admins_typeform_path(@typeform), notice: 'Ce formulaire a été ajouté avec succès !' }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class Admins::TypeformsController < AdminsController
     authorize @typeform
     respond_to do |format|
       if @typeform.update(typeform_params)
-        format.html { redirect_to admins_typeforms_path, notice: 'Ce formulaire a été mis à jour avec succès !' }
+        format.html { redirect_to admins_typeform_path(@typeform), notice: 'Ce formulaire a été mis à jour avec succès !' }
       else
         format.html { render :edit }
       end

@@ -20,7 +20,7 @@ class Admins::CategoriesController < AdminsController
     @category = Category.new(category_params)
     respond_to do |format|
       if @category.save
-        format.html { redirect_to admins_categories_path, notice: 'Cette catégorie a été créée avec succès.' }
+        format.html { redirect_to new_admins_category_path, notice: 'Cette catégorie a été créée avec succès.' }
       else
         format.html { render :new }
       end
