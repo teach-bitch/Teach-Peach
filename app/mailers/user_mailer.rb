@@ -19,7 +19,7 @@ class UserMailer < ApplicationMailer
   def contact_email_from_user(message)
     @message = message
     @url = 'https://www.teach-peach.fr'
-    mail(to: 'teach-peach@yopmail.com', subject: 'Bienvenue sur Teach Peach')
+    mail(to: 'teach-peach@yopmail.com', subject: 'Un utilisateur de teach-peach vous a envoyé un message..')
   end
 
   def new_typeform_email(typeform)
