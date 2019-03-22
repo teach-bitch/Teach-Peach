@@ -5,6 +5,7 @@ class Shop::ProductsController < ShopController
   def index
     @products = Product.all
     @product_categories = ProductCategory.all
+    @indextext = ["La boutique Teach-Peach.", "Découvre notre sélection d'articles pour augmenter ton plaisir."]
   end
 
   def show
