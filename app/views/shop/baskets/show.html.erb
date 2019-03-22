@@ -40,7 +40,7 @@
                                     </div>
                                 </td>
                                 <td class="td-name">
-                                    <a href="/products/<%= item.product.id %>"><%= item.product.name %></a>
+                                    <%= link_to item.product.name, shop_product_path(item.product.id) %>
                                     <br />
                                     <small>Réf : <%= item.product.reference %></small>
                                 </td>
