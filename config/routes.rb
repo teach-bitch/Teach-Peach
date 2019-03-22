@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       get 'home', :on => :collection
       get 'contact', :on => :collection
     end
+    resources :messages, only: [:new, :create]
 
     get '*all', to: 'application#index', constraints: lambda { |req|
         req.path.exclude? 'rails/active_storage'
