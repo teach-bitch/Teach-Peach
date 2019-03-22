@@ -57,6 +57,6 @@ class Admins::TypeformsController < AdminsController
     end
 
     def typeform_params
-      params.require(:typeform).permit(:title, :description, :id_typeform, :id_results)
+      params.require(:typeform).permit(:title, :description, :id_typeform, :id_results, :for_adult)
     end
 end
