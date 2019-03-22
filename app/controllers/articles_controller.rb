@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_to_root_if_visitor, except: [:index]
+  before_action :redirect_to_root_if_visitor, except: [:index, :show]
   include ArticlesHelper
 
   def index
@@ -8,7 +8,15 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    authorize @article
+    if (user_signed_in? && @article.for_adult == true)
+      authorize @article, :show_article?
+    else
+      skip_authorization
+      if @article.for_adult == true
+        flash[:notice] = "Contenu pour adulte. Veuillez vous connecter pour y accéder."
+        redirect_to root_path
+      end
+    end
   end
 
   private

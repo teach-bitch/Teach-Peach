@@ -15,7 +15,7 @@ class TypeformPolicy < ApplicationPolicy
     user.role == 'admin'
   end
 
-  def new?  
+  def new?
     user.role == 'admin'
   end
 
@@ -25,12 +25,12 @@ class TypeformPolicy < ApplicationPolicy
 
   def create?
     user.role == 'admin'
-    
+
   end
 
   def update?
     user.role == 'admin'
-    
+
   end
 
   def destroy?
