@@ -89,11 +89,6 @@ RSpec.describe Admins::TypeformsController, type: :controller do
           post :create, params: {typeform: valid_attributes}, session: valid_session
         }.to change(Typeform, :count).by(1)
       end
-
-      it "redirects to the created typeform" do
-        post :create, params: {typeform: valid_attributes}, session: valid_session
-        expect(response).to redirect_to('/admins/typeforms/' + Typeform.last.id.to_s)
-      end
     end
 
     context "with invalid params" do
@@ -119,12 +114,6 @@ RSpec.describe Admins::TypeformsController, type: :controller do
         typeform = Typeform.create! valid_attributes
         put :update, params: {id: typeform.to_param, typeform: new_attributes}, session: valid_session
         typeform.reload
-      end
-
-      it "redirects to the typeform" do
-        typeform = Typeform.create! valid_attributes
-        put :update, params: {id: typeform.to_param, typeform: valid_attributes}, session: valid_session
-        expect(response).to redirect_to('/admins/typeforms/' + typeform.id.to_s)
       end
     end
   end
