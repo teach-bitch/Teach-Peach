@@ -37,7 +37,7 @@
                                     <%= bill.created_at %>
                                 </td>
                                 <td class="td-number">
-                                  <%= bill.price %><small>€</small>
+                                  <%= number_to_currency(bill.price, unit: "") %><small>€</small>
                                 </td>
                                 <td>
                                   <%= button_to 'Voir la facture', shop_facturation_path(bill), class: 'btn btn-neutral', method: :get %>

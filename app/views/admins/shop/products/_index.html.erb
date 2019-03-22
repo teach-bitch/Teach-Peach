@@ -63,7 +63,7 @@
                   </button>
               </td>
               <td>
-                <%= product.price %>
+                <%= number_to_currency(product.price, unit: "") %>
               </td>
               <td class="text-center">
                 <%= product.quantity %>

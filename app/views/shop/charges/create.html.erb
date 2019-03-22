@@ -1,1 +1,1 @@
-<h2>Merci à vous, voilà votre facture : <strong><%= @price %> €</strong>!</h2>
+<h2>Merci à vous, voilà votre facture : <strong><%= number_to_currency(@price, unit: "") %> €</strong>!</h2>

@@ -23,7 +23,7 @@
                   </div>
                   <div class="card-footer">
                     <div class="">
-                      <small class="price"><%= product.price %> €</small>
+                      <small class="price"><%= number_to_currency(product.price, unit: "") %> €</small>
                     </div>
                     <span class="tag badge badge-primary pull-right">
                       <%= product.product_categories.first.title %>
@@ -61,7 +61,7 @@
                   </div>
                   <div class="card-footer">
                     <div class="">
-                      <small class="price"><%= product.price %> €</small>
+                      <small class="price"><%= number_to_currency(product.price, unit: "") %> €</small>
                     </div>
                     <% if product.product_categories.length > 0 %>
                       <span class="tag badge badge-primary pull-right">

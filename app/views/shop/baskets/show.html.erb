@@ -48,7 +48,7 @@
                                     <%= item.product.brand %>
                                 </td>
                                 <td class="td-number">
-                                    <%= item.product.price %><small>€</small>
+                                    <%= number_to_currency(item.product.price, unit: "") %><small>€</small>
                                 </td>
 
                                 <td class="td-number">
@@ -68,7 +68,7 @@
                                           </button>
                                         <% end %>
                                 <td class="td-number" id="item_total_<%= item.id %>">
-                                    <%= (item.product.price * item.quantity).round(2) %><small>€</small>
+                                    <%= number_to_currency((item.product.price * item.quantity).round(2), unit: "") %><small>€</small>
                                 </td>
                                 <td class="td-actions">
                                   <%= link_to shop_line_item_path(item.id), method: :DELETE, data: {confirm: 'Voulez-vous vraiment supprimer ' + item.product.name} do %>
@@ -86,7 +86,7 @@
                                     Total
                                 </td>
                                 <td class="td-price" id="total_price">
-                                    <%= @price.round(2) %><small>€</small>
+                                    <%= number_to_currency(@price.round(2), unit: "") %><small>€</small>
                                 </td>
                                 <%= render 'button' %>
                                 <p><%= link_to "Retour aux produits", shop_products_path, class: 'text-primary' %></p>

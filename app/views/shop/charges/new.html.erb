@@ -49,7 +49,7 @@
                     <%= item.product.brand %>
                   </td>
                   <td class="td-number">
-                    <%= item.product.price %><small>€</small>
+                    <%= number_to_currency(item.product.price, unit: "") %><small>€</small>
                   </td>
 
                   <td class="td-number">
@@ -61,7 +61,7 @@
                       </div>
 
                   <td class="td-number" id="item_total_<%= item.id %>">
-                    <%= (item.product.price * item.quantity).round(2) %><small>€</small>
+                    <%= number_to_currency((item.product.price * item.quantity).round(2), unit: "") %><small>€</small>
                   </td>
                   <td class="td-actions">
 
@@ -75,7 +75,7 @@
                     Total
                   </td>
                   <td class="td-price" id="total_price">
-                    <%= @price.round(2) %><small>€</small>
+                    <%= number_to_currency(@price.round(2), unit: "") %><small>€</small>
                   </td>
                   <td colspan="3" class="text-right">
                     <%= form_tag url_for(action: 'create'), method: "post" do %>

@@ -27,7 +27,7 @@
               </span>
             <% end %>
             <h2 class="main-price">
-              <%= @product.price %> €
+              <%= number_to_currency(@product.price, unit: "") %> €
             </h2>
             <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
               <div class="card card-plain">

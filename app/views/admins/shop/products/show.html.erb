@@ -17,7 +17,7 @@
             <div class="col-md-5 ml-auto mr-auto">
               <h2 class="title"><%= @product.name %></h2>
               <h5 class="category"><%= @product.brand %> </h5>
-              <h2 class="main-price"><%= @product.price %><small>€</small></h2>
+              <h2 class="main-price"><%= number_to_currency(@product.price, unit: "") %><small>€</small></h2>
               <% if @product.quantity.to_i > 0 %>
                 <div class="card-collapse justify-content-start">
                   <span><%= link_to 'Ajouter au panier', admins_path, class: 'btn btn-dribbble btn-round' %></span>

@@ -25,7 +25,7 @@
                   <%= User.find(facturation.user_id).first_name %> <%= User.find(facturation.user_id).first_name %>
                 </td>
                 <td>
-                  <%= facturation.price %>
+                  <%= number_to_currency(facturation.price, unit: "") %>
                 </td>
                 <td class="text-right">
                   <%= link_to admins_shop_facturation_path(facturation.id) do %>

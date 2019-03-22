@@ -39,10 +39,10 @@
                                     <%= item.quantity %>
                                 </td>
                                 <td class="td-number text-center">
-                                    <%= item.product.price.round(2) %><small>€</small>
+                                    <%= number_to_currency(item.product.price.round(2), unit: "") %><small>€</small>
                                 </td>
                                 <td class="td-number">
-                                  <%= (item.product.price * item.quantity).round(2) %><small>€</small>
+                                  <%= number_to_currency((item.product.price * item.quantity).round(2), unit: "") %><small>€</small>
                                 </td>
                             </tr>
                           <% end %>
@@ -51,7 +51,7 @@
                                     Total
                                 </td>
                                 <td class="td-price" id="total_price">
-                                    <%= @facturation.price.round(2) %><small>€</small>
+                                    <%= number_to_currency(@facturation.price.round(2), unit: "") %><small>€</small>
                                 </td>
                                 <p>Facture n°<%= @facturation.id %> - <%= User.find(@facturation.user_id).last_name %> <%= User.find(@facturation.user_id).first_name %></p>
                             </tr>
