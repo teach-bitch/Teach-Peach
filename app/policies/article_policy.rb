@@ -9,12 +9,8 @@ class ArticlePolicy < ApplicationPolicy
   def index?
   end
 
-  def show?
-    if article.for_adult == true
-      user.role != "user_minor"
-    else
-      user.role == "user_minor" || user.role == 'user' || user.role == 'admin' || article.user_id == user.id || user.role == "subscriber"
-    end
+  def show_article?
+      user.role != 'user_minor'
   end
 
   def new?
