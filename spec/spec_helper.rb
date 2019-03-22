@@ -17,6 +17,7 @@ require 'devise'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  require 'capybara/rspec'
 
   config.include ControllerHelpers, type: :controller
   Warden.test_mode!
