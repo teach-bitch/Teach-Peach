@@ -3,7 +3,6 @@
       <%= link_to  'Tous les produits', "#link-all", class: "nav-link active show", "data-toggle" => "tab", "role" => "tablist" %>
   </li>
   <% @product_categories.each do |category| %>
-
     <li class="nav-item">
       <%= link_to  category.title, "#link-#{category.id}", class: "nav-link", "data-toggle" => "tab", "role" => "tablist" %>
     </li>
