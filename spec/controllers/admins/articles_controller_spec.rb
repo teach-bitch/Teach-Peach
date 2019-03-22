@@ -81,19 +81,6 @@ RSpec.describe Admins::ArticlesController, type: :controller do
   end
 
   describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Article" do
-        expect {
-          post :create, params: {article: valid_attributes}, session: valid_session
-        }.to change(Article, :count).by(1)
-      end
-
-      it "redirects to the created article" do
-        post :create, params: {article: valid_attributes}, session: valid_session
-        expect(response).to redirect_to('/admins/articles/' + Article.last.id.to_s)
-      end
-    end
-
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
         post :create, params: {article: invalid_attributes}, session: valid_session
