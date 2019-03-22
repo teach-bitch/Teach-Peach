@@ -21,18 +21,16 @@
 				</li>
 			</ul>
 		</div>
-		<div class="container-image">
+		<div class="container-image mt-5 mb-5">
 			<% if @article.images.attached? %>
-			<% @article.images.each do |image| %>
-				<%= image_tag image, alt: 'image' %>
-				
-				<% end %>
+				<%= image_tag @article.images.last %>
 		  <% end %>
 	  </div>
 		<div class="mb-5">
 			<%= raw @article.content %>
 		</div>
     <%= link_to 'Éditer', edit_admins_article_path(@article) %> |
-    <%= link_to "Retour à l'index", admins_articles_path %>
+    <%= link_to 'Retour aux articles', admins_articles_path %>
 	</div>
 </div>
+
