@@ -1,56 +1,53 @@
-<body class="product-page">
+<main>
   <div class="wrapper">
-    <div class="page-header page-header-mini">
-      <div class="page-header-image" data-parallax="true" style="background-image: url(https://images.pexels.com/photos/193356/pexels-photo-193356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); transform: translate3d(0px, 76.3333px, 0px);">
-      </div>
-    </div>
     <div class="section">
       <div class="container">
-        <%= link_to shop_products_path do %>
-          <i class="now-ui-icons arrows-1_minimal-left"></i>
-          Retour vers l'index
+        <%= link_to admins_path do %>
+          <i class='now-ui-icons arrows-1_minimal-left'>Retour vers l'index</i>
         <% end %>
         <div class="row">
-          <div class="col-md-5">
-            <%= render 'carousel' %>
-          </div>
-          <div class="col-md-6 ml-auto mr-auto">
-            <h2 class="title">
-              <%= @product.name %>
-            </h2>
-            <h5 class="category">
-              <%= @product.brand %>
-            </h5>
-            <% @product.product_categories.each do |category| %>
-              <span class="tag badge badge-primary">
-                <%= category.title %>
-              </span>
-            <% end %>
-            <h2 class="main-price">
-              <%= number_to_currency(@product.price, unit: "") %> €
-            </h2>
-            <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
-              <div class="card card-plain">
-                <div class="card-header" role="tab" id="headingOne">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <div class="d-flex align-content-stretch flex-wrap">
+            <div class="col-md-6 d-flex align-content-center flex-wrap">
+              <% if @product.images.attached? %>
+                <% @product.images.each do |image| %>
+                  <%= image_tag image, alt: 'image', class: 'd-block img-raised align-self-center' %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="col-md-5 ml-auto mr-auto">
+              <h2 class="title"><%= @product.name %></h2>
+              <h5 class="category"><%= @product.brand %> </h5>
+              <h2 class="main-price"><%= number_to_currency(@product.price, unit: "") %><small>€</small></h2>
+              <% if @product.quantity.to_i > 0 %>
+                <div class="card-collapse justify-content-start">
+                  <span><%= link_to 'Ajouter au panier', admins_path, class: 'btn btn-dribbble btn-round' %></span>
+                </div><br/>
+              <% else %>
+              <h6>Out of stock</h6>
+              <%end%>
+              <div class="card-collapse">
+                <div class="card card-plain">
+                  <div class="card-header">
                     Description
-                    <i class="now-ui-icons arrows-1_minimal-down"></i>
-                  </a>
-                </div>
-                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                  </div>
                   <div class="card-body">
-                    <p>
-                      <%= @product.description %>
-                    </p>
+                    <p><%= @product.description %></p>
+                  </div>
+                  <div class="card-header">
+                    Reference : <%= @product.reference %>
+                  </div>
+                  <div class="card-header">
+                    Categories :
+                    <% @product.product_categories.each do |cat| %>
+                      <span class="badge badge-neutral"><%= cat.title %></span>
+                    <%end%>
                   </div>
                 </div>
               </div>
             </div>
-            <%= render 'add_to_cart_button' %>
           </div>
         </div>
       </div>
     </div>
-    <%= render 'related_products' %>
   </div>
-</body>
+</main>
