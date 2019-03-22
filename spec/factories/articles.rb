@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :article do
-    title { "MyString" }
-    content { "MyText" }
-    is_adult { false }
+    user_id { FactoryBot.create(:user).id }
+    title { Faker::Food.fruits }
+    content { Faker::GreekPhilosophers.quote }
+    for_adult { Faker::Boolean.boolean }
   end
 end

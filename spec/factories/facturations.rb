@@ -1,5 +1,7 @@
 FactoryBot.define do
   factory :facturation do
-    price { "9.99" }
+    user_id { FactoryBot.create(:user).id }
+    price { Faker::Number.decimal(2) }
+    basket_id { FactoryBot.create(:basket).id }    
   end
 end
