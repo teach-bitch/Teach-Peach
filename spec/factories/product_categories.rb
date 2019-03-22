@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :product_category do
-    title { "MyString" }
+    title { Faker::Coin.flip }
   end
 end
