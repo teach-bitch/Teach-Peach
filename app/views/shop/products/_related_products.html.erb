@@ -1,0 +1,79 @@
+<% if @product.product_categories.length > 0 %>
+  <div class="section related-products" data-background-color="black">
+    <div class="container">
+      <h3 class="title text-center">Hey, regarde, ça pourrait t'intéresser !</h3>
+      <div class="row">
+          <% @product.product_categories.sample.products.sample(4).each do |product| %>
+            <div class="col-sm-6 col-md-3">
+              <div class="card card-product">
+                <div class="card-image">
+                  <% if product.images != nil %>
+                    <%= link_to shop_product_path(product) do %>
+                      <%= image_tag url_for(product.images[0]), alt: 'image', class: 'img-rounded' %>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                  <h6 class="category"><%= product.brand %></h6>
+                  <h4 class="card-title">
+                    <%= link_to product.name, shop_product_path(product) %>
+                  </h4>
+                  <div class="card-description">
+                    <%= product.description %>
+                  </div>
+                  <div class="card-footer">
+                    <div class="">
+                      <small class="price"><%= product.price %> €</small>
+                    </div>
+                    <span class="tag badge badge-primary pull-right">
+                      <%= product.product_categories.first.title %>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="section related-products" data-background-color="black">
+    <div class="container">
+      <h3 class="title text-center">Hey, regarde, ça pourrait t'intéresser !</h3>
+      <div class="row">
+          <% @all_product.sample(4).each do |product| %>
+            <div class="col-sm-6 col-md-3">
+              <div class="card card-product">
+                <div class="card-image">
+                  <% if product.images != nil %>
+                    <%= link_to shop_product_path(product) do %>
+                      <%= image_tag url_for(product.images[0]), alt: 'image', class: 'img-rounded' %>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                  <h6 class="category"><%= product.brand %></h6>
+                  <h4 class="card-title">
+                    <%= link_to product.name, shop_product_path(product) %>
+                  </h4>
+                  <div class="card-description">
+                    <%= product.description %>
+                  </div>
+                  <div class="card-footer">
+                    <div class="">
+                      <small class="price"><%= product.price %> €</small>
+                    </div>
+                    <% if product.product_categories.length > 0 %>
+                      <span class="tag badge badge-primary pull-right">
+                        <%= product.product_categories.first.title %>
+                      </span>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

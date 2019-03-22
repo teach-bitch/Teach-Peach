@@ -8,7 +8,9 @@
             <div class="card card-product">
               <div class="card-image">
                 <% if product.images != nil %>
-                  <%= image_tag url_for(product.images[0]), alt: 'image', class: 'd-block img-raised align-self-center' %>
+                  <%= link_to shop_product_path(product) do %>
+                    <%= image_tag url_for(product.images[0]), alt: 'image', class: 'd-block img-raised align-self-center' %>
+                  <% end %>
                 <% end %>
               </div>
               <div class="card-body">
