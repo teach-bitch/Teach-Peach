@@ -2,7 +2,10 @@
   <div class="wrapper">
     <div class="section">
       <div class="container">
-        <a href="<%= shop_products_path %>"><i class="now-ui-icons arrows-1_minimal-left"></i> <span>Retour vers l'index</span></a>
+        <%= link_to shop_products_path do %>
+          <i class="now-ui-icons arrows-1_minimal-left"></i>
+          Retour vers l'index
+        <% end %>
         <div class="row">
           <div class="d-flex align-content-stretch flex-wrap">
             <div class="col-md-6 d-flex align-content-center flex-wrap">
