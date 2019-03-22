@@ -1,3 +1,3 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.role != "user_minor"%>
   <%= link_to('Mes factures', shop_facturations_path, class: 'nav-link text-primary dropdown-item') %>
 <% end %>
