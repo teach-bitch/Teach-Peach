@@ -2,9 +2,9 @@
   $('#item_fulldiv_<%= @line_item.id %>').fadeOut('2000')
 <% else %>
   $('#item_quantity_<%= @line_item.id%>').html("<%= @line_item.quantity %>")
-  $('#item_total_<%= @line_item.id %>').html("<%= @line_item_total.round(2) %><small>€</small>")
+  $('#item_total_<%= @line_item.id %>').html("<%= number_to_currency(@line_item_total.round(2), unit: "") %><small>€</small>")
 <% end %>
-  $('#total_price').html("<%= @price %><small>€</small>")
+  $('#total_price').html("<%= number_to_currency(@price, unit: "") %><small>€</small>")
 <% if @price == 0 %>
   $('#checkout-btn').fadeOut('2000')
 <% end %>
