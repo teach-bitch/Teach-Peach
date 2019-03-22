@@ -10,7 +10,7 @@
             <div class="col-md-6 d-flex align-content-center flex-wrap">
               <% if @product.images.attached? %>
                 <% @product.images.each do |image| %>
-                  <%= image_tag image, alt: 'image', class: 'd-block img-raised align-self-center' %>
+                  <%= image_tag image, alt: 'image', class: 'd-block  align-self-center' %>
                 <% end %>
               <% end %>
             </div>

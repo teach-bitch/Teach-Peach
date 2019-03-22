@@ -5,11 +5,11 @@
       <div class="row">
         <% category.products.each do |product|%>
           <div class="col-lg-4 col-md-6">
-            <div class="card card-product">
-              <div class="card-image">
+            <div class="card card-product box-shadow">
+              <div class="card-image box-shadow">
                 <% if product.images != nil %>
                   <%= link_to shop_product_path(product) do %>
-                    <%= image_tag url_for(product.images[0]), alt: 'image', class: 'd-block img-raised align-self-center' %>
+                    <%= image_tag url_for(product.images[0]), alt: 'image', class: 'd-block align-self-center' %>
                   <% end %>
                 <% end %>
               </div>

@@ -2,15 +2,16 @@
   <div class="wrapper">
     <div class="section">
       <div class="container">
-        <%= link_to admins_path do %>
-          <i class='now-ui-icons arrows-1_minimal-left'>Retour vers l'index</i>
+        <%= link_to shop_products_path do %>
+          <i class="now-ui-icons arrows-1_minimal-left"></i>
+          Retour vers l'index
         <% end %>
         <div class="row">
           <div class="d-flex align-content-stretch flex-wrap">
             <div class="col-md-6 d-flex align-content-center flex-wrap">
               <% if @product.images.attached? %>
                 <% @product.images.each do |image| %>
-                  <%= image_tag image, alt: 'image', class: 'd-block img-raised align-self-center' %>
+                  <%= image_tag image, alt: 'image', class: 'd-block align-self-center' %>
                 <% end %>
               <% end %>
             </div>
@@ -20,7 +21,8 @@
               <h2 class="main-price"><%= number_to_currency(@product.price, unit: "") %><small>€</small></h2>
               <% if @product.quantity.to_i > 0 %>
                 <div class="card-collapse justify-content-start">
-                  <span><%= link_to 'Ajouter au panier', admins_path, class: 'btn btn-dribbble btn-round' %></span>
+              <%= render 'add_to_cart_button' %>
+
                 </div><br/>
               <% else %>
               <h6>Out of stock</h6>
