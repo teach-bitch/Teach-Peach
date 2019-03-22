@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.role != "user_minor" %>
   <li>
     <%= link_to shop_basket_path(@current_basket.id), class: "nav-link text-primary" do %>
       Panier
