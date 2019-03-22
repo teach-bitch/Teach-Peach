@@ -1,11 +1,11 @@
 require 'spec_helper'
+require 'rails_helper'
 
 feature 'Visitor signs up' do
-    
   scenario 'with valid email and password' do
     sign_up_with 'valid@example.com', 'password'
 
-    expect(page).to have_content('Sign out')
+    expect(page).to have_content("C'est parti !")
   end
 
   scenario 'with invalid email' do
