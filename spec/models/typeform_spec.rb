@@ -37,12 +37,6 @@ RSpec.describe Typeform, type: :model do
     end
   end
 
-  context "associations" do
-    describe "typeforms" do
-      it { expect(@typeform).to belong_to(:user) }
-    end
-  end
-
   context "class" do
     it "should return a string" do
       expect(@typeform.title).to be_a(String)
