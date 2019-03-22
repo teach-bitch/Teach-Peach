@@ -3,17 +3,23 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    @url = 'https://www.teachpeach.fr'
+    @url = 'https://www.teach-peach.fr'
     mail(to: @user.email, subject: 'Bienvenue sur Teach Peach')
   end
 
   def subscribe_email(user)
     @user = user
-    @url = 'https://www.teachpeach.fr/abonnements'
+    @url = 'https://www.teach-peach.fr/abonnements'
     # check if user is not subscribed yet nor minor
     if (user.role != 'user_minor') && (user.subscription_id == nil)
       mail(to: @user.email, subject: 'As-tu vu nos abonnements')
     end
+  end
+
+  def contact_email_from_user(message)
+    @message = message
+    @url = 'https://www.teach-peach.fr'
+    mail(to: 'teach-peach@yopmail.com', subject: 'Bienvenue sur Teach Peach')
   end
 
   def new_typeform_email(typeform)
