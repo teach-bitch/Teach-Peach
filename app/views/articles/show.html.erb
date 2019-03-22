@@ -1,36 +1,37 @@
 <div class="row justify-content-center">
-  <div class="col-md-6 col-xs-12 col-s-12 col-lg-6 mt-5 mb-5">
-    <div class="article-title">
-      <h1><strong>
-          <%= @article.title %></strong></h1>
-    </div>
-    <div class="container article-informations">
-      <ul class="pull-center article-informations-list-list">
-        <li class="article-informations-list-list">
-          <%= @article.created_at.strftime("%m/%d/%Y") %>
-          -
-        </li>
-        <% @article.categories.each do |category| %>
-        <li class="article-informations-list-list">
-          #<%= category.title %>
-        </li>
-        <% end %>
-        <li class="article-informations-list-list pull-right">
-          <%= render 'layouts/social' %>
-        </li>
-      </ul>
-    </div>
-    <div class="mb-5">
-      <% if @article.images.attached? %>
-      <% @article.images.each do |image| %>
-      <div class="container-image">
-        <%= image_tag image, alt: 'image' %>
-        </p>
-        <% end %>
-        <% end %>
-      </div>
-      <%= raw @article.content %>
-    </div>
+	<div class="col-md-6 col-xs-12 col-s-12 col-lg-6 mt-5 mb-5">
+		<div class="article-title">
+			<h1><strong>
+					<%= @article.title %></strong></h1>
+		</div>
+		<div class="container article-informations">
+			<ul class="pull-center article-informations-list-list">
+				<li class="article-informations-list-list">
+					<%= @article.created_at.strftime("%m/%d/%Y") %>
+					-
+				</li>
+				<% @article.categories.each do |category| %>
+				<li class="article-informations-list-list">
+					#
+					<%= category.title %>
+				</li>
+				<% end %>
+				<li class="article-informations-list-list pull-right">
+					<%= render 'layouts/social' %>
+				</li>
+			</ul>
+		</div>
+		<div class="container-image">
+			<% if @article.images.attached? %>
+			<% @article.images.each do |image| %>
+				<%= image_tag image, alt: 'image' %>
+				
+				<% end %>
+		  <% end %>
+	  </div>
+		<div class="mb-5">
+			<%= raw @article.content %>
+		</div>
     <%= link_to 'Retour aux articles', articles_path %>
   </div>
 </div>
